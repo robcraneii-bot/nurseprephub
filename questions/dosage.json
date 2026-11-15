@@ -10,6 +10,7 @@
     "Volume less than 1 mL: round to the nearest hundredth.",
     "Gravity drip (gtt/min): round to the nearest whole number.",
     "Electronic pump (mL/hr): round to the nearest whole number.",
+    "BSA (m²): round to the nearest hundredth before calculating the dose.",
     "Always follow a question's own rounding instruction when it gives one."
   ],
   "categories": [
@@ -22,6 +23,10 @@
       "name": "Oral & Parenteral Single-Dose Calculations"
     },
     {
+      "id": "insulin",
+      "name": "Insulin & Sliding-Scale Dosing"
+    },
+    {
       "id": "reconstitution",
       "name": "Reconstitution of Powdered Medications"
     },
@@ -30,12 +35,20 @@
       "name": "Weight-Based Dosing"
     },
     {
+      "id": "bsa",
+      "name": "Body Surface Area (BSA) Dosing"
+    },
+    {
       "id": "iv-pump",
       "name": "IV Flow Rates – Electronic Pump"
     },
     {
       "id": "iv-gravity",
       "name": "IV Flow Rates – Manual Gravity Drip"
+    },
+    {
+      "id": "infusion-time",
+      "name": "Infusion Time & Completion Time"
     },
     {
       "id": "titration",
@@ -1073,6 +1086,453 @@
           "work": "300 < 425",
           "explain": "Below the range: subtherapeutic."
         }
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-001",
+      "category": "insulin",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A client's fingerstick glucose before lunch is 245 mg/dL. Using the correction scale, how many units of insulin lispro will the nurse give?",
+      "patient": "Fingerstick glucose 245 mg/dL",
+      "order": "Insulin lispro subcut per correction scale before meals",
+      "available": "Correction scale (insulin lispro): 150-199 mg/dL = 2 units; 200-249 = 4 units; 250-299 = 6 units; 300-349 = 8 units; 350 or higher = call the provider. Below 150 = no correction.",
+      "unit": "units",
+      "answer": 4,
+      "exact": 4,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Find the range that contains the glucose value; give the units for that range.",
+      "steps": [
+        {
+          "work": "245 mg/dL falls in 200-249",
+          "explain": "Match the reading to its range."
+        },
+        {
+          "work": "200-249 = 4 units",
+          "explain": "Read the dose for that range."
+        }
+      ],
+      "explanation": "Match the glucose reading to the correct range on the scale. 245 is in the 200-249 range.",
+      "mistakes": [
+        "Reading the next range up because 245 is close to 250."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-002",
+      "category": "insulin",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A client has an order for insulin lispro 6 units subcut with meals plus correction per scale. The glucose before dinner is 312 mg/dL and the client is about to eat. What is the total dose of insulin lispro?",
+      "patient": "Fingerstick glucose 312 mg/dL; meal tray at bedside",
+      "order": "Insulin lispro 6 units subcut with meals, plus correction scale",
+      "available": "Correction scale (insulin lispro): 150-199 mg/dL = 2 units; 200-249 = 4 units; 250-299 = 6 units; 300-349 = 8 units; 350 or higher = call the provider. Below 150 = no correction.",
+      "unit": "units",
+      "answer": 14,
+      "exact": 14,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Total = scheduled mealtime dose + correction dose",
+      "steps": [
+        {
+          "work": "312 mg/dL falls in 300-349 = 8 units",
+          "explain": "Find the correction dose."
+        },
+        {
+          "work": "6 + 8 = 14 units",
+          "explain": "Add it to the scheduled mealtime dose; both are the same rapid-acting insulin."
+        }
+      ],
+      "explanation": "When the scheduled and correction doses are the same insulin, add them and give one injection.",
+      "mistakes": [
+        "Giving only the correction dose and leaving out the scheduled mealtime dose.",
+        "Giving rapid-acting insulin when the meal is not available."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-003",
+      "category": "insulin",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "The order is insulin glargine 18 units subcut at bedtime. The vial is U-100 (100 units/mL). How many mL is this dose?",
+      "order": "Insulin glargine 18 units subcut at bedtime",
+      "available": "U-100 vial (100 units/mL)",
+      "unit": "mL",
+      "answer": 0.18,
+      "exact": 0.18,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "formula": "mL = units / 100 units/mL",
+      "steps": [
+        {
+          "work": "18 units / 100 units/mL = 0.18 mL",
+          "explain": "Divide the dose by the concentration."
+        }
+      ],
+      "explanation": "U-100 insulin has 100 units in each mL. In practice, draw insulin up in units with a U-100 insulin syringe; the mL value shows how small the volume is.",
+      "mistakes": [
+        "Using a tuberculin (mL) syringe instead of an insulin syringe.",
+        "Mixing insulin glargine with any other insulin."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-004",
+      "category": "insulin",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "The order is regular insulin U-500 150 units subcut before breakfast. The vial is U-500 (500 units/mL). How many mL is this dose?",
+      "order": "Regular insulin U-500 150 units subcut before breakfast",
+      "available": "U-500 vial (500 units/mL)",
+      "unit": "mL",
+      "answer": 0.3,
+      "exact": 0.3,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "formula": "mL = units / 500 units/mL",
+      "steps": [
+        {
+          "work": "150 units / 500 units/mL = 0.3 mL",
+          "explain": "Divide the dose by the concentration."
+        }
+      ],
+      "explanation": "U-500 is five times as concentrated as U-100. Measure it only with a U-500 syringe or the U-500 pen, which are marked in units of U-500, never with a U-100 syringe.",
+      "mistakes": [
+        "Drawing 150 units in a U-100 syringe, which gives 750 units (five times the dose)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-005",
+      "category": "insulin",
+      "format": "mc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A client's fingerstick glucose before breakfast is 368 mg/dL. Using the correction scale, what should the nurse do?",
+      "patient": "Fingerstick glucose 368 mg/dL",
+      "order": "Insulin lispro subcut per correction scale before meals",
+      "available": "Correction scale (insulin lispro): 150-199 mg/dL = 2 units; 200-249 = 4 units; 250-299 = 6 units; 300-349 = 8 units; 350 or higher = call the provider. Below 150 = no correction.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give 8 units, the highest dose on the scale."
+        },
+        {
+          "id": "B",
+          "text": "Contact the provider for orders, as the scale directs."
+        },
+        {
+          "id": "C",
+          "text": "Give 10 units by adding 2 units for each 50 mg/dL above 349."
+        },
+        {
+          "id": "D",
+          "text": "Recheck the glucose in 4 hours and give the correction then."
+        }
+      ],
+      "answer": "B",
+      "explanation": "The scale says to call the provider at 350 mg/dL or higher. The nurse follows the order as written and does not extend the scale.",
+      "why": {
+        "A": "8 units is ordered only for 300-349 mg/dL.",
+        "C": "Extrapolating the scale is giving a dose that was never ordered.",
+        "D": "Severe hyperglycemia needs prompt action, not a 4-hour delay."
+      },
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-001",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A client is 160 cm tall and weighs 64 kg. Using the Mosteller formula, what is the body surface area?",
+      "patient": "Height 160 cm; weight 64 kg",
+      "unit": "m²",
+      "answer": 1.69,
+      "exact": 1.6865480854231356,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "formula": "BSA (m²) = √(height cm × weight kg / 3600)",
+      "steps": [
+        {
+          "work": "160 × 64 = 10,240",
+          "explain": "Multiply height in cm by weight in kg."
+        },
+        {
+          "work": "10,240 / 3600 = 2.8444",
+          "explain": "Divide by 3600."
+        },
+        {
+          "work": "√2.8444 = 1.6865 -> 1.69 m²",
+          "explain": "Take the square root and round to the nearest hundredth."
+        }
+      ],
+      "explanation": "Multiply height (cm) by weight (kg), divide by 3600, then take the square root.",
+      "mistakes": [
+        "Forgetting the square root.",
+        "Using pounds or inches in the metric formula."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-002",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A client is 175 cm tall and weighs 154 lb. Using the Mosteller formula, what is the body surface area?",
+      "patient": "Height 175 cm; weight 154 lb",
+      "unit": "m²",
+      "answer": 1.84,
+      "exact": 1.8446619684315546,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "formula": "1) kg = lb / 2.2  2) BSA (m²) = √(height cm × weight kg / 3600)",
+      "steps": [
+        {
+          "work": "154 lb / 2.2 = 70 kg",
+          "explain": "Convert weight to kg first."
+        },
+        {
+          "work": "175 × 70 = 12,250",
+          "explain": "Height in cm times weight in kg."
+        },
+        {
+          "work": "12,250 / 3600 = 3.4028",
+          "explain": "Divide by 3600."
+        },
+        {
+          "work": "√3.4028 = 1.8447 -> 1.84 m²",
+          "explain": "Square root, rounded to the nearest hundredth."
+        }
+      ],
+      "explanation": "Convert pounds to kilograms, then use the metric Mosteller formula.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-003",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "A child who is 110 cm tall and weighs 20 kg has an order for vincristine 1.5 mg/m² IV. What dose in mg will the child receive?",
+      "patient": "Height 110 cm; weight 20 kg",
+      "order": "Vincristine 1.5 mg/m² IV",
+      "unit": "mg",
+      "answer": 1.17,
+      "exact": 1.17,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth",
+        "special": true,
+        "note": "Round BSA to the nearest hundredth first, then round the dose to the nearest hundredth of a mg."
+      },
+      "formula": "1) BSA = √(cm × kg / 3600)  2) Dose = mg/m² × BSA",
+      "steps": [
+        {
+          "work": "√(110 × 20 / 3600) = √0.6111 = 0.7817 -> 0.78 m²",
+          "explain": "Find BSA and round to the nearest hundredth."
+        },
+        {
+          "work": "1.5 mg/m² × 0.78 m² = 1.17 mg",
+          "explain": "Multiply the ordered dose per m² by the BSA."
+        }
+      ],
+      "explanation": "Find the BSA, round it to the nearest hundredth, then multiply by the mg/m² dose. Chemotherapy doses are independently double-checked by two qualified clinicians.",
+      "mistakes": [
+        "Multiplying by weight (mg/kg) instead of BSA (mg/m²)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-004",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "A client who is 170 cm tall and weighs 72 kg has an order for cyclophosphamide 600 mg/m² IV. What dose in mg will the client receive?",
+      "patient": "Height 170 cm; weight 72 kg",
+      "order": "Cyclophosphamide 600 mg/m² IV",
+      "unit": "mg",
+      "answer": 1104,
+      "exact": 1104,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "1) BSA = √(cm × kg / 3600)  2) Dose = mg/m² × BSA",
+      "steps": [
+        {
+          "work": "√(170 × 72 / 3600) = √3.4 = 1.8439 -> 1.84 m²",
+          "explain": "Find BSA and round to the nearest hundredth."
+        },
+        {
+          "work": "600 mg/m² × 1.84 m² = 1,104 mg",
+          "explain": "Multiply by the BSA."
+        }
+      ],
+      "explanation": "Round BSA to the nearest hundredth before multiplying by the mg/m² dose.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-001",
+      "category": "infusion-time",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "One liter of 0.9% sodium chloride is infusing at 125 mL/hr. How many hours will it take to infuse?",
+      "order": "0.9% sodium chloride 1,000 mL IV at 125 mL/hr",
+      "unit": "hr",
+      "answer": 8,
+      "exact": 8,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "Time (hr) = Volume (mL) / Rate (mL/hr)",
+      "steps": [
+        {
+          "work": "1 L = 1,000 mL",
+          "explain": "Convert liters to mL."
+        },
+        {
+          "work": "1,000 mL / 125 mL/hr = 8 hr",
+          "explain": "Divide volume by rate."
+        }
+      ],
+      "explanation": "Divide the volume by the hourly rate.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-002",
+      "category": "infusion-time",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "An IV piggyback of 250 mL is infusing at 100 mL/hr. How many minutes will it take to infuse?",
+      "order": "IV piggyback 250 mL at 100 mL/hr",
+      "unit": "min",
+      "answer": 150,
+      "exact": 150,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Time (min) = (Volume / Rate) × 60",
+      "steps": [
+        {
+          "work": "250 mL / 100 mL/hr = 2.5 hr",
+          "explain": "Find the time in hours."
+        },
+        {
+          "work": "2.5 hr × 60 min/hr = 150 min",
+          "explain": "Convert decimal hours to minutes."
+        }
+      ],
+      "explanation": "Find the time in hours, then multiply by 60. 2.5 hours is 2 hours 30 minutes, not 2 hours 50 minutes.",
+      "mistakes": [
+        "Reading 2.5 hours as 2 hours 50 minutes."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-003",
+      "category": "infusion-time",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "At 0700 a nurse hangs 1,000 mL of lactated Ringer's at 125 mL/hr. If it runs on time, how many mL will remain in the bag at 1100?",
+      "order": "Lactated Ringer's 1,000 mL IV at 125 mL/hr",
+      "unit": "mL",
+      "answer": 500,
+      "exact": 500,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Remaining = Starting volume − (Rate × Hours elapsed)",
+      "steps": [
+        {
+          "work": "0700 to 1100 = 4 hr",
+          "explain": "Find elapsed time."
+        },
+        {
+          "work": "125 mL/hr × 4 hr = 500 mL infused",
+          "explain": "Volume infused so far."
+        },
+        {
+          "work": "1,000 − 500 = 500 mL",
+          "explain": "Subtract from the starting volume."
+        }
+      ],
+      "explanation": "Multiply the rate by the hours elapsed, then subtract from the starting volume.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-004",
+      "category": "infusion-time",
+      "format": "fill",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "At 0930 the nurse checks an IV: 750 mL remain and it is infusing at 90 mL/hr. At what time will it finish? Give the answer in military time (for example 1415).",
+      "order": "IV fluid at 90 mL/hr; 750 mL remaining at 0930",
+      "answer": [
+        "1750",
+        "17:50",
+        "5:50 pm",
+        "5:50pm",
+        "5:50 p.m."
+      ],
+      "formula": "1) Hours = Remaining mL / Rate  2) Minutes = decimal × 60  3) Add to the current time",
+      "steps": [
+        {
+          "work": "750 / 90 = 8.3333 hr",
+          "explain": "Time left in hours."
+        },
+        {
+          "work": "0.3333 × 60 = 20 min, so 8 hr 20 min",
+          "explain": "Convert the decimal part to minutes."
+        },
+        {
+          "work": "0930 + 8 hr 20 min = 1750",
+          "explain": "Add to the current time."
+        }
+      ],
+      "explanation": "750 mL at 90 mL/hr takes 8 hours 20 minutes. Starting at 0930, it finishes at 1750.",
+      "mistakes": [
+        "Treating 8.3333 hr as 8 hr 33 min."
       ],
       "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
