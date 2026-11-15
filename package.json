@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js",
-    "check-questions": "node scripts/check-questions.js"
+    "check-questions": "node scripts/check-questions.js",
+    "review": "node scripts/review-server.js"
   },
   "dependencies": {
     "express": "^4.18.2",

@@ -9,6 +9,8 @@ const CHOICE_FORMATS = ['mc', 'priority', 'delegation', 'ekg', 'case'];
 const DIFFICULTY = ['beginner', 'intermediate', 'advanced', 'nclex'];
 // Fields that reveal the answer; removed before a question is sent to the browser.
 const KEY_FIELDS = ['answer', 'exact', 'tolerance', 'explanation', 'why', 'steps', 'mistakes', 'roundingExplanation', 'acceptUnits'];
+// Reviewer bookkeeping (see scripts/review-server.js); never sent to students.
+const REVIEW_FIELDS = ['reviewedBy', 'reviewedAt', 'reviewNote'];
 
 const decimals = to => { const s = String(to); return s.includes('.') ? s.split('.')[1].length : 0; };
 function roundTo(x, to) {
@@ -85,7 +87,7 @@ function load() {
 function shuffled(a) { const b = a.slice(); for (let i = b.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [b[i], b[j]] = [b[j], b[i]]; } return b; }
 function publicQuestion(q) {
   const p = {};
-  for (const [k, v] of Object.entries(q)) if (!KEY_FIELDS.includes(k)) p[k] = v;
+  for (const [k, v] of Object.entries(q)) if (!KEY_FIELDS.includes(k) && !REVIEW_FIELDS.includes(k)) p[k] = v;
   // An ordering list shown in answer order would give the answer away.
   if (q.format === 'order') { let o = shuffled(q.options); for (let n = 0; n < 5 && o.every((x, i) => x.id === q.answer[i]); n++) o = shuffled(q.options); p.options = o; }
   if (q.format === 'match') p.right = shuffled(q.right);
@@ -94,7 +96,7 @@ function publicQuestion(q) {
 function listSets() {
   return [...SETS.values()].map(s => ({
     set: s.set, title: s.title || s.set, description: s.description || '', tier: s.tier || 'free', mode: s.mode || 'bank',
-    total: s.questions.length,
+    total: s.questions.length, verified: s.questions.filter(q => q.verified === true).length,
     categories: s.categories.map(c => ({ ...c, count: s.questions.filter(q => q.category === c.id).length }))
   }));
 }
@@ -168,4 +170,4 @@ function check(id, response) {
 function reveal(id) { const q = QUESTIONS.get(id); return q ? { revealed: true, ...feedback(q) } : null; }
 
 load();
-module.exports = { load, listSets, publicSet, check, reveal, has: id => QUESTIONS.has(id), count: () => QUESTIONS.size, errors: () => ERRORS, roundTo, FORMATS };
+module.exports = { load, listSets, publicSet, check, reveal, has: id => QUESTIONS.has(id), count: () => QUESTIONS.size, errors: () => ERRORS, roundTo, FORMATS, validateQuestion };

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Question Review</title>
+<style>
+:root{--bg:#F5F2EB;--panel:#EEECE7;--field:#FBFAF7;--ink:#293B36;--ink2:#4F5F59;--ink3:#6B7873;--blue:#52796F;--blue-ink:#3D5F56;--blue-s:#E1E8E3;--line:#DEDAD1;--line2:#CBC6BB;--ok-s:#EAF4EE;--ok-line:#A9D3BA;--ok-ink:#1E6B45;--bad-s:#F8ECEC;--bad-line:#E5BDBD;--bad-ink:#A8323F;--warn-s:#F7EED9;--warn-line:#E6D3A3;--warn-ink:#6B4E10;--r:14px;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.5 system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:2;background:rgba(245,242,235,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);padding:12px 16px}
+.wrap{max-width:900px;margin:0 auto}
+h1{font-size:1.15rem;font-weight:800;letter-spacing:-.02em}
+.stats{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.85rem;color:var(--ink2);margin:4px 0 10px}
+.stats b{color:var(--ink)}
+.bar{height:6px;background:var(--line);border-radius:9px;overflow:hidden;margin-bottom:10px}.bar i{display:block;height:100%;background:var(--blue)}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+input,select,textarea{font:inherit;color:inherit;background:var(--field);border:1px solid var(--line2);border-radius:9px;padding:7px 10px;min-height:38px}
+textarea{width:100%;resize:vertical}
+.filters input[type=search]{flex:1 1 200px}
+#who{width:110px}
+main{padding:16px}
+.err{background:var(--bad-s);border:1px solid var(--bad-line);color:var(--bad-ink);border-radius:var(--r);padding:12px 14px;margin-bottom:14px;font-size:.88rem}
+.err ul{margin:6px 0 0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;margin-bottom:14px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:.76rem;color:var(--ink3);margin-bottom:8px}
+.meta code{font-size:.76rem}
+.tag{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:99px;background:var(--blue-s);color:var(--blue-ink)}
+.tag.ok{background:var(--ok-s);color:var(--ok-ink)}.tag.warn{background:var(--warn-s);color:var(--warn-ink)}.tag.bad{background:var(--bad-s);color:var(--bad-ink)}
+.ctx{font-size:.88rem;color:var(--ink2);background:var(--field);border:1px solid var(--line);border-radius:10px;padding:8px 12px;margin-bottom:8px;white-space:pre-wrap}
+.ctx b{color:var(--ink)}
+.stem{font-weight:600;margin-bottom:10px;white-space:pre-wrap}
+.opts{list-style:none;display:grid;gap:6px;margin-bottom:10px}
+.opts li{border:1px solid var(--line);background:var(--field);border-radius:10px;padding:7px 11px;font-size:.9rem}
+.opts li.right{border-color:var(--ok-line);background:var(--ok-s)}
+.opts li.right::after{content:" ✓ correct";font-weight:700;color:var(--ok-ink);font-size:.78rem}
+.opts small{display:block;color:var(--ink3);margin-top:2px}
+.ans{font-size:.9rem;background:var(--ok-s);border:1px solid var(--ok-line);border-radius:10px;padding:8px 12px;margin-bottom:10px;white-space:pre-wrap}
+.sec{font-size:.88rem;margin-bottom:8px}.sec b{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--ink3)}
+.sec ol,.sec ul{margin-left:20px}
+.reports{background:var(--warn-s);border:1px solid var(--warn-line);border-radius:10px;padding:8px 12px;font-size:.86rem;margin-bottom:10px}
+.reports li{margin-left:18px}
+.act{display:flex;flex-wrap:wrap;gap:8px;align-items:center;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.act textarea{flex:1 1 100%;min-height:38px}
+button{font:inherit;font-weight:600;font-size:.86rem;border-radius:9px;padding:8px 14px;min-height:38px;cursor:pointer;border:1px solid var(--line2);background:var(--field);color:var(--ink)}
+button.p{background:var(--blue);border-color:var(--blue-ink);color:#fff}
+button:disabled{opacity:.5;cursor:default}
+.msg{font-size:.82rem;color:var(--ink2)}.msg.bad{color:var(--bad-ink)}
+.json{margin-top:10px}.json textarea{font:12.5px/1.45 ui-monospace,Menlo,Consolas,monospace;min-height:320px}
+.empty{color:var(--ink2);text-align:center;padding:40px 0}
+.more{display:block;margin:0 auto}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>Question review</h1>
+  <div class="stats" id="stats">Loading…</div>
+  <div class="bar"><i id="prog" style="width:0"></i></div>
+  <div class="filters">
+    <select id="f-status" aria-label="Status">
+      <option value="todo">Needs review</option><option value="reported">Has student reports</option><option value="noted">Has reviewer note</option><option value="done">Reviewed</option><option value="all">All</option>
+    </select>
+    <select id="f-cat" aria-label="Category"><option value="">All categories</option></select>
+    <input type="search" id="f-q" placeholder="Search text, id or source" aria-label="Search">
+    <input id="who" placeholder="Your initials" aria-label="Your initials" maxlength="40">
+  </div>
+</div></header>
+<main class="wrap">
+  <div id="errs"></div>
+  <div id="list"></div>
+</main>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const store = { get(k) { try { return localStorage.getItem(k) || ''; } catch { return ''; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+let DATA = [], shown = 25;
+
+$('#who').value = store.get('review-who');
+$('#who').addEventListener('input', e => store.set('review-who', e.target.value.trim()));
+['#f-status', '#f-cat'].forEach(s => $(s).addEventListener('change', () => { shown = 25; render(); }));
+$('#f-q').addEventListener('input', () => { shown = 25; render(); });
+
+async function load() {
+  const r = await fetch('/api/questions').then(r => r.json());
+  DATA = r.questions;
+  $('#errs').innerHTML = r.errors.length ? `<div class="err"><b>${r.errors.length} question(s) fail validation and are hidden on the site:</b><ul>${r.errors.map(e => `<li>${esc(e)}</li>`).join('')}</ul></div>` : '';
+  const cats = [...new Map(DATA.map(d => [d.set + ':' + d.q.category, `${d.set} · ${d.categoryName}`]))];
+  const cur = $('#f-cat').value;
+  $('#f-cat').innerHTML = '<option value="">All categories</option>' + cats.map(([v, l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join('');
+  $('#f-cat').value = cur;
+  render();
+}
+
+function stats() {
+  const n = DATA.length, done = DATA.filter(d => d.q.verified === true).length, rep = DATA.filter(d => d.reports.length).length;
+  $('#stats').innerHTML = `<span><b>${done}</b> of ${n} reviewed</span><span><b>${n - done}</b> need review</span><span><b>${rep}</b> with student reports</span>`;
+  $('#prog').style.width = (n ? done / n * 100 : 0) + '%';
+}
+
+function matches(d) {
+  const st = $('#f-status').value, cat = $('#f-cat').value, q = $('#f-q').value.trim().toLowerCase();
+  if (st === 'todo' && d.q.verified === true) return false;
+  if (st === 'done' && d.q.verified !== true) return false;
+  if (st === 'reported' && !d.reports.length) return false;
+  if (st === 'noted' && !d.q.reviewNote) return false;
+  if (cat && cat !== d.set + ':' + d.q.category) return false;
+  if (q && !JSON.stringify(d.q).toLowerCase().includes(q)) return false;
+  return true;
+}
+
+function render() {
+  stats();
+  const list = DATA.filter(matches);
+  $('#list').innerHTML = list.length ? list.slice(0, shown).map(card).join('') + (list.length > shown ? `<button class="more" id="more">Show more (${list.length - shown} left)</button>` : '') : '<p class="empty">Nothing here. Try another filter.</p>';
+  const more = $('#more'); if (more) more.onclick = () => { shown += 25; render(); };
+}
+
+function answerBlock(q) {
+  const opt = (o, right) => `<li class="${right ? 'right' : ''}"><b>${esc(o.id)}.</b> ${esc(o.text)}${q.why && q.why[o.id] ? `<small>${esc(q.why[o.id])}</small>` : ''}</li>`;
+  switch (q.format) {
+    case 'sata': return `<ul class="opts">${q.options.map(o => opt(o, q.answer.includes(o.id))).join('')}</ul>`;
+    case 'order': return `<ul class="opts">${q.options.map(o => opt(o, false)).join('')}</ul><div class="ans"><b>Correct order:</b> ${q.answer.map(esc).join(' → ')}</div>`;
+    case 'match': return `<div class="ans"><b>Pairs:</b>\n${q.left.map(l => `${esc(l.text)} → ${esc((q.right.find(r => r.id === q.answer[l.id]) || {}).text)}`).join('\n')}</div>`;
+    case 'fill': return `<div class="ans"><b>Accepted:</b> ${q.answer.map(esc).join(' · ')}</div>`;
+    case 'calc': return `<div class="ans"><b>Answer:</b> ${esc(q.answer)} ${esc(q.unit)}${typeof q.exact === 'number' ? ` (exact ${esc(q.exact)})` : ''} · rounded ${esc(q.rounding.label || 'to ' + q.rounding.to)}${q.rounding.note ? ` · ${esc(q.rounding.note)}` : ''}</div>`;
+    default: return `<ul class="opts">${(q.options || []).map(o => opt(o, o.id === q.answer)).join('')}</ul>`;
+  }
+}
+
+function card(d) {
+  const q = d.q, id = esc(q.id);
+  const ctx = [['Case', q.case], ['Patient', q.patient], ['Order', q.order], ['Available', q.available]].filter(x => x[1]).map(([k, v]) => `<div class="ctx"><b>${k}:</b> ${esc(v)}</div>`).join('');
+  const list = (title, arr, tag = 'ul', f = x => esc(x)) => arr && arr.length ? `<div class="sec"><b>${title}</b><${tag}>${arr.map(x => `<li>${f(x)}</li>`).join('')}</${tag}></div>` : '';
+  return `<article class="card" data-id="${id}">
+    <div class="meta"><code>${id}</code><span>${esc(d.set)} · ${esc(d.categoryName)} · ${esc(q.format)}${q.difficulty ? ' · ' + esc(q.difficulty) : ''}</span>
+      ${q.verified === true ? `<span class="tag ok">Reviewed${q.reviewedBy ? ' by ' + esc(q.reviewedBy) : ''}${q.reviewedAt ? ' · ' + esc(q.reviewedAt) : ''}</span>` : '<span class="tag warn">Needs review</span>'}
+      ${d.reports.length ? `<span class="tag bad">${d.reports.length} report${d.reports.length > 1 ? 's' : ''}</span>` : ''}</div>
+    ${ctx}<p class="stem">${esc(q.stem)}</p>
+    ${q.image ? `<p class="sec"><b>Image</b>${esc(q.image)}</p>` : ''}
+    ${answerBlock(q)}
+    <div class="sec"><b>Explanation</b>${esc(q.explanation)}</div>
+    ${list('Worked steps', q.steps, 'ol', s => `<code>${esc(s.work)}</code>${s.explain ? ' — ' + esc(s.explain) : ''}`)}
+    ${list('Common mistakes', q.mistakes)}
+    ${list('Hints', q.hints)}
+    ${q.formula ? `<div class="sec"><b>Formula</b>${esc(q.formula)}</div>` : ''}
+    ${q.concept ? `<div class="sec"><b>Concept</b>${esc(q.concept)}</div>` : ''}
+    <div class="sec"><b>Source</b>${q.source ? esc(q.source) : '<span class="msg bad">None. Add one (Edit JSON) before marking reviewed.</span>'}</div>
+    ${d.reports.length ? `<div class="reports"><b>Student reports</b><ul>${d.reports.map(r => `<li>${esc(r.at.slice(0, 10))} · ${esc(r.reason)}${r.note ? ': ' + esc(r.note) : ''}</li>`).join('')}</ul></div>` : ''}
+    <div class="act">
+      <textarea class="note" rows="1" placeholder="Reviewer note (kept in the file, never shown to students)">${esc(q.reviewNote || '')}</textarea>
+      ${q.verified === true ? '<button data-a="unverify">Mark not reviewed</button><button data-a="note">Save note</button>' : '<button class="p" data-a="verify">Mark reviewed</button><button data-a="note">Save note</button>'}
+      <button data-a="edit">Edit JSON</button>
+      <span class="msg" aria-live="polite"></span>
+    </div>
+    <div class="json" hidden><textarea spellcheck="false">${esc(JSON.stringify(q, null, 2))}</textarea>
+      <div class="act"><button class="p" data-a="save">Save changes</button><button data-a="cancel">Cancel</button><span class="msg">Answer keys are checked the same way the site checks them. Editing a reviewed question sends it back to "Needs review".</span></div></div>
+  </article>`;
+}
+
+async function post(url, body) {
+  const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  const j = await r.json().catch(() => ({ error: 'Server error' }));
+  if (!r.ok) throw new Error(j.error || 'Server error');
+  return j;
+}
+
+$('#list').addEventListener('click', async e => {
+  const b = e.target.closest('button[data-a]'); if (!b) return;
+  const el = b.closest('.card'), id = el.dataset.id, d = DATA.find(x => x.q.id === id), msg = el.querySelector('.act .msg');
+  const note = el.querySelector('.note').value;
+  const a = b.dataset.a;
+  if (a === 'edit') { el.querySelector('.json').hidden = false; return; }
+  if (a === 'cancel') { el.querySelector('.json').hidden = true; return; }
+  b.disabled = true; msg.className = 'msg'; msg.textContent = 'Saving…';
+  try {
+    let r;
+    if (a === 'save') {
+      let question;
+      try { question = JSON.parse(el.querySelector('.json textarea').value); } catch (err) { throw new Error('That is not valid JSON: ' + err.message); }
+      r = await post('/api/save', { id, question });
+    } else {
+      const verified = a === 'verify' ? true : a === 'unverify' ? false : d.q.verified === true;
+      r = await post('/api/verify', { id, verified, reviewer: $('#who').value, note });
+    }
+    d.q = r.q;
+    const keep = $('#f-status').value === 'all' || matches(d);
+    if (keep) { el.outerHTML = card(d); stats(); } else { el.remove(); stats(); }
+  } catch (err) { msg.className = 'msg bad'; msg.textContent = err.message; b.disabled = false; }
+});
+
+load();
+</script>
+</body>
+</html>

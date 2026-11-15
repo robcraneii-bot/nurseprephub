@@ -13,6 +13,22 @@ npm run check-questions
 It lists any problem (missing field, answer not among the options, a calc answer that isn't rounded the way the
 question says, and so on). Invalid questions are skipped by the site and logged at startup.
 
+## Reviewing questions
+
+```
+npm run review
+```
+
+Then open http://localhost:8090. It runs only on your own computer (it isn't part of the deployed site) and shows every
+question with its answer key, rationale, source and any student reports (from `data/reports.jsonl`). You can:
+
+- **Mark reviewed.** This needs your initials and a `source`. It sets `verified: true`, `reviewedBy` and `reviewedAt`.
+- **Save a reviewer note** (`reviewNote`). Students never see it.
+- **Edit JSON** to fix a question. Changes are checked the same way the site checks them. If you change a reviewed
+  question, it goes back to "Needs review".
+
+Changes are written to the files in this folder. Commit them and redeploy to publish them.
+
 ## Set file
 
 ```json
@@ -53,6 +69,7 @@ question says, and so on). Invalid questions are skipped by the site and logged 
 | `difficulty` | no | `beginner`, `intermediate`, `advanced`, `nclex`. |
 | `source` | no | Where the question and rationale come from (textbook, edition, page). |
 | `verified` | no | `true` once reviewed. Unverified questions show a "Not yet verified" label. |
+| `reviewedBy`, `reviewedAt`, `reviewNote` | no | Set by the review tool. Never sent to students. |
 
 ## Format-specific answers
 
