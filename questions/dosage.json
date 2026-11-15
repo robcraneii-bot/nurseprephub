@@ -1,0 +1,25 @@
+{
+  "set": "dosage",
+  "mode": "dosage",
+  "tier": "free",
+  "title": "Dosage Calculation Challenge",
+  "description": "Work one problem at a time. Use dimensional analysis, show your work if it helps, then check your answer.",
+  "roundingRules": [
+    "Weight in kg: round to the nearest tenth.",
+    "Volume greater than 1 mL: round to the nearest tenth.",
+    "Volume less than 1 mL: round to the nearest hundredth.",
+    "Gravity drip (gtt/min): round to the nearest whole number.",
+    "Electronic pump (mL/hr): round to the nearest whole number.",
+    "Always follow a question's own rounding instruction when it gives one."
+  ],
+  "categories": [
+    { "id": "conversions", "name": "Basic Metric & Household Conversions" },
+    { "id": "single-dose", "name": "Oral & Parenteral Single-Dose Calculations" },
+    { "id": "reconstitution", "name": "Reconstitution of Powdered Medications" },
+    { "id": "weight-based", "name": "Weight-Based Dosing" },
+    { "id": "iv-pump", "name": "IV Flow Rates – Electronic Pump" },
+    { "id": "iv-gravity", "name": "IV Flow Rates – Manual Gravity Drip" },
+    { "id": "titration", "name": "Critical Care Titratable Drips" }
+  ],
+  "questions": []
+}

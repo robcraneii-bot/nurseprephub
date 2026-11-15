@@ -1,0 +1,42 @@
+{
+  "set": "bank",
+  "mode": "bank",
+  "tier": "free",
+  "title": "Question Bank",
+  "description": "NCLEX-style practice by topic. Every question explains the right answer and why the others are wrong.",
+  "categories": [
+    { "id": "anatomy", "name": "Anatomy", "example": "Cardiovascular system" },
+    { "id": "pharmacology", "name": "Pharmacology", "example": "Beta blockers" },
+    { "id": "med-surg", "name": "Medical-Surgical", "example": "Heart failure" },
+    { "id": "fundamentals", "name": "Fundamentals", "example": "Infection control" },
+    { "id": "ob", "name": "OB", "example": "Preeclampsia" },
+    { "id": "pediatrics", "name": "Pediatrics", "example": "Respiratory disorders" },
+    { "id": "psych", "name": "Psychiatric", "example": "Schizophrenia" },
+    { "id": "ekg", "name": "EKG", "example": "Rhythm identification" },
+    { "id": "dosage", "name": "Dosage Calculations", "example": "IV drip rates" },
+    { "id": "nclex", "name": "NCLEX Mixed", "example": "Comprehensive exams" }
+  ],
+  "questions": [
+    {
+      "id": "medsurg-hf-001",
+      "category": "med-surg",
+      "format": "priority",
+      "stem": "A nurse is caring for a patient with heart failure. Which finding requires immediate intervention?",
+      "options": [
+        { "id": "A", "text": "Oxygen saturation of 86%" },
+        { "id": "B", "text": "1+ bilateral ankle edema" },
+        { "id": "C", "text": "Weight gain of 1 lb in one week" },
+        { "id": "D", "text": "Fatigue after walking" }
+      ],
+      "answer": "A",
+      "explanation": "Hypoxemia can indicate impaired oxygenation and requires immediate assessment and intervention.",
+      "why": {
+        "B": "Mild peripheral edema can occur with heart failure.",
+        "C": "A 1 lb gain over a week is less concerning than acute hypoxemia.",
+        "D": "Fatigue with activity can occur with heart failure."
+      },
+      "source": "NursePrepHub sample question",
+      "verified": false
+    }
+  ]
+}
