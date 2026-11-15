@@ -13,13 +13,410 @@
     "Always follow a question's own rounding instruction when it gives one."
   ],
   "categories": [
-    { "id": "conversions", "name": "Basic Metric & Household Conversions" },
-    { "id": "single-dose", "name": "Oral & Parenteral Single-Dose Calculations" },
-    { "id": "reconstitution", "name": "Reconstitution of Powdered Medications" },
-    { "id": "weight-based", "name": "Weight-Based Dosing" },
-    { "id": "iv-pump", "name": "IV Flow Rates – Electronic Pump" },
-    { "id": "iv-gravity", "name": "IV Flow Rates – Manual Gravity Drip" },
-    { "id": "titration", "name": "Critical Care Titratable Drips" }
+    {
+      "id": "conversions",
+      "name": "Basic Metric & Household Conversions"
+    },
+    {
+      "id": "single-dose",
+      "name": "Oral & Parenteral Single-Dose Calculations"
+    },
+    {
+      "id": "reconstitution",
+      "name": "Reconstitution of Powdered Medications"
+    },
+    {
+      "id": "weight-based",
+      "name": "Weight-Based Dosing"
+    },
+    {
+      "id": "iv-pump",
+      "name": "IV Flow Rates – Electronic Pump"
+    },
+    {
+      "id": "iv-gravity",
+      "name": "IV Flow Rates – Manual Gravity Drip"
+    },
+    {
+      "id": "titration",
+      "name": "Critical Care Titratable Drips"
+    }
   ],
-  "questions": []
+  "questions": [
+    {
+      "id": "dose-conv-lb-kg-001",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A client weighs 200 lb. What is the weight in kg?",
+      "unit": "kg",
+      "answer": 90.9,
+      "exact": 90.9090909090909,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "kg = lb / 2.2",
+      "steps": [
+        {
+          "work": "200 lb / 2.2 = 90.909",
+          "explain": "Divide pounds by 2.2."
+        },
+        {
+          "work": "90.909 -> 90.9 kg",
+          "explain": "Round weight in kg to the nearest tenth."
+        }
+      ],
+      "explanation": "Divide the weight in pounds by 2.2.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-conv-lb-kg-002",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A client weighs 143 lb. What is the weight in kg?",
+      "unit": "kg",
+      "answer": 65,
+      "exact": 65,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "kg = lb / 2.2",
+      "steps": [
+        {
+          "work": "143 lb / 2.2 = 65",
+          "explain": "Divide pounds by 2.2."
+        }
+      ],
+      "explanation": "Divide the weight in pounds by 2.2. The answer comes out even.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-001",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "Infuse 1,000 mL of 0.9% sodium chloride over 8 hours by electronic pump. At what rate in mL/hr?",
+      "order": "1,000 mL 0.9% NS over 8 hours",
+      "unit": "mL/hr",
+      "answer": 125,
+      "exact": 125,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate (mL/hr) = total volume (mL) / total time (hr)",
+      "steps": [
+        {
+          "work": "1,000 mL / 8 hr = 125 mL/hr",
+          "explain": "Divide volume by hours."
+        }
+      ],
+      "explanation": "Volume divided by time in hours gives the pump rate.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-002",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A provider orders 250 mL over 3 hours by electronic pump. At what rate in mL/hr?",
+      "order": "250 mL over 3 hours",
+      "unit": "mL/hr",
+      "answer": 83,
+      "exact": 83.33333333333333,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate (mL/hr) = total volume (mL) / total time (hr)",
+      "steps": [
+        {
+          "work": "250 mL / 3 hr = 83.33 mL/hr",
+          "explain": "Divide volume by hours."
+        },
+        {
+          "work": "83.33 -> 83 mL/hr",
+          "explain": "Round pump rates to the nearest whole number."
+        }
+      ],
+      "explanation": "Volume divided by hours, rounded to a whole number for an electronic pump.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-003",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A provider orders 600 mL over 4 hours by electronic pump. At what rate in mL/hr?",
+      "order": "600 mL over 4 hours",
+      "unit": "mL/hr",
+      "answer": 150,
+      "exact": 150,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate (mL/hr) = total volume (mL) / total time (hr)",
+      "steps": [
+        {
+          "work": "600 mL / 4 hr = 150 mL/hr",
+          "explain": "Divide volume by hours."
+        }
+      ],
+      "explanation": "Volume divided by hours.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-001",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "Infuse 500 mL over 4 hours by gravity. The drop factor is 15 gtt/mL. How many gtt/min?",
+      "order": "500 mL over 4 hours",
+      "available": "Drop factor 15 gtt/mL",
+      "unit": "gtt/min",
+      "answer": 31,
+      "exact": 31.250000000000004,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = [volume (mL) / time (min)] x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "4 hr x 60 = 240 min",
+          "explain": "Convert hours to minutes."
+        },
+        {
+          "work": "(500 / 240) x 15 = 31.25",
+          "explain": "Volume over minutes, times drop factor."
+        },
+        {
+          "work": "31.25 -> 31 gtt/min",
+          "explain": "Round gravity drip to a whole number."
+        }
+      ],
+      "explanation": "Convert hours to minutes first, then apply the drop factor.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-002",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Infuse 1,000 mL over 8 hours by gravity. The drop factor is 10 gtt/mL. How many gtt/min?",
+      "order": "1,000 mL over 8 hours",
+      "available": "Drop factor 10 gtt/mL",
+      "unit": "gtt/min",
+      "answer": 21,
+      "exact": 20.833333333333336,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = [volume (mL) / time (min)] x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "8 hr x 60 = 480 min",
+          "explain": "Convert hours to minutes."
+        },
+        {
+          "work": "(1,000 / 480) x 10 = 20.83",
+          "explain": "Volume over minutes, times drop factor."
+        },
+        {
+          "work": "20.83 -> 21 gtt/min",
+          "explain": "Round to a whole number."
+        }
+      ],
+      "explanation": "Convert hours to minutes first, then apply the drop factor.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-003",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Infuse 250 mL over 2 hours by gravity. The drop factor is 20 gtt/mL. How many gtt/min?",
+      "order": "250 mL over 2 hours",
+      "available": "Drop factor 20 gtt/mL",
+      "unit": "gtt/min",
+      "answer": 42,
+      "exact": 41.66666666666667,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = [volume (mL) / time (min)] x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "2 hr x 60 = 120 min",
+          "explain": "Convert hours to minutes."
+        },
+        {
+          "work": "(250 / 120) x 20 = 41.67",
+          "explain": "Volume over minutes, times drop factor."
+        },
+        {
+          "work": "41.67 -> 42 gtt/min",
+          "explain": "Round to a whole number."
+        }
+      ],
+      "explanation": "Convert hours to minutes first, then apply the drop factor.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-heparin-001",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Heparin 1,200 units/hr is ordered. The bag is 25,000 units in 500 mL (50 units/mL). At what rate in mL/hr?",
+      "order": "Heparin 1,200 units/hr",
+      "available": "25,000 units in 500 mL (50 units/mL)",
+      "unit": "mL/hr",
+      "answer": 24,
+      "exact": 24,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate (mL/hr) = desired units/hr / concentration (units/mL)",
+      "steps": [
+        {
+          "work": "25,000 / 500 = 50 units/mL",
+          "explain": "Find the concentration."
+        },
+        {
+          "work": "1,200 / 50 = 24 mL/hr",
+          "explain": "Divide the hourly dose by the concentration."
+        }
+      ],
+      "explanation": "Divide the ordered units per hour by the units in each mL.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-heparin-002",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "The heparin order is increased to 1,400 units/hr. The bag is the same, 25,000 units in 500 mL. At what rate in mL/hr?",
+      "order": "Heparin 1,400 units/hr",
+      "available": "25,000 units in 500 mL (50 units/mL)",
+      "unit": "mL/hr",
+      "answer": 28,
+      "exact": 28,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate (mL/hr) = desired units/hr / concentration (units/mL)",
+      "steps": [
+        {
+          "work": "1,400 / 50 = 28 mL/hr",
+          "explain": "Divide the hourly dose by 50 units/mL."
+        }
+      ],
+      "explanation": "Divide the ordered units per hour by the units in each mL.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-dopamine-001",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "Dopamine 5 mcg/kg/min is ordered for a client who weighs 154 lb. The bag is 400 mg in 250 mL (1,600 mcg/mL). At what rate in mL/hr? Round to the nearest tenth.",
+      "order": "Dopamine 5 mcg/kg/min",
+      "available": "400 mg in 250 mL (1,600 mcg/mL)",
+      "unit": "mL/hr",
+      "answer": 13.1,
+      "exact": 13.125,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth",
+        "special": true,
+        "note": "This question asks for the nearest tenth, not a whole number."
+      },
+      "formula": "1) kg = lb / 2.2  2) mcg/min = mcg/kg/min x kg  3) mL/hr = (mcg/min x 60) / concentration (mcg/mL)",
+      "steps": [
+        {
+          "work": "154 lb / 2.2 = 70 kg",
+          "explain": "Convert pounds to kilograms."
+        },
+        {
+          "work": "5 x 70 = 350 mcg/min",
+          "explain": "Dose per minute."
+        },
+        {
+          "work": "(350 x 60) / 1,600 = 13.125",
+          "explain": "Convert to mL per hour."
+        },
+        {
+          "work": "13.125 -> 13.1 mL/hr",
+          "explain": "Round to the nearest tenth as the question asks."
+        }
+      ],
+      "explanation": "Convert to kg, then mcg/min, then mL/hr.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-dopamine-002",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "Dopamine 8 mcg/kg/min is ordered for a client who weighs 176 lb. The bag is 400 mg in 250 mL (1,600 mcg/mL). At what rate in mL/hr by electronic pump?",
+      "order": "Dopamine 8 mcg/kg/min",
+      "available": "400 mg in 250 mL (1,600 mcg/mL)",
+      "unit": "mL/hr",
+      "answer": 24,
+      "exact": 24,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "1) kg = lb / 2.2  2) mcg/min = mcg/kg/min x kg  3) mL/hr = (mcg/min x 60) / concentration (mcg/mL)",
+      "steps": [
+        {
+          "work": "176 lb / 2.2 = 80 kg",
+          "explain": "Convert pounds to kilograms."
+        },
+        {
+          "work": "8 x 80 = 640 mcg/min",
+          "explain": "Dose per minute."
+        },
+        {
+          "work": "(640 x 60) / 1,600 = 24 mL/hr",
+          "explain": "Convert to mL per hour."
+        }
+      ],
+      "explanation": "Convert to kg, then mcg/min, then mL/hr.",
+      "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    }
+  ]
 }

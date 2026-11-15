@@ -5,16 +5,56 @@
   "title": "Question Bank",
   "description": "NCLEX-style practice by topic. Every question explains the right answer and why the others are wrong.",
   "categories": [
-    { "id": "anatomy", "name": "Anatomy", "example": "Cardiovascular system" },
-    { "id": "pharmacology", "name": "Pharmacology", "example": "Beta blockers" },
-    { "id": "med-surg", "name": "Medical-Surgical", "example": "Heart failure" },
-    { "id": "fundamentals", "name": "Fundamentals", "example": "Infection control" },
-    { "id": "ob", "name": "OB", "example": "Preeclampsia" },
-    { "id": "pediatrics", "name": "Pediatrics", "example": "Respiratory disorders" },
-    { "id": "psych", "name": "Psychiatric", "example": "Schizophrenia" },
-    { "id": "ekg", "name": "EKG", "example": "Rhythm identification" },
-    { "id": "dosage", "name": "Dosage Calculations", "example": "IV drip rates" },
-    { "id": "nclex", "name": "NCLEX Mixed", "example": "Comprehensive exams" }
+    {
+      "id": "anatomy",
+      "name": "Anatomy",
+      "example": "Cardiovascular system"
+    },
+    {
+      "id": "pharmacology",
+      "name": "Pharmacology",
+      "example": "Beta blockers"
+    },
+    {
+      "id": "med-surg",
+      "name": "Medical-Surgical",
+      "example": "Heart failure"
+    },
+    {
+      "id": "fundamentals",
+      "name": "Fundamentals",
+      "example": "Infection control"
+    },
+    {
+      "id": "ob",
+      "name": "OB",
+      "example": "Preeclampsia"
+    },
+    {
+      "id": "pediatrics",
+      "name": "Pediatrics",
+      "example": "Respiratory disorders"
+    },
+    {
+      "id": "psych",
+      "name": "Psychiatric",
+      "example": "Schizophrenia"
+    },
+    {
+      "id": "ekg",
+      "name": "EKG",
+      "example": "Rhythm identification"
+    },
+    {
+      "id": "dosage",
+      "name": "Dosage Calculations",
+      "example": "IV drip rates"
+    },
+    {
+      "id": "nclex",
+      "name": "NCLEX Mixed",
+      "example": "Comprehensive exams"
+    }
   ],
   "questions": [
     {
@@ -23,10 +63,22 @@
       "format": "priority",
       "stem": "A nurse is caring for a patient with heart failure. Which finding requires immediate intervention?",
       "options": [
-        { "id": "A", "text": "Oxygen saturation of 86%" },
-        { "id": "B", "text": "1+ bilateral ankle edema" },
-        { "id": "C", "text": "Weight gain of 1 lb in one week" },
-        { "id": "D", "text": "Fatigue after walking" }
+        {
+          "id": "A",
+          "text": "Oxygen saturation of 86%"
+        },
+        {
+          "id": "B",
+          "text": "1+ bilateral ankle edema"
+        },
+        {
+          "id": "C",
+          "text": "Weight gain of 1 lb in one week"
+        },
+        {
+          "id": "D",
+          "text": "Fatigue after walking"
+        }
       ],
       "answer": "A",
       "explanation": "Hypoxemia can indicate impaired oxygenation and requires immediate assessment and intervention.",
@@ -36,6 +88,2367 @@
         "D": "Fatigue with activity can occur with heart failure."
       },
       "source": "NursePrepHub sample question",
+      "verified": false
+    },
+    {
+      "id": "pharm-digoxin-hold-001",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Before giving a scheduled dose of digoxin, a nurse counts an apical pulse of 54 beats/min for one full minute. What is the best action?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give half of the dose"
+        },
+        {
+          "id": "B",
+          "text": "Hold the dose and notify the provider"
+        },
+        {
+          "id": "C",
+          "text": "Check a radial pulse instead and give the dose if it is regular"
+        },
+        {
+          "id": "D",
+          "text": "Give the dose and recheck the pulse in 1 hour"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Digoxin is held for a heart rate below 60 bpm, and the pulse is counted at the apex for a full minute.",
+      "why": {
+        "A": "Nurses do not change a dose on their own.",
+        "C": "The apical pulse is the required check for digoxin.",
+        "D": "The dose should be held now, not given and rechecked later."
+      },
+      "difficulty": "beginner",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-digoxin-early-002",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which finding is an EARLY sign of digoxin toxicity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yellow-green halos around lights"
+        },
+        {
+          "id": "B",
+          "text": "Blurred vision"
+        },
+        {
+          "id": "C",
+          "text": "Anorexia, nausea and vomiting"
+        },
+        {
+          "id": "D",
+          "text": "Ventricular dysrhythmias"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Early toxicity shows up as loss of appetite, nausea and vomiting.",
+      "why": {
+        "A": "Visual halos are a late sign.",
+        "B": "Blurred vision is a late sign.",
+        "D": "Ventricular dysrhythmias are a late, dangerous sign."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-digoxin-lab-003",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client takes digoxin for heart failure. Which lab result raises the risk of digoxin toxicity the most?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sodium 140 mEq/L"
+        },
+        {
+          "id": "B",
+          "text": "Potassium 4.5 mEq/L"
+        },
+        {
+          "id": "C",
+          "text": "Digoxin level 0.8 ng/mL"
+        },
+        {
+          "id": "D",
+          "text": "Potassium 3.0 mEq/L"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Low potassium makes digoxin toxicity more likely.",
+      "why": {
+        "A": "This sodium level is normal.",
+        "B": "This potassium level is normal.",
+        "C": "A level of 0.8 ng/mL is inside the 0.5-0.9 ng/mL target for heart failure."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-digoxin-antidote-004",
+      "category": "pharmacology",
+      "format": "fill",
+      "difficulty": "beginner",
+      "lesson": "cardpharm",
+      "stem": "Name the antidote used for serious digoxin toxicity.",
+      "answer": [
+        "digifab",
+        "digoxin immune fab",
+        "digoxin immune fab (digifab)",
+        "digibind"
+      ],
+      "explanation": "Digoxin immune Fab (DigiFab) is the antidote for digoxin toxicity.",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-kcl-iv-005",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A nurse prepares IV potassium chloride for a client with hypokalemia. Which action is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dilute it, infuse it with an electronic pump, and confirm urine output is above 30 mL/hr"
+        },
+        {
+          "id": "B",
+          "text": "Give it as a bolus, then recheck the level"
+        },
+        {
+          "id": "C",
+          "text": "Infuse it peripherally at 20 mEq/hr to correct the level faster"
+        },
+        {
+          "id": "D",
+          "text": "Give it by slow IV push over 5 minutes"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Potassium chloride is always diluted and run on a pump. Urine output should be above 30 mL/hr before and during the infusion.",
+      "why": {
+        "B": "A bolus is unsafe for the same reason.",
+        "C": "The peripheral maximum is 10 mEq/hr. 20 mEq/hr is the central line maximum.",
+        "D": "IV push potassium can cause fatal cardiac arrest."
+      },
+      "difficulty": "intermediate",
+      "lesson": "fe",
+      "source": "Master Guide, Ch 13 Fluid & Electrolytes (Ignatavicius 11e, pp. 246-270)",
+      "verified": false
+    },
+    {
+      "id": "pharm-hyperk-order-006",
+      "category": "pharmacology",
+      "format": "order",
+      "difficulty": "intermediate",
+      "lesson": "fe",
+      "stem": "Put the three phases of hyperkalemia treatment in order, from first priority to last.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give IV calcium gluconate to protect the heart"
+        },
+        {
+          "id": "B",
+          "text": "Give regular insulin with D50W to shift potassium into cells"
+        },
+        {
+          "id": "C",
+          "text": "Give sodium polystyrene sulfonate (Kayexalate) to remove potassium from the body"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "explanation": "First protect the heart, then move potassium into the cells, then remove it from the body.",
+      "source": "Master Guide, Ch 13 Fluid & Electrolytes (Ignatavicius 11e, pp. 246-270)",
+      "verified": false
+    },
+    {
+      "id": "pharm-calcium-gluc-007",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "IV calcium gluconate is ordered for a client with hyperkalemia. What is its purpose?",
+      "options": [
+        {
+          "id": "A",
+          "text": "It removes potassium through the urine"
+        },
+        {
+          "id": "B",
+          "text": "It removes potassium through the stool"
+        },
+        {
+          "id": "C",
+          "text": "It lowers the potassium level by moving potassium into cells"
+        },
+        {
+          "id": "D",
+          "text": "It protects the heart by countering cardiac excitability, but it does not lower potassium"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Calcium gluconate calms the heart right away. The potassium level stays the same until other treatments shift or remove it.",
+      "why": {
+        "A": "Loop diuretics remove potassium through the urine.",
+        "B": "Kayexalate, Lokelma and patiromer remove potassium through the gut.",
+        "C": "Insulin with dextrose and albuterol shift potassium into cells."
+      },
+      "difficulty": "intermediate",
+      "lesson": "fe",
+      "source": "Master Guide, Ch 13 Fluid & Electrolytes (Ignatavicius 11e, pp. 246-270)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ace-cough-008",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client taking lisinopril develops a dry, hacking cough. Which drug would the provider most likely switch to?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Amlodipine"
+        },
+        {
+          "id": "B",
+          "text": "Metoprolol"
+        },
+        {
+          "id": "C",
+          "text": "Enalapril"
+        },
+        {
+          "id": "D",
+          "text": "Losartan"
+        }
+      ],
+      "answer": "D",
+      "explanation": "ACE inhibitors cause a cough because bradykinin builds up. An ARB such as losartan is the usual alternative.",
+      "why": {
+        "A": "Amlodipine is a calcium channel blocker, a different class that is not the usual swap.",
+        "B": "Metoprolol is a beta blocker, a different class that is not the usual swap.",
+        "C": "Enalapril is another ACE inhibitor and would cause the same cough."
+      },
+      "difficulty": "beginner",
+      "lesson": "raas",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ace-angio-009",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client recently started an ACE inhibitor. Which finding requires immediate action?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mild fatigue"
+        },
+        {
+          "id": "B",
+          "text": "Swelling of the lips and tongue with noisy breathing"
+        },
+        {
+          "id": "C",
+          "text": "Mild headache"
+        },
+        {
+          "id": "D",
+          "text": "Dry, hacking cough"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Angioedema can close the airway, so it is an emergency.",
+      "why": {
+        "A": "Mild fatigue does not threaten the airway.",
+        "C": "A mild headache does not threaten the airway.",
+        "D": "The cough is common and bothersome, but it is not an emergency."
+      },
+      "difficulty": "intermediate",
+      "lesson": "raas",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ace-pregnancy-010",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A nurse is teaching a woman of childbearing age who is starting lisinopril. Which teaching point is most important?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use a potassium-based salt substitute"
+        },
+        {
+          "id": "B",
+          "text": "Tell the provider right away if she becomes pregnant, because the drug is contraindicated in pregnancy"
+        },
+        {
+          "id": "C",
+          "text": "Take the pill with grapefruit juice"
+        },
+        {
+          "id": "D",
+          "text": "Stop the drug if a dry cough starts without telling anyone"
+        }
+      ],
+      "answer": "B",
+      "explanation": "ACE inhibitors are strictly contraindicated in pregnancy because of fetal renal agenesis and teratogenicity.",
+      "why": {
+        "A": "ACE inhibitors can raise potassium, so potassium salt substitutes are a poor choice.",
+        "C": "Grapefruit juice is a caution for other drugs in this guide, not part of ACE inhibitor teaching.",
+        "D": "A cough should be reported so the provider can change the drug."
+      },
+      "difficulty": "intermediate",
+      "lesson": "raas",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "pharm-spironolactone-011",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client starting spironolactone asks about using a salt substitute. Which response is best?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use salt substitutes only at dinner"
+        },
+        {
+          "id": "B",
+          "text": "Salt substitutes are fine if you drink extra water"
+        },
+        {
+          "id": "C",
+          "text": "Avoid potassium supplements and potassium-based salt substitutes"
+        },
+        {
+          "id": "D",
+          "text": "Salt substitutes are a good way to cut sodium"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Spironolactone holds potassium in the body, so extra potassium from supplements or salt substitutes can cause hyperkalemia.",
+      "why": {
+        "A": "Timing does not remove the potassium load.",
+        "B": "Extra water does not prevent hyperkalemia.",
+        "D": "Many salt substitutes are made with potassium."
+      },
+      "difficulty": "beginner",
+      "lesson": "raas",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-bb-hold-012",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which finding means a nurse should hold a scheduled dose of metoprolol and notify the provider?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Blood pressure 142/88 mmHg"
+        },
+        {
+          "id": "B",
+          "text": "Heart rate 72 beats/min"
+        },
+        {
+          "id": "C",
+          "text": "Respiratory rate 20 breaths/min"
+        },
+        {
+          "id": "D",
+          "text": "Heart rate 58 beats/min"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Hold beta blockers for a heart rate below 60 bpm or a systolic pressure below 90 mmHg.",
+      "why": {
+        "A": "This pressure is not low, so the dose can be given.",
+        "B": "This heart rate is above 60.",
+        "C": "This respiratory rate is normal and is not a hold parameter."
+      },
+      "difficulty": "beginner",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-bb-asthma-013",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A provider orders propranolol. Which history is most concerning?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Atrial fibrillation"
+        },
+        {
+          "id": "B",
+          "text": "Hypertension"
+        },
+        {
+          "id": "C",
+          "text": "Mild ankle edema"
+        },
+        {
+          "id": "D",
+          "text": "Asthma"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Nonselective beta blockers such as propranolol and carvedilol should be avoided in asthma and COPD.",
+      "why": {
+        "A": "Rate control is a reason to use a beta blocker.",
+        "B": "Hypertension is a reason to use a beta blocker.",
+        "C": "Mild edema does not rule out the drug."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
+      "verified": false
+    },
+    {
+      "id": "pharm-diltiazem-hfref-014",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client with atrial fibrillation will start diltiazem for rate control. Which condition makes this drug a poor choice?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Heart failure with reduced ejection fraction"
+        },
+        {
+          "id": "B",
+          "text": "Mild anemia"
+        },
+        {
+          "id": "C",
+          "text": "Seasonal allergies"
+        },
+        {
+          "id": "D",
+          "text": "Mild hypertension"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Non-dihydropyridine calcium channel blockers lower contractility, so they should be avoided in heart failure with reduced ejection fraction.",
+      "why": {
+        "B": "Mild anemia has no effect on this choice.",
+        "C": "Allergies have no effect on this choice.",
+        "D": "Hypertension is a reason to use this class."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "pharm-amio-cough-015",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client takes amiodarone. Which new finding should the nurse report right away?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Dry cough with shortness of breath"
+        },
+        {
+          "id": "B",
+          "text": "Mild nausea after the first dose"
+        },
+        {
+          "id": "C",
+          "text": "Slightly dry mouth"
+        },
+        {
+          "id": "D",
+          "text": "Mild trouble falling asleep"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Amiodarone can cause serious pulmonary toxicity, which shows up as a dry cough and trouble breathing. Baseline pulmonary function tests are needed.",
+      "why": {
+        "B": "Mild nausea is less urgent than a lung problem.",
+        "C": "A dry mouth is minor.",
+        "D": "Sleep trouble is minor."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 28 Dysrhythmias (Ignatavicius 11e, pp. 659-688)",
+      "verified": false
+    },
+    {
+      "id": "pharm-adenosine-016",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A nurse will give adenosine for stable supraventricular tachycardia (SVT). Which action is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use the smallest IV in the hand to reduce pain"
+        },
+        {
+          "id": "B",
+          "text": "Give it with a slow 2 mL flush over 1 minute"
+        },
+        {
+          "id": "C",
+          "text": "Infuse it slowly over 30 minutes"
+        },
+        {
+          "id": "D",
+          "text": "Give a rapid IV push over 1-2 seconds through a large-bore IV close to the heart, then a rapid 20 mL saline flush"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Adenosine works for only a few seconds, so it must go in fast and be flushed in quickly. Warn the client about facial flushing and chest heaviness. A brief pause in the rhythm is expected.",
+      "why": {
+        "A": "A small distant IV slows delivery.",
+        "B": "A slow flush slows delivery.",
+        "C": "A slow infusion would be broken down before it reaches the heart."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 28 Dysrhythmias (Ignatavicius 11e, pp. 659-688)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ntg-sl-017",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client with chest pain takes one sublingual nitroglycerin tablet. Five minutes later the pain is not relieved. What should the client do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Lie down and drink water"
+        },
+        {
+          "id": "B",
+          "text": "Wait 15 minutes before doing anything else"
+        },
+        {
+          "id": "C",
+          "text": "Call 911"
+        },
+        {
+          "id": "D",
+          "text": "Take another tablet and wait 30 minutes"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The client should call 911 if the pain is not relieved 5 minutes after the first dose. Tablets are taken 1 every 5 minutes, up to 3 doses.",
+      "why": {
+        "A": "These steps do not treat ongoing chest pain.",
+        "B": "Waiting 15 minutes delays emergency care.",
+        "D": "Waiting 30 minutes delays emergency care."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 32 Acute Coronary Syndromes (Ignatavicius 11e, pp. 781-809)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ntg-pde5-018",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client with chest pain says he took tadalafil 36 hours ago. Nitroglycerin is ordered. What should the nurse do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give it now because more than 24 hours have passed"
+        },
+        {
+          "id": "B",
+          "text": "Give half the dose"
+        },
+        {
+          "id": "C",
+          "text": "Give it after an antacid"
+        },
+        {
+          "id": "D",
+          "text": "Hold it and contact the provider, because tadalafil requires a 48-hour gap"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Nitrates with a PDE-5 inhibitor can cause fatal hypotension. The gap is 24 hours for sildenafil and vardenafil and 48 hours for tadalafil.",
+      "why": {
+        "A": "The 24-hour gap applies to sildenafil and vardenafil, not tadalafil.",
+        "B": "A smaller dose does not remove the risk.",
+        "C": "An antacid has no effect on this interaction."
+      },
+      "difficulty": "advanced",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 32 Acute Coronary Syndromes (Ignatavicius 11e, pp. 781-809)",
+      "verified": false
+    },
+    {
+      "id": "pharm-furosemide-push-019",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Furosemide is ordered by IV push. How should the nurse give it?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Slowly over 1-2 minutes"
+        },
+        {
+          "id": "B",
+          "text": "Quickly followed by a saline flush"
+        },
+        {
+          "id": "C",
+          "text": "As a rapid bolus over 10 seconds"
+        },
+        {
+          "id": "D",
+          "text": "Over 30 minutes at 10 mg/min"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Pushing furosemide slowly lowers the risk of ototoxicity. IV infusions should not run faster than 4 mg/min.",
+      "why": {
+        "B": "The slow rate is the key, not the flush.",
+        "C": "A fast push raises the risk of hearing damage.",
+        "D": "10 mg/min is faster than the 4 mg/min maximum for infusions."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 60 AKI and CKD (Ignatavicius 11e, pp. 1454-1494)",
+      "verified": false
+    },
+    {
+      "id": "pharm-heparin-antidote-020",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which drug reverses the effects of heparin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Protamine sulfate"
+        },
+        {
+          "id": "B",
+          "text": "Naloxone"
+        },
+        {
+          "id": "C",
+          "text": "Flumazenil"
+        },
+        {
+          "id": "D",
+          "text": "Vitamin K"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Protamine sulfate is the antidote for heparin.",
+      "why": {
+        "B": "Naloxone reverses opioids.",
+        "C": "Flumazenil reverses benzodiazepines.",
+        "D": "Vitamin K reverses warfarin."
+      },
+      "difficulty": "beginner",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 34 Hematologic (Ignatavicius 11e, pp. 827-864)",
+      "verified": false
+    },
+    {
+      "id": "pharm-heparin-aptt-021",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client is on a heparin infusion. The control aPTT is 30 seconds. Which client aPTT is within the therapeutic range of 1.5 to 2.5 times the control?",
+      "options": [
+        {
+          "id": "A",
+          "text": "120 seconds"
+        },
+        {
+          "id": "B",
+          "text": "90 seconds"
+        },
+        {
+          "id": "C",
+          "text": "35 seconds"
+        },
+        {
+          "id": "D",
+          "text": "60 seconds"
+        }
+      ],
+      "answer": "D",
+      "explanation": "1.5 x 30 = 45 seconds and 2.5 x 30 = 75 seconds, so the range is 45-75 seconds. Only 60 seconds falls inside it.",
+      "why": {
+        "A": "120 seconds is far above the range and raises bleeding risk.",
+        "B": "90 seconds is above the range.",
+        "C": "35 seconds is below the range, so the heparin is not working enough."
+      },
+      "difficulty": "intermediate",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 34 Hematologic (Ignatavicius 11e, pp. 827-864)",
+      "verified": false
+    },
+    {
+      "id": "pharm-hit-022",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "On day 6 of heparin, a client's platelet count has dropped by more than 50%. What is the expected plan?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give protamine sulfate and continue heparin"
+        },
+        {
+          "id": "B",
+          "text": "Continue heparin and recheck the count daily"
+        },
+        {
+          "id": "C",
+          "text": "Reduce the heparin dose by half"
+        },
+        {
+          "id": "D",
+          "text": "Stop all heparin and switch to a non-heparin anticoagulant such as argatroban"
+        }
+      ],
+      "answer": "D",
+      "explanation": "A drop of more than 50% suggests heparin-induced thrombocytopenia (HIT). All heparin is stopped and a non-heparin anticoagulant is started.",
+      "why": {
+        "A": "Protamine reverses bleeding, and heparin must not continue.",
+        "B": "Continuing heparin risks dangerous clotting.",
+        "C": "Any heparin, even a lower dose, keeps the problem going."
+      },
+      "difficulty": "advanced",
+      "lesson": "cardpharm",
+      "source": "Master Guide, Ch 34 Hematologic (Ignatavicius 11e, pp. 827-864)",
+      "verified": false
+    },
+    {
+      "id": "pharm-insulin-mix-023",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A nurse will draw up regular insulin and NPH insulin in the same syringe. Which is the correct order?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Either order is fine"
+        },
+        {
+          "id": "B",
+          "text": "Glargine first, then regular"
+        },
+        {
+          "id": "C",
+          "text": "NPH first, then regular"
+        },
+        {
+          "id": "D",
+          "text": "Regular first, then NPH"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Draw the clear insulin (regular) before the cloudy insulin (NPH).",
+      "why": {
+        "A": "The order matters.",
+        "B": "Glargine is never mixed with another insulin.",
+        "C": "This order can contaminate the regular insulin vial."
+      },
+      "difficulty": "beginner",
+      "lesson": "insulin",
+      "source": "Master Guide, Ch 56 Diabetes Mellitus (Ignatavicius 11e, pp. 1341-1380)",
+      "verified": false
+    },
+    {
+      "id": "pharm-lispro-tray-024",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "What must a nurse confirm before giving insulin lispro?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The meal tray is in the room and the client is ready to eat"
+        },
+        {
+          "id": "B",
+          "text": "The dose can be mixed with glargine"
+        },
+        {
+          "id": "C",
+          "text": "The client has fasted for 2 hours"
+        },
+        {
+          "id": "D",
+          "text": "The vial has been shaken well"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Rapid-acting insulin starts working in 10-15 minutes, so food must be ready.",
+      "why": {
+        "B": "Glargine is never mixed with any other insulin.",
+        "C": "Fasting after rapid-acting insulin raises the risk of low blood sugar.",
+        "D": "Insulin should not be shaken."
+      },
+      "difficulty": "beginner",
+      "lesson": "insulin",
+      "source": "Master Guide, Ch 56 Diabetes Mellitus (Ignatavicius 11e, pp. 1341-1380)",
+      "verified": false
+    },
+    {
+      "id": "pharm-nph-peak-025",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "NPH insulin peaks 4 to 12 hours after the injection. A client gets NPH at 0700. When should the nurse watch most closely for hypoglycemia?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only after 0700 the next day"
+        },
+        {
+          "id": "B",
+          "text": "Between 1100 and 1900"
+        },
+        {
+          "id": "C",
+          "text": "0715 to 0745"
+        },
+        {
+          "id": "D",
+          "text": "Only right after a meal"
+        }
+      ],
+      "answer": "B",
+      "explanation": "4 hours after 0700 is 1100 and 12 hours after is 1900. That window is when the insulin is working hardest.",
+      "why": {
+        "A": "The effect lasts 14-24 hours, but the peak is the highest risk.",
+        "C": "The insulin has barely started working.",
+        "D": "Risk depends on the insulin peak, not just on meals."
+      },
+      "difficulty": "advanced",
+      "lesson": "insulin",
+      "source": "Master Guide, Ch 56 Diabetes Mellitus (Ignatavicius 11e, pp. 1341-1380)",
+      "verified": false
+    },
+    {
+      "id": "pharm-glargine-mix-026",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client has orders for insulin glargine and insulin lispro at the same time. Which is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give them separately and never mix glargine with another insulin"
+        },
+        {
+          "id": "B",
+          "text": "Mix them only if the same site is used"
+        },
+        {
+          "id": "C",
+          "text": "Draw up glargine first, then lispro"
+        },
+        {
+          "id": "D",
+          "text": "Mix both in one syringe to save an injection"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Long-acting basal insulins such as glargine are never mixed in a syringe with any other insulin.",
+      "why": {
+        "B": "Using the same site does not make mixing safe.",
+        "C": "Glargine should not be in a mixed syringe at all.",
+        "D": "Mixing changes how each insulin works."
+      },
+      "difficulty": "beginner",
+      "lesson": "insulin",
+      "source": "Master Guide, Ch 56 Diabetes Mellitus (Ignatavicius 11e, pp. 1341-1380)",
+      "verified": false
+    },
+    {
+      "id": "pharm-metformin-contrast-027",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client who takes metformin is scheduled for a CT scan with IV iodinated contrast. What is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Double the dose before the scan"
+        },
+        {
+          "id": "B",
+          "text": "Continue metformin as usual"
+        },
+        {
+          "id": "C",
+          "text": "Hold it at or before the procedure and for 48 hours afterward until kidney function is confirmed stable"
+        },
+        {
+          "id": "D",
+          "text": "Hold it for 4 hours only"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Contrast can harm the kidneys, and metformin can build up and cause lactic acidosis. Your textbook (Ch 57, p. 1398) gives the timing as 24 hours before and 48 hours after.",
+      "why": {
+        "A": "A higher dose adds risk.",
+        "B": "Continuing it risks lactic acidosis if the kidneys are stressed.",
+        "D": "Four hours is far too short."
+      },
+      "difficulty": "intermediate",
+      "lesson": "insulin",
+      "source": "Master Guide, Ch 56 Diabetes Mellitus (Ignatavicius 11e, pp. 1341-1380); Ch 57 p. 1398",
+      "verified": false
+    },
+    {
+      "id": "pharm-levothyroxine-028",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which teaching about levothyroxine is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Take it at bedtime with an antacid"
+        },
+        {
+          "id": "B",
+          "text": "Take it with breakfast and a calcium supplement"
+        },
+        {
+          "id": "C",
+          "text": "Take it in the morning on an empty stomach with a full glass of water, 30-60 minutes before breakfast"
+        },
+        {
+          "id": "D",
+          "text": "Take it with iron to prevent anemia"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Levothyroxine is absorbed best on an empty stomach. Keep it at least 4 hours apart from calcium, iron and antacids.",
+      "why": {
+        "A": "Antacids interfere with absorption.",
+        "B": "Food and calcium reduce absorption.",
+        "D": "Iron interferes with absorption."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 55 Thyroid and Parathyroid (Ignatavicius 11e, pp. 1323-1340)",
+      "verified": false
+    },
+    {
+      "id": "pharm-steroid-stop-029",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client who has taken prednisone for 3 months wants to stop because he feels better. Which risk should the nurse explain?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hyperglycemia"
+        },
+        {
+          "id": "B",
+          "text": "Acute adrenal crisis"
+        },
+        {
+          "id": "C",
+          "text": "Peptic ulcer"
+        },
+        {
+          "id": "D",
+          "text": "Osteoporosis"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Stopping a corticosteroid suddenly can cause a life-threatening adrenal crisis. It must be tapered.",
+      "why": {
+        "A": "Hyperglycemia is a side effect of taking the drug.",
+        "C": "Ulcers are a side effect of taking the drug.",
+        "D": "Osteoporosis is a side effect of long-term use."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 54 Pituitary and Adrenal (Ignatavicius 11e, pp. 1302-1322)",
+      "verified": false
+    },
+    {
+      "id": "pharm-opioid-hold-030",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "Before giving IV morphine, a nurse finds the client has a respiratory rate of 10 and is hard to arouse. What is the priority?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give the dose as ordered"
+        },
+        {
+          "id": "B",
+          "text": "Give half the dose"
+        },
+        {
+          "id": "C",
+          "text": "Hold the dose, support breathing, and prepare to give naloxone"
+        },
+        {
+          "id": "D",
+          "text": "Wait 5 minutes and give the dose"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Hold opioids when the respiratory rate is below 12 or the client is overly sleepy. Naloxone reverses the effect.",
+      "why": {
+        "A": "More opioid would worsen breathing.",
+        "B": "Any dose is unsafe right now.",
+        "D": "Waiting does not fix the problem."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 6 Pain (Ignatavicius 11e, pp. 93-119)",
+      "verified": false
+    },
+    {
+      "id": "pharm-naloxone-halflife-031",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "After naloxone reverses opioid-induced respiratory depression, why must the nurse keep monitoring the client?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Naloxone always causes seizures"
+        },
+        {
+          "id": "B",
+          "text": "Naloxone raises the risk of hyperkalemia"
+        },
+        {
+          "id": "C",
+          "text": "Naloxone has a shorter half-life than many opioids, so breathing can slow again and repeat doses may be needed"
+        },
+        {
+          "id": "D",
+          "text": "Naloxone permanently blocks pain relief"
+        }
+      ],
+      "answer": "C",
+      "explanation": "The opioid can outlast the naloxone, so sedation and slow breathing can return.",
+      "why": {
+        "A": "Seizures are not a routine effect of naloxone in this guide.",
+        "B": "Potassium is not affected by naloxone.",
+        "D": "The block is temporary."
+      },
+      "difficulty": "advanced",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 6 Pain (Ignatavicius 11e, pp. 93-119)",
+      "verified": false
+    },
+    {
+      "id": "pharm-vanc-infusion-032",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "How should vancomycin be infused to reduce the risk of \"red man syndrome\"?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Over 5 minutes"
+        },
+        {
+          "id": "B",
+          "text": "As a rapid IV push"
+        },
+        {
+          "id": "C",
+          "text": "Over at least 60 minutes"
+        },
+        {
+          "id": "D",
+          "text": "Over 10 minutes with a saline flush"
+        }
+      ],
+      "answer": "C",
+      "explanation": "A rapid infusion causes histamine release with flushing and rash. Infuse over at least 60 minutes.",
+      "why": {
+        "A": "Too fast.",
+        "B": "Too fast.",
+        "D": "Too fast."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 19 Infection (Ignatavicius 11e, pp. 406-421)",
+      "verified": false
+    },
+    {
+      "id": "pharm-fq-tendon-033",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client starting levofloxacin should be taught to report which symptom right away?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Orange-colored tears"
+        },
+        {
+          "id": "B",
+          "text": "Pain in the heel or calf tendon"
+        },
+        {
+          "id": "C",
+          "text": "A metallic taste in the mouth"
+        },
+        {
+          "id": "D",
+          "text": "Gum overgrowth"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Fluoroquinolones carry a black box warning for tendinitis and tendon rupture, especially the Achilles tendon.",
+      "why": {
+        "A": "Orange tears are a harmless effect of rifampin.",
+        "C": "A metallic taste is a harmless effect of metronidazole.",
+        "D": "Gum overgrowth is linked to phenytoin."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 19 Infection (Ignatavicius 11e, pp. 406-421)",
+      "verified": false
+    },
+    {
+      "id": "pharm-match-effects-034",
+      "category": "pharmacology",
+      "format": "match",
+      "difficulty": "intermediate",
+      "stem": "Match each drug to its key nursing point.",
+      "left": [
+        {
+          "id": "1",
+          "text": "Isoniazid (INH)"
+        },
+        {
+          "id": "2",
+          "text": "Rifampin"
+        },
+        {
+          "id": "3",
+          "text": "Levodopa/carbidopa"
+        },
+        {
+          "id": "4",
+          "text": "Doxorubicin"
+        }
+      ],
+      "right": [
+        {
+          "id": "a",
+          "text": "Vitamin B6 helps prevent peripheral neuropathy"
+        },
+        {
+          "id": "b",
+          "text": "Harmless reddish-orange tears, sweat and urine"
+        },
+        {
+          "id": "c",
+          "text": "High-protein meals can interfere with absorption"
+        },
+        {
+          "id": "d",
+          "text": "Baseline echocardiogram because of heart failure risk"
+        }
+      ],
+      "answer": {
+        "1": "a",
+        "2": "b",
+        "3": "c",
+        "4": "d"
+      },
+      "explanation": "Isoniazid needs B6, rifampin colors body fluids orange, levodopa competes with dietary protein, and doxorubicin can damage the heart.",
+      "source": "Master Guide, Ch 25 (pp. 573-595), Ch 36 (pp. 882-912), Ch 18 (pp. 375-405)",
+      "verified": false
+    },
+    {
+      "id": "pharm-inhalers-035",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client uses albuterol and fluticasone inhalers. Which teaching is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Use albuterol first, then fluticasone, and rinse the mouth and spit afterward"
+        },
+        {
+          "id": "B",
+          "text": "Use both together and do not rinse"
+        },
+        {
+          "id": "C",
+          "text": "Use fluticasone for sudden shortness of breath"
+        },
+        {
+          "id": "D",
+          "text": "Use fluticasone first, then albuterol, and swallow the rinse water"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Albuterol first helps the steroid reach the airways. Rinsing and spitting after the steroid prevents thrush and hoarseness.",
+      "why": {
+        "B": "Not rinsing raises the risk of oral candidiasis.",
+        "C": "Fluticasone is a daily controller. Albuterol is the rescue drug.",
+        "D": "The order is reversed, and the rinse water should be spit out."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 24 Lower Respiratory (Ignatavicius 11e, pp. 539-572)",
+      "verified": false
+    },
+    {
+      "id": "pharm-theophylline-036",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client's theophylline level is 22 mcg/mL. The target is 10-15 mcg/mL. Which finding fits toxicity?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Persistent vomiting"
+        },
+        {
+          "id": "B",
+          "text": "Gum overgrowth"
+        },
+        {
+          "id": "C",
+          "text": "Tea-colored urine"
+        },
+        {
+          "id": "D",
+          "text": "Facial flushing during a fast infusion"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A level above 20 mcg/mL is toxic. Signs include persistent vomiting, arrhythmias and seizures.",
+      "why": {
+        "B": "Gum overgrowth is linked to phenytoin.",
+        "C": "Tea-colored urine is a warning sign for statins.",
+        "D": "That describes red man syndrome from vancomycin."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 24 Lower Respiratory (Ignatavicius 11e, pp. 539-572)",
+      "verified": false
+    },
+    {
+      "id": "pharm-phenytoin-iv-037",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "How should IV phenytoin be given?",
+      "options": [
+        {
+          "id": "A",
+          "text": "In 0.9% sodium chloride only, no faster than 50 mg/min, with a filter"
+        },
+        {
+          "id": "B",
+          "text": "Mixed in D5W over 5 minutes"
+        },
+        {
+          "id": "C",
+          "text": "Mixed with other IV drugs in the same line"
+        },
+        {
+          "id": "D",
+          "text": "As a rapid push through a central line"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Phenytoin goes in normal saline only, at no more than 50 mg/min with a filter. Too fast risks arrhythmias and purple glove syndrome.",
+      "why": {
+        "B": "Dextrose is not the right diluent for phenytoin.",
+        "C": "Phenytoin should not be mixed with other drugs.",
+        "D": "A rapid push risks arrhythmias."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 38 Neurologic Emergencies (Ignatavicius 11e, pp. 941-974)",
+      "verified": false
+    },
+    {
+      "id": "pharm-alteplase-038",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client arrives within 3 hours of ischemic stroke symptoms. The CT shows no bleeding. Blood pressure is 192/104 mmHg. What should the nurse do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Cancel the stroke workup"
+        },
+        {
+          "id": "B",
+          "text": "Start the alteplase infusion"
+        },
+        {
+          "id": "C",
+          "text": "Notify the provider that blood pressure must be below 185/110 before alteplase can start"
+        },
+        {
+          "id": "D",
+          "text": "Give a double dose of alteplase"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Before alteplase, systolic pressure must be below 185 and diastolic below 110 mmHg. After the infusion it must stay below 180/105.",
+      "why": {
+        "A": "The client still needs treatment once pressure is controlled.",
+        "B": "A pressure of 192/104 is over the limit.",
+        "D": "A double dose is unsafe."
+      },
+      "difficulty": "advanced",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 36 Brain (Ignatavicius 11e, pp. 882-912)",
+      "verified": false
+    },
+    {
+      "id": "pharm-levodopa-039",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which statement by a client taking levodopa/carbidopa shows good understanding?",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"I will stop the drug if my urine turns dark.\""
+        },
+        {
+          "id": "B",
+          "text": "\"I will stop standing up slowly.\""
+        },
+        {
+          "id": "C",
+          "text": "\"I will keep my doses apart from high-protein meals, and dark sweat or urine is harmless.\""
+        },
+        {
+          "id": "D",
+          "text": "\"I will take my dose with a large steak dinner.\""
+        }
+      ],
+      "answer": "C",
+      "explanation": "Protein interferes with levodopa absorption. Dark sweat and urine are harmless, but orthostatic hypotension is possible.",
+      "why": {
+        "A": "Dark urine is harmless.",
+        "B": "Orthostatic hypotension is a risk, so standing slowly is wise.",
+        "D": "High-protein meals interfere with absorption."
+      },
+      "difficulty": "beginner",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 36 Brain (Ignatavicius 11e, pp. 882-912)",
+      "verified": false
+    },
+    {
+      "id": "pharm-statin-040",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "A client takes atorvastatin. Which report requires an immediate call to the provider?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mild constipation"
+        },
+        {
+          "id": "B",
+          "text": "Muscle aches with weakness and tea-colored urine"
+        },
+        {
+          "id": "C",
+          "text": "Taking the pill in the evening"
+        },
+        {
+          "id": "D",
+          "text": "A plan to avoid large amounts of grapefruit juice"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Muscle pain, weakness and tea-colored urine can mean rhabdomyolysis.",
+      "why": {
+        "A": "Mild constipation is not an emergency.",
+        "C": "Evening dosing is acceptable.",
+        "D": "Avoiding grapefruit juice is correct teaching."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "pharm-ppi-timing-041",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "When should omeprazole be taken?",
+      "options": [
+        {
+          "id": "A",
+          "text": "At bedtime only with an antacid"
+        },
+        {
+          "id": "B",
+          "text": "30-60 minutes before meals"
+        },
+        {
+          "id": "C",
+          "text": "With a full glass of milk"
+        },
+        {
+          "id": "D",
+          "text": "Immediately after meals"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Proton pump inhibitors work best when taken 30-60 minutes before meals.",
+      "why": {
+        "A": "This is not the recommended timing.",
+        "C": "Milk is not part of the instructions.",
+        "D": "Taking it after eating reduces effectiveness."
+      },
+      "difficulty": "beginner",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 47-50 Stomach, Intestinal, Liver (Ignatavicius 11e, pp. 1151-1239)",
+      "verified": false
+    },
+    {
+      "id": "pharm-lactulose-042",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client with hepatic encephalopathy takes lactulose. What is the clinical goal?",
+      "options": [
+        {
+          "id": "A",
+          "text": "8-10 watery stools per day"
+        },
+        {
+          "id": "B",
+          "text": "Formed stools once a week"
+        },
+        {
+          "id": "C",
+          "text": "2-3 soft stools per day"
+        },
+        {
+          "id": "D",
+          "text": "No bowel movements for 24 hours"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Lactulose traps ammonia in the colon. The goal is 2-3 soft stools daily, while watching hydration and potassium.",
+      "why": {
+        "A": "This much diarrhea risks dehydration and low potassium.",
+        "B": "This does not clear ammonia.",
+        "D": "Without stools the ammonia is not removed."
+      },
+      "difficulty": "beginner",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 47-50 Stomach, Intestinal, Liver (Ignatavicius 11e, pp. 1151-1239)",
+      "verified": false
+    },
+    {
+      "id": "pharm-nac-043",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which drug is the antidote for acetaminophen toxicity, and when is it most effective?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Protamine sulfate, started within 12 hours"
+        },
+        {
+          "id": "B",
+          "text": "Acetylcysteine, started within 8 hours of ingestion"
+        },
+        {
+          "id": "C",
+          "text": "Naloxone, started within 8 hours"
+        },
+        {
+          "id": "D",
+          "text": "Flumazenil, started within 1 hour"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Acetylcysteine replenishes liver glutathione and is most effective when started within 8 hours of an acute ingestion.",
+      "why": {
+        "A": "Protamine reverses heparin.",
+        "C": "Naloxone reverses opioids.",
+        "D": "Flumazenil reverses benzodiazepines."
+      },
+      "difficulty": "beginner",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 47-50 Stomach, Intestinal, Liver (Ignatavicius 11e, pp. 1151-1239)",
+      "verified": false
+    },
+    {
+      "id": "pharm-metoclopramide-044",
+      "category": "pharmacology",
+      "format": "priority",
+      "stem": "Metoclopramide is ordered. Which condition makes it contraindicated?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Mechanical bowel obstruction"
+        },
+        {
+          "id": "B",
+          "text": "Mild reflux"
+        },
+        {
+          "id": "C",
+          "text": "Slow stomach emptying"
+        },
+        {
+          "id": "D",
+          "text": "Nausea after surgery"
+        }
+      ],
+      "answer": "A",
+      "explanation": "It speeds the upper GI tract, so it is contraindicated in obstruction, perforation or active bleeding. Long-term use carries a black box warning for tardive dyskinesia.",
+      "why": {
+        "B": "This is not a contraindication.",
+        "C": "Slow emptying is a reason it might be used.",
+        "D": "This is a reason the drug might be used."
+      },
+      "difficulty": "advanced",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 47-50 Stomach, Intestinal, Liver (Ignatavicius 11e, pp. 1151-1239)",
+      "verified": false
+    },
+    {
+      "id": "ms-tpn-d10w-045",
+      "category": "fundamentals",
+      "format": "priority",
+      "stem": "A client's TPN bag runs out and the next bag is not ready. What should the nurse do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Stop the infusion and wait"
+        },
+        {
+          "id": "B",
+          "text": "Flush the line with heparin"
+        },
+        {
+          "id": "C",
+          "text": "Hang 10% dextrose in water at the same rate"
+        },
+        {
+          "id": "D",
+          "text": "Hang 0.9% sodium chloride at a faster rate"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Stopping TPN suddenly can cause rebound hypoglycemia. D10W at the same rate bridges the gap.",
+      "why": {
+        "A": "Stopping suddenly risks severe hypoglycemia.",
+        "B": "Heparin does not provide dextrose.",
+        "D": "Saline contains no dextrose."
+      },
+      "difficulty": "intermediate",
+      "lesson": "iv",
+      "source": "Master Guide, Ch 15 Infusion Therapy (Ignatavicius 11e, pp. 285-315)",
+      "verified": false
+    },
+    {
+      "id": "ms-mh-046",
+      "category": "med-surg",
+      "format": "priority",
+      "stem": "A client in the PACU has jaw muscle rigidity, a rising temperature, tachycardia and unexplained high carbon dioxide. What is the first action?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Wait for a repeat arterial blood gas"
+        },
+        {
+          "id": "B",
+          "text": "Give a sedative and recheck in 30 minutes"
+        },
+        {
+          "id": "C",
+          "text": "Stop the triggering anesthetic right away"
+        },
+        {
+          "id": "D",
+          "text": "Wrap the client in blankets"
+        }
+      ],
+      "answer": "C",
+      "explanation": "These signs suggest malignant hyperthermia. Stop the trigger, ventilate with 100% oxygen, cool the client, and give IV dantrolene.",
+      "why": {
+        "A": "Waiting delays life-saving treatment.",
+        "B": "Waiting risks a rapid decline.",
+        "D": "Warmth worsens hyperthermia."
+      },
+      "difficulty": "advanced",
+      "source": "Master Guide, Ch 9 Perioperative Care (Ignatavicius 11e, pp. 156-193)",
+      "verified": false
+    },
+    {
+      "id": "ms-chemo-fluids-047",
+      "category": "med-surg",
+      "format": "mc",
+      "stem": "Which instruction is correct for the care of a client who received chemotherapy today?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Linens do not need special handling"
+        },
+        {
+          "id": "B",
+          "text": "Body fluids are hazardous for 48 hours, so double flush the toilet with the lid down"
+        },
+        {
+          "id": "C",
+          "text": "Body fluids are safe after 2 hours"
+        },
+        {
+          "id": "D",
+          "text": "Gloves are needed only for IV tubing"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Use a chemo-tested gown and double gloves, and treat body fluids as hazardous for 48 hours.",
+      "why": {
+        "A": "Linens can carry hazardous drug residue.",
+        "C": "2 hours is too short.",
+        "D": "Universal cytotoxic precautions apply to body fluids too."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Ch 18 Cancer (Ignatavicius 11e, pp. 375-405)",
+      "verified": false
+    },
+    {
+      "id": "ms-vincristine-048",
+      "category": "med-surg",
+      "format": "mc",
+      "stem": "A client receiving vincristine reports numbness and tingling in the fingers and has had no bowel movement for 4 days. Which complication should the nurse suspect?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hemorrhagic cystitis"
+        },
+        {
+          "id": "B",
+          "text": "Neurotoxicity with peripheral neuropathy and constipation"
+        },
+        {
+          "id": "C",
+          "text": "Cardiotoxicity"
+        },
+        {
+          "id": "D",
+          "text": "Serotonin syndrome"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Vincristine causes dose-limiting peripheral neuropathy and severe constipation or paralytic ileus. It is also fatal if given intrathecally.",
+      "why": {
+        "A": "Hemorrhagic cystitis is linked to cyclophosphamide.",
+        "C": "Cardiotoxicity is linked to doxorubicin.",
+        "D": "Serotonin syndrome is linked to antidepressants."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Ch 18 Cancer (Ignatavicius 11e, pp. 375-405)",
+      "verified": false
+    },
+    {
+      "id": "ms-doxorubicin-049",
+      "category": "med-surg",
+      "format": "mc",
+      "stem": "Which baseline test is needed before a client starts doxorubicin?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pulmonary function tests"
+        },
+        {
+          "id": "B",
+          "text": "Audiogram"
+        },
+        {
+          "id": "C",
+          "text": "Digoxin level"
+        },
+        {
+          "id": "D",
+          "text": "Echocardiogram to check ejection fraction"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Doxorubicin can cause dose-limiting cardiotoxicity and heart failure.",
+      "why": {
+        "A": "Lungs are the concern with amiodarone.",
+        "B": "Hearing is the concern with aminoglycosides.",
+        "C": "A digoxin level is unrelated."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Ch 18 Cancer (Ignatavicius 11e, pp. 375-405)",
+      "verified": false
+    },
+    {
+      "id": "ms-pcn-ceph-050",
+      "category": "med-surg",
+      "format": "priority",
+      "stem": "A client with a history of anaphylaxis to penicillin is prescribed cephalexin. What should the nurse do first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Clarify the order with the provider before giving it"
+        },
+        {
+          "id": "B",
+          "text": "Give the first dose in a hallway chair"
+        },
+        {
+          "id": "C",
+          "text": "Give the dose with an antihistamine"
+        },
+        {
+          "id": "D",
+          "text": "Give half the dose"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A severe reaction to penicillin calls for clarifying with the provider before giving a cephalosporin.",
+      "why": {
+        "B": "This ignores the risk.",
+        "C": "An antihistamine does not prevent anaphylaxis.",
+        "D": "A half dose does not remove the risk."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Ch 17 Allergy and Immunity (Ignatavicius 11e, pp. 333-374)",
+      "verified": false
+    },
+    {
+      "id": "ms-tacrolimus-051",
+      "category": "med-surg",
+      "format": "mc",
+      "stem": "Which labs does the nurse monitor for a client taking tacrolimus?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only a hemoglobin"
+        },
+        {
+          "id": "B",
+          "text": "Only a platelet count"
+        },
+        {
+          "id": "C",
+          "text": "Drug trough level, serum creatinine and potassium"
+        },
+        {
+          "id": "D",
+          "text": "Only blood glucose"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Tacrolimus has a black box warning for nephrotoxicity, hypertension and secondary malignancies.",
+      "why": {
+        "A": "Hemoglobin alone does not cover the main risks.",
+        "B": "Platelets alone do not cover the main risks.",
+        "D": "Glucose alone does not cover the main risks."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Ch 17 Allergy and Immunity (Ignatavicius 11e, pp. 333-374)",
+      "verified": false
+    },
+    {
+      "id": "ms-nitroprusside-052",
+      "category": "med-surg",
+      "format": "mc",
+      "stem": "A client is receiving a nitroprusside infusion for a hypertensive emergency. Which actions are correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Protect the infusion and tubing from light and monitor with an arterial line"
+        },
+        {
+          "id": "B",
+          "text": "Watch for hypokalemia as the main toxicity"
+        },
+        {
+          "id": "C",
+          "text": "Check blood pressure once a shift"
+        },
+        {
+          "id": "D",
+          "text": "Keep the bag clear in room light"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Nitroprusside is light sensitive and needs continuous arterial BP monitoring. Watch for cyanide toxicity, including altered mental status and metabolic acidosis.",
+      "why": {
+        "B": "The main toxicity is cyanide, not hypokalemia.",
+        "C": "Titration needs continuous monitoring.",
+        "D": "Light breaks the drug down."
+      },
+      "difficulty": "advanced",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "ms-hctz-053",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "Which lab changes does a nurse expect with hydrochlorothiazide?",
+      "options": [
+        {
+          "id": "A",
+          "text": "High potassium and low calcium"
+        },
+        {
+          "id": "B",
+          "text": "High sodium and high potassium"
+        },
+        {
+          "id": "C",
+          "text": "Low potassium and sodium, high glucose and uric acid"
+        },
+        {
+          "id": "D",
+          "text": "Low glucose and low uric acid"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Thiazides can cause hypokalemia, hyponatremia, hyperglycemia, hyperuricemia and hypercalcemia.",
+      "why": {
+        "A": "Potassium is lowered, not raised.",
+        "B": "Sodium and potassium are lowered.",
+        "D": "Glucose and uric acid are raised."
+      },
+      "difficulty": "intermediate",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "ms-dhp-grapefruit-054",
+      "category": "pharmacology",
+      "format": "mc",
+      "stem": "A client starts amlodipine. Which teaching is correct?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Skip doses when blood pressure is normal"
+        },
+        {
+          "id": "B",
+          "text": "Avoid grapefruit juice and report swelling in the ankles"
+        },
+        {
+          "id": "C",
+          "text": "Stop it if gums feel tender without telling anyone"
+        },
+        {
+          "id": "D",
+          "text": "Take it with a large glass of grapefruit juice"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Amlodipine can cause dependent edema, flushing, headache and gingival hyperplasia. Avoid grapefruit juice.",
+      "why": {
+        "A": "Normal pressure means the drug is working, not that it can be skipped.",
+        "C": "Gum changes should be reported.",
+        "D": "Grapefruit juice should be avoided."
+      },
+      "difficulty": "beginner",
+      "lesson": "meds",
+      "source": "Master Guide, Ch 30 Hypertension (Ignatavicius 11e, pp. 725-759)",
+      "verified": false
+    },
+    {
+      "id": "ob-magnesium-055",
+      "category": "ob",
+      "format": "priority",
+      "stem": "A client with preeclampsia is receiving magnesium sulfate. Which finding requires immediate action?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Absent deep tendon reflexes"
+        },
+        {
+          "id": "B",
+          "text": "Mild warmth and flushing"
+        },
+        {
+          "id": "C",
+          "text": "Urine output 45 mL/hr"
+        },
+        {
+          "id": "D",
+          "text": "Respiratory rate 14 per minute"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Loss of deep tendon reflexes is the first sign of toxicity. Other signs are a respiratory rate below 12 and urine output below 30 mL/hr. The antidote is IV calcium gluconate.",
+      "why": {
+        "B": "Mild warmth is not a toxicity sign in this guide.",
+        "C": "This urine output is above 30 mL/hr.",
+        "D": "This respiratory rate is above 12."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Reproductive Health and Maternity (Ignatavicius 11e, pp. 1495-1602)",
+      "verified": false
+    },
+    {
+      "id": "ob-match-uterotonic-056",
+      "category": "ob",
+      "format": "match",
+      "difficulty": "advanced",
+      "stem": "Match each drug to its key warning.",
+      "left": [
+        {
+          "id": "1",
+          "text": "Methylergonovine"
+        },
+        {
+          "id": "2",
+          "text": "Carboprost"
+        },
+        {
+          "id": "3",
+          "text": "Oxytocin"
+        },
+        {
+          "id": "4",
+          "text": "Magnesium sulfate"
+        }
+      ],
+      "right": [
+        {
+          "id": "a",
+          "text": "Avoid with hypertension or preeclampsia"
+        },
+        {
+          "id": "b",
+          "text": "Avoid with asthma"
+        },
+        {
+          "id": "c",
+          "text": "Stop for more than 5 contractions in 10 minutes"
+        },
+        {
+          "id": "d",
+          "text": "Loss of deep tendon reflexes is the first sign of toxicity"
+        }
+      ],
+      "answer": {
+        "1": "a",
+        "2": "b",
+        "3": "c",
+        "4": "d"
+      },
+      "explanation": "Methylergonovine constricts vessels, carboprost can trigger bronchospasm, oxytocin can cause tachysystole, and magnesium toxicity shows first in the reflexes.",
+      "source": "Master Guide, Reproductive Health and Maternity (Ignatavicius 11e, pp. 1495-1602)",
+      "verified": false
+    },
+    {
+      "id": "ob-rhogam-057",
+      "category": "ob",
+      "format": "mc",
+      "stem": "When is Rho(D) immune globulin given to an Rh-negative mother?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Only after the second pregnancy"
+        },
+        {
+          "id": "B",
+          "text": "Only if the infant is Rh-negative"
+        },
+        {
+          "id": "C",
+          "text": "At 28 weeks, within 72 hours after delivering an Rh-positive infant, and after invasive events such as trauma or amniocentesis"
+        },
+        {
+          "id": "D",
+          "text": "Only at the first prenatal visit"
+        }
+      ],
+      "answer": "C",
+      "explanation": "It clears fetal Rh-positive cells before the mother can make antibodies.",
+      "why": {
+        "A": "It is given in the first pregnancy to prevent sensitization.",
+        "B": "It is given when the infant is Rh-positive.",
+        "D": "One early dose does not cover delivery."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Reproductive Health and Maternity (Ignatavicius 11e, pp. 1495-1602)",
+      "verified": false
+    },
+    {
+      "id": "ob-oxytocin-058",
+      "category": "ob",
+      "format": "priority",
+      "stem": "A client receiving oxytocin has 6 contractions in 10 minutes. What should the nurse do?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give a fluid bolus and increase the rate"
+        },
+        {
+          "id": "B",
+          "text": "Stop the oxytocin infusion"
+        },
+        {
+          "id": "C",
+          "text": "Continue and recheck in 1 hour"
+        },
+        {
+          "id": "D",
+          "text": "Increase the rate"
+        }
+      ],
+      "answer": "B",
+      "explanation": "More than 5 contractions in 10 minutes is tachysystole. Stop oxytocin. Also stop it for non-reassuring fetal heart tracings.",
+      "why": {
+        "A": "Increasing the rate would worsen tachysystole.",
+        "C": "Waiting risks fetal distress.",
+        "D": "This would worsen tachysystole."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Reproductive Health and Maternity (Ignatavicius 11e, pp. 1495-1602)",
+      "verified": false
+    },
+    {
+      "id": "ob-betamethasone-059",
+      "category": "ob",
+      "format": "mc",
+      "stem": "Which regimen is used to mature fetal lungs when preterm delivery is expected?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Magnesium sulfate once"
+        },
+        {
+          "id": "B",
+          "text": "Terbutaline 12 mg IM, two doses"
+        },
+        {
+          "id": "C",
+          "text": "Betamethasone once, at term"
+        },
+        {
+          "id": "D",
+          "text": "Betamethasone 12 mg IM, two doses 24 hours apart, between 24 and 34 weeks"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Betamethasone speeds fetal surfactant and lung maturation.",
+      "why": {
+        "A": "Magnesium sulfate is for seizure prophylaxis.",
+        "B": "Terbutaline relaxes the uterus and does not mature lungs.",
+        "C": "It is given before preterm delivery, not at term."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Reproductive Health and Maternity (Ignatavicius 11e, pp. 1495-1602)",
+      "verified": false
+    },
+    {
+      "id": "psych-lithium-060",
+      "category": "psych",
+      "format": "priority",
+      "stem": "Which statement by a client taking lithium shows the need for more teaching?",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"I started a low-salt diet and take ibuprofen for back pain.\""
+        },
+        {
+          "id": "B",
+          "text": "\"I get my lithium level checked.\""
+        },
+        {
+          "id": "C",
+          "text": "\"I report coarse hand tremors.\""
+        },
+        {
+          "id": "D",
+          "text": "\"I keep my salt and fluid intake steady.\""
+        }
+      ],
+      "answer": "A",
+      "explanation": "Low sodium, dehydration, thiazides and NSAIDs reduce lithium excretion and can cause toxicity. The therapeutic level is 0.6-1.2 mEq/L.",
+      "why": {
+        "B": "Level checks are needed.",
+        "C": "Coarse tremors are a toxicity sign.",
+        "D": "This is correct teaching."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Cross-System Psychiatric Medications",
+      "verified": false
+    },
+    {
+      "id": "psych-serotonin-061",
+      "category": "psych",
+      "format": "priority",
+      "stem": "A client taking sertraline has hyperreflexia, clonus, fever and agitation. What does the nurse suspect?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Acute dystonia"
+        },
+        {
+          "id": "B",
+          "text": "Neuroleptic malignant syndrome"
+        },
+        {
+          "id": "C",
+          "text": "Tardive dyskinesia"
+        },
+        {
+          "id": "D",
+          "text": "Serotonin syndrome"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Hyperreflexia, clonus, hyperthermia and agitation are signs of serotonin syndrome.",
+      "why": {
+        "A": "Dystonia is a sudden muscle spasm, treated with benztropine.",
+        "B": "NMS shows lead-pipe rigidity and high CK after antipsychotics.",
+        "C": "Tardive dyskinesia is a late movement disorder."
+      },
+      "difficulty": "advanced",
+      "source": "Master Guide, Cross-System Psychiatric Medications",
+      "verified": false
+    },
+    {
+      "id": "psych-maoi-062",
+      "category": "psych",
+      "format": "mc",
+      "stem": "Which statement shows a client understands teaching about phenelzine, an MAOI?",
+      "options": [
+        {
+          "id": "A",
+          "text": "\"I can take pseudoephedrine for colds.\""
+        },
+        {
+          "id": "B",
+          "text": "\"I can drink red wine on weekends.\""
+        },
+        {
+          "id": "C",
+          "text": "\"I will avoid aged cheeses, cured meats, red wine and tap beer.\""
+        },
+        {
+          "id": "D",
+          "text": "\"I can take it with my SSRI.\""
+        }
+      ],
+      "answer": "C",
+      "explanation": "Tyramine foods can trigger a hypertensive crisis. MAOIs are not combined with SSRIs, SNRIs, meperidine or pseudoephedrine.",
+      "why": {
+        "A": "Pseudoephedrine should not be combined with an MAOI.",
+        "B": "Red wine contains tyramine.",
+        "D": "Combining with an SSRI is dangerous."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Cross-System Psychiatric Medications",
+      "verified": false
+    },
+    {
+      "id": "psych-nms-063",
+      "category": "psych",
+      "format": "priority",
+      "stem": "A client on haloperidol has a temperature of 104 F, lead-pipe muscle rigidity and a high creatine kinase. What is the most likely cause?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Neuroleptic malignant syndrome"
+        },
+        {
+          "id": "B",
+          "text": "Tardive dyskinesia"
+        },
+        {
+          "id": "C",
+          "text": "Acute dystonia"
+        },
+        {
+          "id": "D",
+          "text": "Serotonin syndrome"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Lead-pipe rigidity with hyperthermia and elevated CK is neuroleptic malignant syndrome.",
+      "why": {
+        "B": "Tardive dyskinesia is a late movement disorder.",
+        "C": "Dystonia is a sudden spasm without high fever.",
+        "D": "Serotonin syndrome shows hyperreflexia and clonus."
+      },
+      "difficulty": "advanced",
+      "source": "Master Guide, Cross-System Psychiatric Medications",
+      "verified": false
+    },
+    {
+      "id": "psych-clozapine-064",
+      "category": "psych",
+      "format": "priority",
+      "stem": "A client on clozapine says, \"I have a fever and a sore throat.\" What is the priority?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Hold only the evening dose and wait"
+        },
+        {
+          "id": "B",
+          "text": "Recheck in 3 days"
+        },
+        {
+          "id": "C",
+          "text": "Tell the client it is a common cold"
+        },
+        {
+          "id": "D",
+          "text": "Report it right away and check the absolute neutrophil count"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Clozapine can cause severe neutropenia and agranulocytosis. Fever or sore throat must be reported immediately.",
+      "why": {
+        "A": "Waiting delays testing.",
+        "B": "Waiting 3 days is unsafe.",
+        "C": "This could be early agranulocytosis."
+      },
+      "difficulty": "intermediate",
+      "source": "Master Guide, Cross-System Psychiatric Medications",
+      "verified": false
+    },
+    {
+      "id": "nclex-warfarin-sata-065",
+      "category": "nclex",
+      "format": "sata",
+      "difficulty": "nclex",
+      "lesson": "cardpharm",
+      "stem": "Which statements about warfarin are correct? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "It is strictly contraindicated in pregnancy"
+        },
+        {
+          "id": "B",
+          "text": "The antidote is protamine sulfate"
+        },
+        {
+          "id": "C",
+          "text": "The target INR is 2.0 to 3.0"
+        },
+        {
+          "id": "D",
+          "text": "It works by enhancing antithrombin III"
+        },
+        {
+          "id": "E",
+          "text": "Vitamin K intake should be kept consistent"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "E"
+      ],
+      "explanation": "Warfarin blocks vitamin K-dependent clotting factors. The antidote is vitamin K (and prothrombin complex concentrate for acute bleeding). Protamine and antithrombin III relate to heparin.",
+      "why": {
+        "B": "Protamine sulfate reverses heparin.",
+        "D": "Enhancing antithrombin III is how heparin works."
+      },
+      "source": "Master Guide, Ch 34 Hematologic (Ignatavicius 11e, pp. 827-864)",
+      "verified": false
+    },
+    {
+      "id": "nclex-norepi-sata-066",
+      "category": "nclex",
+      "format": "sata",
+      "difficulty": "nclex",
+      "lesson": "cardpharm",
+      "stem": "Which statements about norepinephrine for septic shock are correct? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Subcutaneous phentolamine is the extravasation antidote"
+        },
+        {
+          "id": "B",
+          "text": "It is a first-line vasopressor for septic shock"
+        },
+        {
+          "id": "C",
+          "text": "Give it through a central line"
+        },
+        {
+          "id": "D",
+          "text": "Give it by IV push"
+        },
+        {
+          "id": "E",
+          "text": "Titrate to a mean arterial pressure of at least 65 mmHg"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "Norepinephrine is a potent alpha-1 agonist given by continuous infusion through a central line. Watch for peripheral gangrene.",
+      "why": {
+        "D": "It is a titrated infusion, not an IV push."
+      },
+      "source": "Master Guide, Ch 31 Shock (Ignatavicius 11e, pp. 760-780)",
+      "verified": false
+    },
+    {
+      "id": "nclex-hf-sata-067",
+      "category": "nclex",
+      "format": "sata",
+      "difficulty": "nclex",
+      "lesson": "cardpharm",
+      "stem": "A client takes digoxin for heart failure. Which findings suggest toxicity? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Yellow-green visual halos"
+        },
+        {
+          "id": "B",
+          "text": "Ventricular dysrhythmias"
+        },
+        {
+          "id": "C",
+          "text": "Nausea and vomiting"
+        },
+        {
+          "id": "D",
+          "text": "Gynecomastia"
+        },
+        {
+          "id": "E",
+          "text": "Anorexia"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "Early signs are anorexia and nausea or vomiting. Late signs are blurred vision, yellow-green halos and ventricular dysrhythmias.",
+      "why": {
+        "D": "Gynecomastia is an effect of spironolactone."
+      },
+      "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
       "verified": false
     }
   ]
