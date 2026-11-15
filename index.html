@@ -4,7 +4,7 @@
 <meta name="apple-mobile-web-app-title" content="NursePrepHub"><meta name="theme-color" content="#293B36">
 <meta name="description" content="NursePrepHub — Free nursing study platform with animated lessons, EKG rhythms, cardiac pharmacology, NCLEX prep, flashcards, games, and AI tutoring.">
 <title>NursePrepHub — Free Nursing Study Platform</title>
-<script>try{var s=JSON.parse(localStorage.getItem("nph_settings")||"{}");if(s.appearance)document.documentElement.dataset.appearance=s.appearance}catch(e){}</script>
+<script>try{var s=JSON.parse(localStorage.getItem("nph_settings")||"{}");if(s.appearance==="dim")document.documentElement.dataset.appearance="dim"}catch(e){}</script>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="practice/practice.css">
 <style>
@@ -17,7 +17,6 @@
   --fs:16px;color-scheme:light;
 }
 html[data-appearance="dim"]{--bg:#DCD8CF;--panel:#D3CFC6;--field:#E5E2DB;--ink:#1F2D29;--ink2:#3F4D48;--ink3:#56635E;--navy:#1F2D29;--blue-ink:#2F4E46;--blue-s:#C8D4CE;--line:#C4BFB4;--line2:#B2AC9F;--track:#C6C1B6;--top-bg:rgba(220,216,207,.92);--hero-end:#C6D1CB;--num-bg:#C4D2CB;--ok-s:#D2E2D8;--bad-s:#E6D3D2;--warn-s:#E6DCC3;--pro-s:#D6D0E2}
-html[data-appearance="dark"]{--bg:#1C2422;--panel:#242E2B;--field:#2B3633;--ink:#E6E2D9;--ink2:#B7BDB6;--ink3:#8F9A94;--navy:#E6E2D9;--navy2:#D2CEC4;--chrome:#151C1A;--chrome-end:#111715;--blue-ink:#8FBFB2;--blue-s:#2C3D38;--shadow-rgb:0,0,0;--line:#34403C;--line2:#46534E;--track:#34403C;--top-bg:rgba(28,36,34,.92);--hero-end:#26352F;--num-bg:#2F4540;--ok-s:#1F3329;--ok-line:#2F5A43;--ok-ink:#8FD1AE;--bad-s:#3A2426;--bad-line:#6A3439;--bad-ink:#F0A3AB;--warn-s:#3A321F;--warn-line:#6B5A2C;--warn-ink:#E9CF8E;--pro:#C2B5EC;--pro-s:#2E2A40;--pro-line:#4A4366;--green:#5DB585;--amber:#E0A83A;--rose:#E07A85;color-scheme:dark}
 html[data-text="large"]{--fs:18px}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth;font-size:var(--fs)}
@@ -125,7 +124,7 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .lc{position:relative;display:flex;gap:14px;align-items:stretch;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:10px;box-shadow:var(--sh1);transition:transform .18s,box-shadow .18s,border-color .18s;min-height:116px}
 .lc:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--line2)}
 .lc:active{transform:translateY(-1px)}
-.thumb{position:relative;width:104px;flex-shrink:0;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--t1,#dbe8ff),var(--t2,#b9d1ff));aspect-ratio:1/1;align-self:center;display:grid;place-items:center;color:var(--tc,#1d5fe0)}
+.thumb{position:relative;width:104px;flex-shrink:0;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--t1,#E1E8E3),var(--t2,#CFDCD5));aspect-ratio:1/1;align-self:center;display:grid;place-items:center;color:var(--tc,#3D5F56)}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .thumb img,.qcard img,.hero-img img,.pimg img{opacity:0;transition:opacity .3s}.ld img{opacity:1}.noimg img{display:none}.ld>.fb{display:none}
 .thumb .fb .ic{width:38px;height:38px;stroke-width:1.5}
@@ -138,7 +137,7 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .go{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line2);display:grid;place-items:center;color:var(--blue-ink);background:var(--field);flex-shrink:0;transition:background .15s,color .15s,border-color .15s}
 .lc:hover .go{background:var(--blue);color:#fff;border-color:var(--blue-ink)}
 .tag{position:absolute;top:12px;right:12px;font-size:.62rem;font-weight:700;padding:3px 9px;border-radius:99px;letter-spacing:.05em;text-transform:uppercase}
-.t-pop{background:#fff1d6;color:#a86b00}.t-ai{background:#ece5ff;color:#5b3bc4}.t-game{background:#ffe3e8;color:#c0243d}.t-vid{background:#dff3ff;color:#0a6aa8}.t-done{background:#dcf6e8;color:#0d7a46}
+.t-pop{background:var(--warn-s);color:var(--warn-ink)}.t-ai{background:var(--pro-s);color:var(--pro)}.t-game{background:var(--bad-s);color:var(--bad-ink)}.t-vid{background:var(--blue-s);color:var(--blue-ink)}.t-done{background:var(--ok-s);color:var(--ok-ink)}
 
 /* Side panels */
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh1);overflow:hidden}
@@ -192,14 +191,14 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .btn-d{background:var(--field);color:var(--rose);border-color:var(--bad-line)}.btn-d:hover{background:var(--bad-s)}
 
 /* Tool modal */
-#tool-modal{position:fixed;inset:0;z-index:9999;background:#0b0f1a;display:none;flex-direction:column}
+#tool-modal{position:fixed;inset:0;z-index:9999;background:var(--bg);display:none;flex-direction:column}
 #tool-modal.open{display:flex}
 .mbar{display:flex;align-items:center;gap:12px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);flex-shrink:0}
 .mbar .btn{min-height:44px;padding:0 16px}
 .mbar #tool-modal-title{font-size:.95rem;font-weight:700;color:var(--ink);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mx{margin-left:auto;width:44px;height:44px;border-radius:12px;border:1px solid var(--line2);background:var(--field);color:var(--ink);display:grid;place-items:center}
 .mx:hover{background:var(--blue-s)}
-#tool-frame{flex:1;width:100%;border:0;background:#0b0f1a}
+#tool-frame{flex:1;width:100%;border:0;background:var(--bg)}
 
 /* Mobile nav */
 .mnav{display:none}
@@ -312,9 +311,9 @@ html[data-motion="off"] .lc:hover,html[data-motion="off"] .qcard:hover,html[data
 
     <div class="stats" aria-label="Site statistics">
       <div class="stat"><div class="ico" style="background:var(--blue-s);color:var(--blue-ink)"><svg class="ic"><use href="#i-tools"/></svg></div><div><b id="s-tools">-</b><span>Tools</span></div></div>
-      <div class="stat"><div class="ico" style="background:#dcf6e8;color:#0d7a46"><svg class="ic"><use href="#i-pill"/></svg></div><div><b id="s-drugs">-</b><span>Drug Cards</span></div></div>
-      <div class="stat"><div class="ico" style="background:#ffe3e8;color:#c0243d"><svg class="ic"><use href="#i-heart"/></svg></div><div><b id="s-dis">-</b><span>Diseases</span></div></div>
-      <div class="stat"><div class="ico" style="background:#e4f3ff;color:#0a6aa8"><svg class="ic"><use href="#i-pulse"/></svg></div><div><b id="s-ekg">-</b><span>EKG Strips</span></div></div>
+      <div class="stat"><div class="ico" style="background:var(--blue-s);color:var(--blue-ink)"><svg class="ic"><use href="#i-pill"/></svg></div><div><b id="s-drugs">-</b><span>Drug Cards</span></div></div>
+      <div class="stat"><div class="ico" style="background:var(--blue-s);color:var(--blue-ink)"><svg class="ic"><use href="#i-heart"/></svg></div><div><b id="s-dis">-</b><span>Diseases</span></div></div>
+      <div class="stat"><div class="ico" style="background:var(--blue-s);color:var(--blue-ink)"><svg class="ic"><use href="#i-pulse"/></svg></div><div><b id="s-ekg">-</b><span>EKG Strips</span></div></div>
     </div>
 
     <div class="sec"><div class="cgrid" id="g-top" style="grid-template-columns:1fr"></div></div>
@@ -350,7 +349,7 @@ html[data-motion="off"] .lc:hover,html[data-motion="off"] .qcard:hover,html[data
     </div>
 
     <div class="sec"><div class="sh"><h2><svg class="ic"><use href="#i-pill"/></svg>Pharmacology</h2></div><div class="cgrid wide" id="g-pharm"></div></div>
-    <div class="sec"><div class="sh"><h2><svg class="ic"><use href="#i-clip"/></svg>Practice &amp; Quiz</h2><a class="more" href="#practice">All practice<svg class="ic"><use href="#i-arrow"/></svg></a></div><div class="cgrid wide" style="margin-bottom:12px"><a class="lc" href="#practice/dosage"><div class="thumb" style="--t1:#fff4d6;--t2:#ffe6a3;--tc:#a86b00"><span class="fb"><svg class="ic"><use href="#i-calc"/></svg></span></div><div class="lbody"><h3>Dosage Calculation Challenge</h3><p>One problem at a time with dimensional analysis and worked solutions</p><div class="lfoot"><span style="flex:1"></span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></div></div><span class="tag t-done">Free</span></a><a class="lc" href="#practice/bank"><div class="thumb" style="--t1:#e2f1ff;--t2:#c4e0ff;--tc:#1d5fe0"><span class="fb"><svg class="ic"><use href="#i-clip"/></svg></span></div><div class="lbody"><h3>Question Bank</h3><p>NCLEX-style questions by topic, with rationales for every answer</p><div class="lfoot"><span style="flex:1"></span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></div></div><span class="tag t-done">Free</span></a></div><div class="cgrid wide" id="g-practice"></div></div>
+    <div class="sec"><div class="sh"><h2><svg class="ic"><use href="#i-clip"/></svg>Practice &amp; Quiz</h2><a class="more" href="#practice">All practice<svg class="ic"><use href="#i-arrow"/></svg></a></div><div class="cgrid wide" style="margin-bottom:12px"><a class="lc" href="#practice/dosage"><div class="thumb" style="--t1:#E6E9DF;--t2:#D5DACB;--tc:#4F5F45"><span class="fb"><svg class="ic"><use href="#i-calc"/></svg></span></div><div class="lbody"><h3>Dosage Calculation Challenge</h3><p>One problem at a time with dimensional analysis and worked solutions</p><div class="lfoot"><span style="flex:1"></span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></div></div><span class="tag t-done">Free</span></a><a class="lc" href="#practice/bank"><div class="thumb" style="--t1:#E1E8E3;--t2:#CFDCD5;--tc:#3D5F56"><span class="fb"><svg class="ic"><use href="#i-clip"/></svg></span></div><div class="lbody"><h3>Question Bank</h3><p>NCLEX-style questions by topic, with rationales for every answer</p><div class="lfoot"><span style="flex:1"></span><span class="go"><svg class="ic"><use href="#i-arrow"/></svg></span></div></div><span class="tag t-done">Free</span></a></div><div class="cgrid wide" id="g-practice"></div></div>
     <div class="sec"><div class="sh"><h2><svg class="ic"><use href="#i-doc"/></svg>Reference</h2></div><div class="cgrid wide" id="g-ref"></div></div>
 
     <div class="sec">
@@ -391,8 +390,8 @@ html[data-motion="off"] .lc:hover,html[data-motion="off"] .qcard:hover,html[data
   <section class="view" id="v-settings" aria-label="Settings">
     <div class="vh"><h1>Settings</h1><p>Make long study sessions comfortable.</p></div>
     <div class="set">
-      <div class="srow"><div><b>Appearance</b><small>Dim and Dark are easier on the eyes in low light. Screen brightness and regular breaks matter too.</small></div>
-        <div class="seg" role="group" aria-label="Appearance"><button data-appearance="light" aria-pressed="true">Light</button><button data-appearance="dim" aria-pressed="false">Dim</button><button data-appearance="dark" aria-pressed="false">Dark</button></div></div>
+      <div class="srow"><div><b>Appearance</b><small>Dim lowers the brightness for low light. Screen brightness and regular breaks matter too.</small></div>
+        <div class="seg" role="group" aria-label="Appearance"><button data-appearance="light" aria-pressed="true">Light</button><button data-appearance="dim" aria-pressed="false">Dim</button></div></div>
       <div class="srow"><div><b>Text size</b><small>Larger text for long sessions</small></div>
         <div class="seg" role="group" aria-label="Text size"><button data-text="normal" aria-pressed="true">Normal</button><button data-text="large" aria-pressed="false">Large</button></div></div>
       <div class="srow"><div><b>Reduce motion</b><small>Turns off animations and hover movement</small></div>
@@ -423,25 +422,25 @@ const TOOL_DATA={"planner": "PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9ImVuIj4KPGhlYWQ
 <script>
 /* ── TOOL REGISTRY (same 19 tools as before; titles and descriptions kept) ── */
 const TOOLS=[
- {id:'bodysys',sec:'lessons',t:'11 Body Systems',d:'Assessment, labs, meds & nursing priorities',tags:'body systems cardiovascular respiratory',ic:'heart',c:['#dff3e8','#bfe6d1','#0d7a46']},
- {id:'ekg',sec:'lessons',t:'EKG Rhythms',d:'__EKG__ animated live strips',tags:'EKG ECG rhythms cardiac',ic:'pulse',pop:1,c:['#dff1ff','#bfe0ff','#0a6aa8']},
- {id:'raas',sec:'lessons',t:'RAAS Cascade',d:'8-step pathway with drug blocks',tags:'RAAS renin angiotensin aldosterone',ic:'loop',c:['#ece5ff','#d6c9ff','#5b3bc4']},
- {id:'iv',sec:'lessons',t:'IV Solutions',d:'Hippo, hyper person & balance',tags:'IV solutions isotonic hypotonic hypertonic',ic:'bag',c:['#e2f1ff','#c4e0ff','#1d5fe0']},
- {id:'fe',sec:'lessons',t:'Fluid & Electrolytes',d:'All 6 electrolytes + memory tricks',tags:'fluid electrolytes potassium sodium',ic:'drop',pop:1,c:['#e4ebff','#c9d6ff','#3a4fd0']},
- {id:'insulin',sec:'lessons',t:'Insulin & Diabetes',d:'4 types, peaks, F.O.O.T. & A-S-U',tags:'insulin diabetes DKA hypoglycemia',ic:'syringe',c:['#ffe4f0','#ffc9e1','#c0247a']},
- {id:'abg',sec:'lessons',t:'ABG Interpreter',d:'ROME rule, calculator & game',tags:'ABG arterial blood gas ROME',ic:'lungs',game:1,c:['#ddf5f1','#bde9e2','#0d7a6e']},
- {id:'circ',sec:'lessons',t:'Inside Circulation',d:'First-person blood journey',tags:'circulation heart blood flow',ic:'vessel',c:['#ffe3e8','#ffc7d1','#c0243d']},
- {id:'cardpharm',sec:'pharm',t:'Cardiac Meds',d:'Lecture + drug cards + receptors',tags:'cardiac meds drugs vasopressor beta blocker ACE',ic:'heart',badge:'vid',c:['#ffe3e8','#ffc7d1','#c0243d']},
- {id:'codeblue',sec:'pharm',t:'Code Blue',d:'4-mode game with lives & XP',tags:'code blue game cardiac quiz',ic:'game',badge:'game',game:1,c:['#ffe3e8','#ffc7d1','#c0243d']},
- {id:'meds',sec:'pharm',t:'Med Flashcards',d:'__MEDS__ drug cards by class',tags:'medication flashcards drugs',ic:'pill',c:['#ffe4f0','#ffc9e1','#c0247a']},
- {id:'disease',sec:'pharm',t:'Disease Flashcards',d:'__DIS__ diseases across body systems',tags:'disease flashcards CHF stroke',ic:'bug',c:['#fff0dc','#ffdcb0','#b3560a']},
- {id:'medmath',sec:'top',t:'Med Math',d:'Dimensional analysis + problems',tags:'med math dimensional analysis',ic:'calc',badge:'vid',c:['#fff4d6','#ffe6a3','#a86b00']},
- {id:'nclex',sec:'practice',t:'NCLEX Prep',d:'NGN-style questions + rationales',tags:'NCLEX board prep NGN',ic:'clip',badge:'ai',c:['#e2f1ff','#c4e0ff','#1d5fe0']},
- {id:'bsquiz',sec:'practice',t:'Body Systems Quiz',d:'AI questions with mnemonics',tags:'body systems quiz',ic:'help',badge:'ai',game:1,c:['#dff3e8','#bfe6d1','#0d7a46']},
- {id:'coach',sec:'practice',t:'Coach Quest',d:'AI study coach & tutor',tags:'coach AI study tutor cardiac',ic:'brain',badge:'ai',game:1,c:['#ece5ff','#d6c9ff','#5b3bc4']},
- {id:'reflib',sec:'ref',t:'Reference Library',d:'Ask your Med-Surg textbook',tags:'reference med surg textbook',ic:'book',badge:'ai',c:['#ddf5f1','#bde9e2','#0d7a6e']},
- {id:'careplan',sec:'ref',t:'Care Plan Generator',d:'NANDA + Ackley page numbers',tags:'care plan NANDA',ic:'doc',badge:'ai',c:['#ece5ff','#d6c9ff','#5b3bc4']},
- {id:'planner',sec:'planner',t:'Study Planner',d:'Tasks, calendar, syllabus import, Break-It-Up scheduling',tags:'planner calendar tasks schedule syllabus',ic:'cal',c:['#e8f0ff','#cfe0ff','#1d5fe0']}
+ {id:'bodysys',sec:'lessons',t:'11 Body Systems',d:'Assessment, labs, meds & nursing priorities',tags:'body systems cardiovascular respiratory',ic:'heart',c:['#E6E9DF','#D5DACB','#4F5F45']},
+ {id:'ekg',sec:'lessons',t:'EKG Rhythms',d:'__EKG__ animated live strips',tags:'EKG ECG rhythms cardiac',ic:'pulse',pop:1,c:['#E1E8E3','#CFDCD5','#3D5F56']},
+ {id:'raas',sec:'lessons',t:'RAAS Cascade',d:'8-step pathway with drug blocks',tags:'RAAS renin angiotensin aldosterone',ic:'loop',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'iv',sec:'lessons',t:'IV Solutions',d:'Hippo, hyper person & balance',tags:'IV solutions isotonic hypotonic hypertonic',ic:'bag',c:['#E1E8E3','#CFDCD5','#3D5F56']},
+ {id:'fe',sec:'lessons',t:'Fluid & Electrolytes',d:'All 6 electrolytes + memory tricks',tags:'fluid electrolytes potassium sodium',ic:'drop',pop:1,c:['#E1E8E3','#CFDCD5','#3D5F56']},
+ {id:'insulin',sec:'lessons',t:'Insulin & Diabetes',d:'4 types, peaks, F.O.O.T. & A-S-U',tags:'insulin diabetes DKA hypoglycemia',ic:'syringe',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'abg',sec:'lessons',t:'ABG Interpreter',d:'ROME rule, calculator & game',tags:'ABG arterial blood gas ROME',ic:'lungs',game:1,c:['#E6E9DF','#D5DACB','#4F5F45']},
+ {id:'circ',sec:'lessons',t:'Inside Circulation',d:'First-person blood journey',tags:'circulation heart blood flow',ic:'vessel',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'cardpharm',sec:'pharm',t:'Cardiac Meds',d:'Lecture + drug cards + receptors',tags:'cardiac meds drugs vasopressor beta blocker ACE',ic:'heart',badge:'vid',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'codeblue',sec:'pharm',t:'Code Blue',d:'4-mode game with lives & XP',tags:'code blue game cardiac quiz',ic:'game',badge:'game',game:1,c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'meds',sec:'pharm',t:'Med Flashcards',d:'__MEDS__ drug cards by class',tags:'medication flashcards drugs',ic:'pill',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'disease',sec:'pharm',t:'Disease Flashcards',d:'__DIS__ diseases across body systems',tags:'disease flashcards CHF stroke',ic:'bug',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'medmath',sec:'top',t:'Med Math',d:'Dimensional analysis + problems',tags:'med math dimensional analysis',ic:'calc',badge:'vid',c:['#E6E9DF','#D5DACB','#4F5F45']},
+ {id:'nclex',sec:'practice',t:'NCLEX Prep',d:'NGN-style questions + rationales',tags:'NCLEX board prep NGN',ic:'clip',badge:'ai',c:['#E1E8E3','#CFDCD5','#3D5F56']},
+ {id:'bsquiz',sec:'practice',t:'Body Systems Quiz',d:'AI questions with mnemonics',tags:'body systems quiz',ic:'help',badge:'ai',game:1,c:['#E6E9DF','#D5DACB','#4F5F45']},
+ {id:'coach',sec:'practice',t:'Coach Quest',d:'AI study coach & tutor',tags:'coach AI study tutor cardiac',ic:'brain',badge:'ai',game:1,c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'reflib',sec:'ref',t:'Reference Library',d:'Ask your Med-Surg textbook',tags:'reference med surg textbook',ic:'book',badge:'ai',c:['#E6E9DF','#D5DACB','#4F5F45']},
+ {id:'careplan',sec:'ref',t:'Care Plan Generator',d:'NANDA + Ackley page numbers',tags:'care plan NANDA',ic:'doc',badge:'ai',c:['#EEECE7','#E0DCD3','#4F5F59']},
+ {id:'planner',sec:'planner',t:'Study Planner',d:'Tasks, calendar, syllabus import, Break-It-Up scheduling',tags:'planner calendar tasks schedule syllabus',ic:'cal',c:['#E1E8E3','#CFDCD5','#3D5F56']}
 ];
 const BY=Object.fromEntries(TOOLS.map(t=>[t.id,t]));
 const BADGE={ai:['AI','t-ai'],game:['Game','t-game'],vid:['Video','t-vid'],pop:['Popular','t-pop']};
@@ -498,10 +497,10 @@ function renderCards(){
 
 /* ── quick start ── */
 const QS=[
- {t:'Animated Lessons',s:'See it. Understand it.',ic:'play',img:'qs-lessons',c:['#2a6fe8','#0b2a5b'],href:'#lessons'},
- {t:'Learn by Playing',s:'Turn study into a game.',ic:'game',img:'qs-games',c:['#c0243d','#5a1230'],open:'codeblue'},
- {t:'AI Tutoring',s:'Get instant help.',ic:'brain',img:'qs-tutor',c:['#5b3bc4','#241a5e'],open:'coach'},
- {t:'Works Offline',s:'Planner saves on your device.',ic:'cal',img:'qs-offline',c:['#0d7a6e','#08334a'],open:'planner'}
+ {t:'Animated Lessons',s:'See it. Understand it.',ic:'play',img:'qs-lessons',c:['#52796F','#293B36'],href:'#lessons'},
+ {t:'Learn by Playing',s:'Turn study into a game.',ic:'game',img:'qs-games',c:['#6E8B74','#2F3D33'],open:'codeblue'},
+ {t:'AI Tutoring',s:'Get instant help.',ic:'brain',img:'qs-tutor',c:['#5E7A7F','#28383B'],open:'coach'},
+ {t:'Works Offline',s:'Planner saves on your device.',ic:'cal',img:'qs-offline',c:['#7D8C70','#323D2C'],open:'planner'}
 ];
 function renderQS(){
   $('#qs').replaceChildren(...QS.map(q=>{
@@ -536,9 +535,54 @@ function show(view,scrollTo){
 
 /* ── tool modal with browser-back support ── */
 let toolOpen=false;
+/* ── tool recoloring: maps each embedded tool's own colors onto the platform palette for the current appearance ──
+   Neutrals snap to the ivory/greige/charcoal ramp; blues and cyans become teal, purples a muted slate; other hues
+   (red = danger, green = correct, amber = caution) keep their meaning but are adjusted to read on the new background.
+   Dark-based tools are flipped light, so no tool opens on a dark screen. Originals stay untouched. */
+const RECOLOR={
+  light:{lo:[41,59,54],hi:[245,242,235],sMul:.75,lMax:.42,tintMax:.95},
+  dim:{lo:[31,45,41],hi:[220,216,207],sMul:.7,lMax:.38,tintMax:.86}
+};
+function rgbToHsl(r,g,b){r/=255;g/=255;b/=255;const M=Math.max(r,g,b),m=Math.min(r,g,b),l=(M+m)/2;let h=0,s=0;
+  if(M!==m){const d=M-m;s=l>.5?d/(2-M-m):d/(M+m);h=M===r?(g-b)/d+(g<b?6:0):M===g?(b-r)/d+2:(r-g)/d+4;h*=60}return[h,s,l]}
+function hslToRgb(h,s,l){h=((h%360)+360)%360/360;if(!s){const v=Math.round(l*255);return[v,v,v]}
+  const q=l<.5?l*(1+s):l+s-l*s,p=2*l-q,f=t=>{t<0&&(t+=1);t>1&&(t-=1);return t<1/6?p+(q-p)*6*t:t<1/2?q:t<2/3?p+(q-p)*(2/3-t)*6:p};
+  return[f(h+1/3),f(h),f(h-1/3)].map(x=>Math.round(x*255))}
+function mapColor(r,g,b,mode,flip){
+  const P=RECOLOR[mode],chroma=(Math.max(r,g,b)-Math.min(r,g,b))/255;
+  let[h,s,l]=rgbToHsl(r,g,b);
+  const L=flip?1-l:l;
+  if(chroma<.13){ // neutral: place on the palette ramp by lightness
+    const t=Math.min(1,Math.max(0,(L-.06)/(.93-.06)));
+    return P.lo.map((c,i)=>Math.round(c+(P.hi[i]-c)*t));
+  }
+  if(h>=170&&h<250){h=163;s=Math.min(.3,s*.45)}        // blues and cyans -> platform teal
+  else if(h>=250&&h<300){h=205;s=Math.min(.22,s*.35)}  // purples -> muted slate
+  else s*=P.sMul;
+  let L2=L;
+  if(L2<.75)L2=Math.min(L2,P.lMax);   // accents and text: dark enough to read on ivory
+  else L2=Math.min(L2,P.tintMax);          // light tints stay light (panels, highlights)
+  return hslToRgb(h,s,L2);
+}
+function recolorTool(html,mode){
+  mode=RECOLOR[mode]?mode:'light';
+  const bg=(html.match(/body\s*\{[^}]*?background(?:-color)?:\s*(#[0-9a-fA-F]{3,6})/)||[])[1]||'#0b0f1a';
+  const hx=bg.length===4?bg.slice(1).split('').map(c=>parseInt(c+c,16)):[1,3,5].map(i=>parseInt(bg.slice(i,i+2),16));
+  const flip=rgbToHsl(...hx)[2]<.5; // dark-based tools are flipped light
+  // Light text drawn at partial opacity read fine on dark; flipped onto ivory it needs more opacity. Faint overlays (<.3) stay subtle.
+  const adj=(r,g,b,a)=>flip&&a<1&&a>=.3&&(Math.max(r,g,b)-Math.min(r,g,b))/255<.13&&rgbToHsl(r,g,b)[2]>.75?.55+.45*a:a;
+  const out=(rgb,a)=>a>=1?'#'+rgb.map(v=>v.toString(16).padStart(2,'0')).join(''):`rgba(${rgb.join(',')},${+a.toFixed(3)})`;
+  html=html.replace(/#([0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{4}|[0-9a-fA-F]{3})(?![\w-])(?!\s*\{)/g,(m,x)=>{
+    if(x.length<5)x=x.split('').map(c=>c+c).join('');
+    const v=[0,2,4].map(i=>parseInt(x.slice(i,i+2),16)),a=x.length===8?parseInt(x.slice(6,8),16)/255:1;
+    return out(mapColor(...v,mode,flip),adj(...v,a));
+  });
+  html=html.replace(/rgba?\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(?:,\s*([\d.]+)\s*)?\)/g,(m,r,g,b,a)=>out(mapColor(+r,+g,+b,mode,flip),adj(+r,+g,+b,a===undefined?1:+a)));
+  return html.replace(/<head>/i,'<head><meta name="color-scheme" content="light"><style>:root{color-scheme:light}</style>');
+}
 function openTool(id,fromHash){
   const data=TOOL_DATA[id];if(!data)return;
-  const html=decodeURIComponent(escape(atob(data)));
+  const html=recolorTool(decodeURIComponent(escape(atob(data))),document.documentElement.dataset.appearance||'light');
   $('#tool-frame').srcdoc=html;
   $('#tool-modal-title').textContent=(BY[id]||{}).t||'';
   $('#tool-modal').classList.add('open');document.body.style.overflow='hidden';
@@ -659,8 +703,8 @@ document.addEventListener('keydown',e=>{if(e.key==='/'&&!/INPUT|TEXTAREA/.test(d
 function getSet(){try{return JSON.parse(localStorage.getItem('nph_settings')||'{}')}catch(e){return{}}}
 function applySet(){
   const s=getSet();
-  document.documentElement.dataset.text=s.text||'normal';document.documentElement.dataset.appearance=s.appearance||'light';
-  $$('button[data-appearance]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.appearance===(s.appearance||'light')));document.documentElement.dataset.motion=s.motion||'on';
+  document.documentElement.dataset.text=s.text||'normal';document.documentElement.dataset.appearance=(s.appearance==='dim'?'dim':'light');
+  $$('button[data-appearance]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.appearance===((s.appearance==='dim'?'dim':'light'))));document.documentElement.dataset.motion=s.motion||'on';
   $$('button[data-text]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.text===(s.text||'normal')));
   $$('button[data-motion]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.motion===(s.motion||'on')));
 }
