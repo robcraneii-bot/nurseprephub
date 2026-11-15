@@ -238,7 +238,7 @@
       "answer": "A",
       "explanation": "Potassium chloride is always diluted and run on a pump. Urine output should be above 30 mL/hr before and during the infusion.",
       "why": {
-        "B": "A bolus is unsafe for the same reason.",
+        "B": "A bolus delivers potassium too fast and can cause fatal cardiac arrest.",
         "C": "The peripheral maximum is 10 mEq/hr. 20 mEq/hr is the central line maximum.",
         "D": "IV push potassium can cause fatal cardiac arrest."
       },
@@ -1001,7 +1001,7 @@
         }
       ],
       "answer": "C",
-      "explanation": "Contrast can harm the kidneys, and metformin can build up and cause lactic acidosis. Your textbook (Ch 57, p. 1398) gives the timing as 24 hours before and 48 hours after.",
+      "explanation": "Contrast can harm the kidneys, and metformin can build up and cause lactic acidosis. Ignatavicius 11e (Ch 57, p. 1398) gives the timing as 24 hours before and 48 hours after.",
       "why": {
         "A": "A higher dose adds risk.",
         "B": "Continuing it risks lactic acidosis if the kidneys are stressed.",
