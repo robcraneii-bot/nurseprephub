@@ -24,6 +24,7 @@ body{font-family:var(--font);background:var(--bg);color:var(--ink);-webkit-font-
 a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:8px}
 .ic{width:1.25em;height:1.25em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+[hidden]{display:none!important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* ── SIDEBAR ── */
@@ -125,7 +126,7 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
 .lc:active{transform:translateY(-1px)}
 .thumb{position:relative;width:104px;flex-shrink:0;border-radius:12px;overflow:hidden;background:linear-gradient(135deg,var(--t1,#dbe8ff),var(--t2,#b9d1ff));aspect-ratio:1/1;align-self:center;display:grid;place-items:center;color:var(--tc,#1d5fe0)}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.thumb img,.qcard img,.hero-img img,.pimg img{opacity:0;transition:opacity .3s}.ld img{opacity:1}.noimg img{display:none}
+.thumb img,.qcard img,.hero-img img,.pimg img{opacity:0;transition:opacity .3s}.ld img{opacity:1}.noimg img{display:none}.ld>.fb{display:none}
 .thumb .fb .ic{width:38px;height:38px;stroke-width:1.5}
 .lbody{flex:1;min-width:0;display:flex;flex-direction:column;padding:4px 2px 2px}
 .lbody h3{font-size:.95rem;font-weight:700;letter-spacing:-.01em;line-height:1.25;padding-right:62px}
@@ -229,7 +230,9 @@ a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
   .sbox kbd{display:none}.sbox input{padding-right:16px}
 }
 @media(max-width:380px){.thumb{width:84px}.qcard b{font-size:.9rem}.hero h1{font-size:1.85rem}}
-@media(prefers-reduced-motion:reduce),html[data-motion="off"]{*{animation-duration:0s!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){*{animation-duration:0s!important;transition-duration:0s!important;scroll-behavior:auto!important}}
+html[data-motion="off"],html[data-motion="off"] *{animation-duration:0s!important;transition-duration:0s!important;scroll-behavior:auto!important}
+html[data-motion="off"] .lc:hover,html[data-motion="off"] .qcard:hover,html[data-motion="off"] .btn-p:hover{transform:none}
 </style>
 </head>
 <body>
