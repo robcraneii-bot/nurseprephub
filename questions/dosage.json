@@ -111,6 +111,162 @@
       "verified": false
     },
     {
+      "id": "dose-conv-001",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "The order is digoxin 0.25 mg. How many mcg is this?",
+      "unit": "mcg",
+      "answer": 250,
+      "exact": 250,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mcg = mg x 1,000",
+      "steps": [
+        {
+          "work": "0.25 mg x 1,000 = 250 mcg",
+          "explain": "Moving from a larger unit (mg) to a smaller one (mcg): multiply by 1,000."
+        }
+      ],
+      "explanation": "1 mg = 1,000 mcg, so 0.25 mg = 250 mcg.",
+      "mistakes": [
+        "Dividing by 1,000 instead of multiplying (0.00025 mcg)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-conv-002",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "A client is ordered 1,500 mg of a medication. How many grams is this?",
+      "unit": "g",
+      "answer": 1.5,
+      "exact": 1.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "g = mg / 1,000",
+      "steps": [
+        {
+          "work": "1,500 mg / 1,000 = 1.5 g",
+          "explain": "Moving from a smaller unit (mg) to a larger one (g): divide by 1,000."
+        }
+      ],
+      "explanation": "1 g = 1,000 mg, so 1,500 mg = 1.5 g. Write it as 1.5 g, never 1.50 g (no trailing zero).",
+      "mistakes": [
+        "Writing a trailing zero (1.50 g), which can be misread as 150."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-conv-003",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "For intake and output, a client drank 6 oz of juice and 2 tbsp of broth. What is the total oral intake in mL? (1 oz = 30 mL, 1 tbsp = 15 mL)",
+      "unit": "mL",
+      "answer": 210,
+      "exact": 210,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mL = (oz x 30) + (tbsp x 15)",
+      "steps": [
+        {
+          "work": "6 oz x 30 = 180 mL",
+          "explain": "Convert ounces."
+        },
+        {
+          "work": "2 tbsp x 15 = 30 mL",
+          "explain": "Convert tablespoons."
+        },
+        {
+          "work": "180 + 30 = 210 mL",
+          "explain": "Add for total intake."
+        }
+      ],
+      "explanation": "6 oz is 180 mL and 2 tbsp is 30 mL, for 210 mL total.",
+      "mistakes": [
+        "Using 5 mL per tbsp (that is a teaspoon)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-conv-004",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A client's temperature is 102.2 °F. What is it in °C? Round to the nearest tenth.",
+      "unit": "°C",
+      "answer": 39,
+      "exact": 39,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "°C = (°F - 32) / 1.8",
+      "steps": [
+        {
+          "work": "102.2 - 32 = 70.2",
+          "explain": "Subtract 32 first."
+        },
+        {
+          "work": "70.2 / 1.8 = 39.0 °C",
+          "explain": "Then divide by 1.8."
+        }
+      ],
+      "explanation": "Subtract 32, then divide by 1.8: 102.2 °F = 39.0 °C.",
+      "mistakes": [
+        "Dividing by 1.8 before subtracting 32."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-conv-005",
+      "category": "conversions",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A child's temperature is 38.5 °C. What is it in °F? Round to the nearest tenth.",
+      "unit": "°F",
+      "answer": 101.3,
+      "exact": 101.3,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "°F = (°C x 1.8) + 32",
+      "steps": [
+        {
+          "work": "38.5 x 1.8 = 69.3",
+          "explain": "Multiply by 1.8 first."
+        },
+        {
+          "work": "69.3 + 32 = 101.3 °F",
+          "explain": "Then add 32."
+        }
+      ],
+      "explanation": "Multiply by 1.8, then add 32: 38.5 °C = 101.3 °F.",
+      "mistakes": [
+        "Adding 32 before multiplying by 1.8."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
       "id": "dose-pump-001",
       "category": "iv-pump",
       "format": "calc",
@@ -190,6 +346,113 @@
       ],
       "explanation": "Volume divided by hours.",
       "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-004",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "Cefazolin 1 g in 50 mL is to infuse over 30 minutes by electronic pump. At what rate in mL/hr?",
+      "order": "Cefazolin 1 g IVPB over 30 minutes",
+      "available": "1 g in 50 mL",
+      "unit": "mL/hr",
+      "answer": 100,
+      "exact": 100,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mL/hr = (volume mL / time min) x 60 min/hr",
+      "steps": [
+        {
+          "work": "50 mL / 30 min = 1.667 mL/min",
+          "explain": "Volume per minute."
+        },
+        {
+          "work": "1.667 x 60 = 100 mL/hr",
+          "explain": "Convert to an hourly rate."
+        }
+      ],
+      "explanation": "A pump is always set in mL/hr, even for a 30-minute piggyback: 50 mL in half an hour is 100 mL/hr.",
+      "mistakes": [
+        "Setting the pump to 50 mL/hr (that would take a full hour)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-005",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Vancomycin 1.25 g in 250 mL is to infuse over 90 minutes by electronic pump. At what rate in mL/hr?",
+      "order": "Vancomycin 1.25 g IVPB over 90 minutes",
+      "available": "1.25 g in 250 mL",
+      "unit": "mL/hr",
+      "answer": 167,
+      "exact": 166.66666666666666,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mL/hr = (volume mL / time min) x 60 min/hr",
+      "steps": [
+        {
+          "work": "250 mL / 90 min = 2.778 mL/min",
+          "explain": "Volume per minute."
+        },
+        {
+          "work": "2.778 x 60 = 166.67 mL/hr",
+          "explain": "Convert to an hourly rate."
+        },
+        {
+          "work": "166.67 -> 167 mL/hr",
+          "explain": "Round pump rates to the nearest whole number."
+        }
+      ],
+      "explanation": "250 mL over 1.5 hours is 166.67 mL/hr, set as 167 mL/hr. The 1.25 g dose does not enter the rate math.",
+      "mistakes": [
+        "Dividing by 90 and stopping (2.8 mL/hr).",
+        "Using 1.9 hr instead of 1.5 hr for 90 minutes."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-006",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Famotidine 20 mg in 50 mL is to infuse over 15 minutes by electronic pump. At what rate in mL/hr?",
+      "order": "Famotidine 20 mg IVPB over 15 minutes",
+      "available": "20 mg in 50 mL",
+      "unit": "mL/hr",
+      "answer": 200,
+      "exact": 200,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mL/hr = (volume mL / time min) x 60 min/hr",
+      "steps": [
+        {
+          "work": "50 mL / 15 min = 3.333 mL/min",
+          "explain": "Volume per minute."
+        },
+        {
+          "work": "3.333 x 60 = 200 mL/hr",
+          "explain": "Convert to an hourly rate."
+        }
+      ],
+      "explanation": "15 minutes is a quarter hour, so 50 mL x 4 = 200 mL/hr.",
+      "mistakes": [
+        "Using 0.15 hr for 15 minutes (it is 0.25 hr)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
     },
     {
@@ -295,6 +558,106 @@
       ],
       "explanation": "Convert hours to minutes first, then apply the drop factor.",
       "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-004",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "An IV piggyback of 100 mL is to infuse over 30 minutes by gravity. The drop factor is 15 gtt/mL. How many gtt/min?",
+      "unit": "gtt/min",
+      "answer": 50,
+      "exact": 50,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = (volume mL / time min) x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "100 mL / 30 min = 3.333 mL/min",
+          "explain": "Time must be in minutes."
+        },
+        {
+          "work": "3.333 x 15 = 50 gtt/min",
+          "explain": "Multiply by the drop factor."
+        }
+      ],
+      "explanation": "(100 / 30) x 15 = 50 gtt/min.",
+      "mistakes": [
+        "Using 0.5 (hours) in the time slot instead of 30 minutes."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-005",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "An IV is to run at 75 mL/hr by gravity using microdrip tubing (60 gtt/mL). How many gtt/min?",
+      "unit": "gtt/min",
+      "answer": 75,
+      "exact": 75,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = (mL/hr / 60 min) x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "75 mL / 60 min = 1.25 mL/min",
+          "explain": "Convert the hourly rate to per minute."
+        },
+        {
+          "work": "1.25 x 60 = 75 gtt/min",
+          "explain": "Multiply by the drop factor."
+        }
+      ],
+      "explanation": "With 60 gtt/mL microdrip tubing, gtt/min always equals mL/hr, because the 60s cancel.",
+      "mistakes": [
+        "Multiplying 75 by 60 without dividing by 60 minutes (4,500)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-006",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "An IV is ordered at 125 mL/hr. No pump is available, so it will run by gravity with 10 gtt/mL tubing. How many gtt/min?",
+      "unit": "gtt/min",
+      "answer": 21,
+      "exact": 20.833333333333336,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = (mL/hr / 60 min) x drop factor (gtt/mL)",
+      "steps": [
+        {
+          "work": "125 mL / 60 min = 2.083 mL/min",
+          "explain": "Convert the hourly rate to per minute."
+        },
+        {
+          "work": "2.083 x 10 = 20.83 gtt/min",
+          "explain": "Multiply by the drop factor."
+        },
+        {
+          "work": "20.83 -> 21 gtt/min",
+          "explain": "You cannot count part of a drop: round to a whole number."
+        }
+      ],
+      "explanation": "(125 / 60) x 10 = 20.83, so regulate to 21 gtt/min.",
+      "mistakes": [
+        "Rounding down to 20 gtt/min (round normally)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
     },
     {
@@ -429,6 +792,198 @@
       ],
       "explanation": "Convert to kg, then mcg/min, then mL/hr.",
       "source": "Master Guide, Section 8: High-Yield IV Calculation Formulas",
+      "verified": false
+    },
+    {
+      "id": "dose-heparin-003",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "A heparin drip is infusing at 18 mL/hr. The bag is 25,000 units in 250 mL. How many units/hr is the client receiving?",
+      "available": "25,000 units in 250 mL",
+      "unit": "units/hr",
+      "answer": 1800,
+      "exact": 1800,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "units/hr = mL/hr x concentration (units/mL)",
+      "steps": [
+        {
+          "work": "25,000 / 250 = 100 units/mL",
+          "explain": "Find the concentration."
+        },
+        {
+          "work": "18 mL/hr x 100 = 1,800 units/hr",
+          "explain": "Multiply the rate by the concentration."
+        }
+      ],
+      "explanation": "This is a reverse calculation: rate x concentration gives the dose. 18 x 100 = 1,800 units/hr.",
+      "mistakes": [
+        "Using 50 units/mL from the more common 25,000 units/500 mL bag."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-heparin-004",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "Heparin 18 units/kg/hr is ordered for a client who weighs 80 kg. The bag is 25,000 units in 500 mL. At what rate in mL/hr?",
+      "patient": "Weight 80 kg",
+      "order": "Heparin 18 units/kg/hr",
+      "available": "25,000 units in 500 mL (50 units/mL)",
+      "unit": "mL/hr",
+      "answer": 29,
+      "exact": 28.8,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "1) units/hr = units/kg/hr x kg  2) mL/hr = units/hr / concentration",
+      "steps": [
+        {
+          "work": "18 x 80 = 1,440 units/hr",
+          "explain": "Hourly dose for this weight."
+        },
+        {
+          "work": "25,000 / 500 = 50 units/mL",
+          "explain": "Concentration."
+        },
+        {
+          "work": "1,440 / 50 = 28.8 mL/hr",
+          "explain": "Rate."
+        },
+        {
+          "work": "28.8 -> 29 mL/hr",
+          "explain": "Round pump rates to the nearest whole number."
+        }
+      ],
+      "explanation": "18 units/kg/hr x 80 kg = 1,440 units/hr; at 50 units/mL that is 28.8, set as 29 mL/hr.",
+      "mistakes": [
+        "Skipping the weight step and dividing 18 by 50."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-drip-001",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "Regular insulin is infusing per protocol. The bag is 100 units in 100 mL. The new order is 6.5 units/hr. At what rate in mL/hr? Round to the nearest tenth.",
+      "order": "Regular insulin 6.5 units/hr",
+      "available": "100 units in 100 mL (1 unit/mL)",
+      "unit": "mL/hr",
+      "answer": 6.5,
+      "exact": 6.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth",
+        "special": true,
+        "note": "Critical care titrations are set to the tenth; this question asks for the nearest tenth."
+      },
+      "formula": "mL/hr = units/hr / concentration (units/mL)",
+      "steps": [
+        {
+          "work": "100 / 100 = 1 unit/mL",
+          "explain": "Concentration."
+        },
+        {
+          "work": "6.5 / 1 = 6.5 mL/hr",
+          "explain": "Divide the hourly dose by the concentration."
+        }
+      ],
+      "explanation": "At 1 unit/mL, units/hr and mL/hr are the same number: 6.5 mL/hr. Only regular insulin is given IV.",
+      "mistakes": [
+        "Rounding to 7 mL/hr when the protocol titrates in tenths."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-norepi-001",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "Norepinephrine 4 mg in 250 mL is infusing at 30 mL/hr. How many mcg/min is the client receiving?",
+      "available": "4 mg in 250 mL (16 mcg/mL)",
+      "unit": "mcg/min",
+      "answer": 8,
+      "exact": 8,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mcg/min = (mL/hr x concentration mcg/mL) / 60",
+      "steps": [
+        {
+          "work": "4 mg x 1,000 = 4,000 mcg; 4,000 / 250 = 16 mcg/mL",
+          "explain": "Concentration in mcg/mL."
+        },
+        {
+          "work": "30 mL/hr x 16 = 480 mcg/hr",
+          "explain": "Dose per hour."
+        },
+        {
+          "work": "480 / 60 = 8 mcg/min",
+          "explain": "Dose per minute."
+        }
+      ],
+      "explanation": "Reverse calculation: 30 mL/hr x 16 mcg/mL = 480 mcg/hr, divided by 60 = 8 mcg/min.",
+      "mistakes": [
+        "Forgetting to convert mg to mcg (0.008).",
+        "Forgetting to divide by 60 (480)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-dopamine-003",
+      "category": "titration",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "Dopamine 400 mg in 250 mL is infusing at 15 mL/hr for a client who weighs 80 kg. How many mcg/kg/min is the client receiving?",
+      "patient": "Weight 80 kg",
+      "available": "400 mg in 250 mL (1,600 mcg/mL)",
+      "unit": "mcg/kg/min",
+      "answer": 5,
+      "exact": 5,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "mcg/kg/min = (mL/hr x mcg/mL) / 60 / kg",
+      "steps": [
+        {
+          "work": "400 mg x 1,000 / 250 = 1,600 mcg/mL",
+          "explain": "Concentration."
+        },
+        {
+          "work": "15 x 1,600 = 24,000 mcg/hr",
+          "explain": "Dose per hour."
+        },
+        {
+          "work": "24,000 / 60 = 400 mcg/min",
+          "explain": "Dose per minute."
+        },
+        {
+          "work": "400 / 80 = 5 mcg/kg/min",
+          "explain": "Dose per kg."
+        }
+      ],
+      "explanation": "Work the forward formula backwards: (15 x 1,600) / 60 / 80 = 5 mcg/kg/min.",
+      "mistakes": [
+        "Leaving out the weight step (400 mcg/min)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
     },
     {
