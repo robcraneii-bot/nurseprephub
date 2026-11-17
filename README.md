@@ -1,27 +1,42 @@
-const express = require('express');
-const cors = require('cors');
-const path = require('path');
+# NursePrepHub
 
-const app = express();
-const PORT = process.env.PORT || 8080;
+Nursing study platform: lessons, flashcards, games, a practice engine (dosage, question bank, case studies) and AI study tools.
+For education only, not medical advice. Not affiliated with MSJC or NCSBN. NCLEX is a trademark of its owner.
 
-app.use(cors());
-app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+## Run locally
 
-app.post('/api/chat', async (req, res) => {
-  const API_KEY = process.env.ANTHROPIC_API_KEY;
-  if (!API_KEY) return res.status(500).json({ error: 'Set ANTHROPIC_API_KEY in environment variables.' });
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
-      body: JSON.stringify({ model: req.body.model || 'claude-sonnet-4-20250514', max_tokens: req.body.max_tokens || 1000, system: req.body.system || '', messages: req.body.messages || [] })
-    });
-    res.json(await response.json());
-  } catch (e) { res.status(500).json({ error: 'AI service error' }); }
-});
+```
+npm install
+GATE=off npm start          # http://localhost:8080, gate disabled on your own computer only
+```
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', tools: 21 }));
+## Private-access gate
 
-app.listen(PORT, () => console.log('NursePrepHub running on port ' + PORT));
+The whole site and every API require a personal access code (see `gate.js`). Set these environment variables on the server:
+
+| Variable | What it is |
+|---|---|
+| `ACCESS_CODES` | Comma-separated `role:name:hash` entries. Role is `owner` or `consultant`. |
+| `SESSION_SECRET` | At least 32 random characters. Signs the 30-day sign-in cookie. Changing it signs everyone out. |
+| `ANTHROPIC_API_KEY` | For the AI tools. |
+
+Make a code (run it yourself, so the code is only shown on your screen):
+
+```
+npm run access-code -- consultant angel
+```
+
+It prints the code to give that person and the `ACCESS_CODES` entry to add on the server. Only the hash is stored.
+To revoke someone, delete their entry and restart; their cookie stops working at once.
+If `ACCESS_CODES` or `SESSION_SECRET` is missing, nobody can sign in (the gate fails closed).
+
+## Checks
+
+```
+npm run check-questions     # validates questions/*.json
+npm run check-content       # decodes every tool and fails on banned names or wording
+npm run review              # local question review tool, http://localhost:8090
+```
+
+Study tools are stored base64-encoded in `index.html` (`TOOL_DATA`). Edit them with
+`node scripts/tool-data.js extract <dir>`, change the HTML, then `node scripts/tool-data.js pack <dir>`.
