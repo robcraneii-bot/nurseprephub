@@ -1,0 +1,1628 @@
+{
+  "set": "cases",
+  "mode": "case",
+  "tier": "free",
+  "title": "Clinical Judgment Case Studies",
+  "description": "Work through a patient case from arrival to outcome. Read the chart, answer, and watch the case unfold. Each case follows the six steps of clinical judgment.",
+  "categories": [
+    {
+      "id": "cardiovascular",
+      "name": "Cardiovascular"
+    },
+    {
+      "id": "infection",
+      "name": "Infection and Sepsis"
+    },
+    {
+      "id": "endocrine",
+      "name": "Endocrine"
+    }
+  ],
+  "cases": [
+    {
+      "id": "case-hf",
+      "category": "cardiovascular",
+      "title": "Shortness of breath after missed diuretics",
+      "setting": "Medical-surgical unit",
+      "difficulty": "nclex",
+      "summary": "Older adult with heart failure and rapid weight gain",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: rapid weight gain plus crackles and JVD means fluid overload; airway and breathing come first; loop diuretics lower potassium, so check it before each dose; and successful diuresis can overshoot into orthostatic hypotension.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Admission, 0800",
+          "text": "A 72-year-old client with heart failure (ejection fraction 30%) is admitted from the emergency department with shortness of breath. The client ran out of furosemide 5 days ago.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0800",
+              "title": "Admission assessment",
+              "text": "Reports trouble breathing when lying flat and now sleeps in a recliner. Weight 84 kg (home weight 81 kg 4 days ago). Crackles bilaterally from bases to mid lungs. Jugular vein distention at 45 degrees. 3+ pitting edema of both lower legs. Alert and oriented x3. Speaks in short sentences."
+            },
+            {
+              "tab": "vitals",
+              "time": "0800",
+              "rows": [
+                [
+                  "Temperature",
+                  "36.8 C (98.2 F)"
+                ],
+                [
+                  "Heart rate",
+                  "108/min, irregular",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "158/92 mm Hg",
+                  "high"
+                ],
+                [
+                  "Respiratory rate",
+                  "26/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "89% on room air",
+                  "low"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "0730",
+              "rows": [
+                [
+                  "BNP",
+                  "1,450 pg/mL",
+                  "high"
+                ],
+                [
+                  "Sodium",
+                  "132 mEq/L",
+                  "low"
+                ],
+                [
+                  "Potassium",
+                  "3.6 mEq/L"
+                ],
+                [
+                  "BUN",
+                  "32 mg/dL",
+                  "high"
+                ],
+                [
+                  "Creatinine",
+                  "1.4 mg/dL",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-hf-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "chart": [],
+          "questions": [
+            "case-hf-q2"
+          ]
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "chart": [],
+          "questions": [
+            "case-hf-q3"
+          ]
+        },
+        {
+          "step": "generate-solutions",
+          "title": "Provider orders received, 0830",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "0830",
+              "text": "Furosemide 40 mg IV push twice daily\nOxygen 2 to 4 L/min by nasal cannula, titrate to SpO2 at least 92%\nDaily weight before breakfast, strict intake and output\nFluid restriction 1.5 L/day; 2 g sodium diet\nBasic metabolic panel every morning\nPotassium replacement per protocol"
+            }
+          ],
+          "questions": [
+            "case-hf-q4"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Day 1, 1700",
+          "text": "The client has received one dose of IV furosemide and has put out 1,600 mL of urine.",
+          "chart": [
+            {
+              "tab": "labs",
+              "time": "1600",
+              "rows": [
+                [
+                  "Potassium",
+                  "3.2 mEq/L",
+                  "low"
+                ],
+                [
+                  "Sodium",
+                  "134 mEq/L",
+                  "low"
+                ],
+                [
+                  "Creatinine",
+                  "1.4 mg/dL",
+                  "high"
+                ]
+              ]
+            },
+            {
+              "tab": "vitals",
+              "time": "1700",
+              "rows": [
+                [
+                  "Heart rate",
+                  "98/min, irregular"
+                ],
+                [
+                  "Blood pressure",
+                  "134/80 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "22/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "93% on 3 L nasal cannula"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-hf-q5"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Day 2, 0900",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0900",
+              "text": "Weight 82.2 kg. Breathing easier; lying at 30 degrees. Crackles in bases only. Edema 1+. Client reports feeling dizzy when standing to use the bathroom."
+            },
+            {
+              "tab": "vitals",
+              "time": "0900",
+              "rows": [
+                [
+                  "Heart rate",
+                  "88/min"
+                ],
+                [
+                  "Blood pressure lying",
+                  "118/70 mm Hg"
+                ],
+                [
+                  "Blood pressure standing",
+                  "98/60 mm Hg",
+                  "low"
+                ],
+                [
+                  "Respiratory rate",
+                  "18/min"
+                ],
+                [
+                  "SpO2",
+                  "95% on 2 L nasal cannula"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "0600",
+              "rows": [
+                [
+                  "Potassium",
+                  "4.0 mEq/L"
+                ],
+                [
+                  "Creatinine",
+                  "1.3 mg/dL",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-hf-q6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-sepsis",
+      "category": "infection",
+      "title": "New confusion and fever in an older adult",
+      "setting": "Emergency department",
+      "difficulty": "nclex",
+      "summary": "Urinary source with low blood pressure and high lactate",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: new confusion can be the first sign of sepsis in older adults; lactate above 2 mmol/L signals hypoperfusion; draw cultures but do not delay antibiotics; calculate weight-based fluid carefully; and reassess lungs during large-volume fluids.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Arrival, 1400",
+          "text": "An 81-year-old client is brought in by family for new confusion that started this morning. Family reports the client has had burning on urination for 3 days.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1400",
+              "title": "Triage",
+              "text": "Oriented to person only (baseline: fully oriented, lives alone). Skin warm and flushed. Urine in the bag is cloudy with a strong odor. Lungs clear. History: hypertension controlled with lisinopril."
+            },
+            {
+              "tab": "vitals",
+              "time": "1400",
+              "rows": [
+                [
+                  "Temperature",
+                  "38.9 C (102 F)",
+                  "high"
+                ],
+                [
+                  "Heart rate",
+                  "118/min",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "84/50 mm Hg",
+                  "low"
+                ],
+                [
+                  "Respiratory rate",
+                  "24/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "95% on room air"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1420",
+              "rows": [
+                [
+                  "WBC",
+                  "16,800/mm3",
+                  "high"
+                ],
+                [
+                  "Lactate",
+                  "3.4 mmol/L",
+                  "high"
+                ],
+                [
+                  "Creatinine",
+                  "1.6 mg/dL",
+                  "high"
+                ],
+                [
+                  "Glucose",
+                  "168 mg/dL",
+                  "high"
+                ],
+                [
+                  "Urinalysis",
+                  "Positive leukocyte esterase and nitrites, many WBCs",
+                  "abn"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-sepsis-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "chart": [],
+          "questions": [
+            "case-sepsis-q2"
+          ]
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "chart": [],
+          "questions": [
+            "case-sepsis-q3"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Sepsis orders, 1430",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "1430",
+              "text": "Blood cultures x2 from two sites, urine culture\n0.9% sodium chloride 30 mL/kg IV over 3 hours\nCeftriaxone 1 g IV now\nRepeat lactate in 2 hours\nInsert indwelling urinary catheter, hourly output\nFall precautions"
+            }
+          ],
+          "questions": [
+            "case-sepsis-q4",
+            "case-sepsis-q5"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Reassessment, 1800",
+          "text": "The fluid bolus is complete and the first antibiotic dose was given at 1445.",
+          "chart": [
+            {
+              "tab": "vitals",
+              "time": "1800",
+              "rows": [
+                [
+                  "Temperature",
+                  "38.1 C (100.6 F)",
+                  "high"
+                ],
+                [
+                  "Heart rate",
+                  "98/min"
+                ],
+                [
+                  "Blood pressure",
+                  "108/64 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "24/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "90% on room air",
+                  "low"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1700",
+              "rows": [
+                [
+                  "Lactate",
+                  "1.9 mmol/L"
+                ]
+              ]
+            },
+            {
+              "tab": "notes",
+              "time": "1800",
+              "text": "Oriented x3, asking for family. Urine output 45 mL/hr for the past 2 hours. New fine crackles in both lung bases."
+            }
+          ],
+          "questions": [
+            "case-sepsis-q6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-dka",
+      "category": "endocrine",
+      "title": "Vomiting and rapid breathing in a young adult with type 1 diabetes",
+      "setting": "Emergency department to intermediate care",
+      "difficulty": "nclex",
+      "summary": "DKA from missed insulin",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: fluids first; know the potassium before insulin starts; insulin lowers serum potassium; add dextrose when glucose falls but keep the infusion running until the gap closes; and overlap basal insulin before stopping the drip.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Arrival, 2200",
+          "text": "A 19-year-old client with type 1 diabetes arrives with 1 day of nausea, vomiting and abdominal pain. The client says they ran out of insulin and skipped doses for 2 days.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "2200",
+              "title": "Triage",
+              "text": "Drowsy but answers questions. Deep, rapid respirations. Fruity odor on breath. Dry mucous membranes, poor skin turgor. Diffuse abdominal tenderness."
+            },
+            {
+              "tab": "vitals",
+              "time": "2200",
+              "rows": [
+                [
+                  "Temperature",
+                  "37.2 C (99 F)"
+                ],
+                [
+                  "Heart rate",
+                  "124/min",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "98/60 mm Hg",
+                  "low"
+                ],
+                [
+                  "Respiratory rate",
+                  "30/min, deep",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "98% on room air"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "2215",
+              "rows": [
+                [
+                  "Glucose",
+                  "486 mg/dL",
+                  "high"
+                ],
+                [
+                  "Arterial pH",
+                  "7.18",
+                  "low"
+                ],
+                [
+                  "Bicarbonate",
+                  "12 mEq/L",
+                  "low"
+                ],
+                [
+                  "Sodium",
+                  "134 mEq/L",
+                  "low"
+                ],
+                [
+                  "Chloride",
+                  "98 mEq/L"
+                ],
+                [
+                  "Anion gap",
+                  "24",
+                  "high"
+                ],
+                [
+                  "Potassium",
+                  "5.6 mEq/L",
+                  "high"
+                ],
+                [
+                  "Beta-hydroxybutyrate",
+                  "6.2 mmol/L",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-dka-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "chart": [],
+          "questions": [
+            "case-dka-q2"
+          ]
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "chart": [],
+          "questions": [
+            "case-dka-q3"
+          ]
+        },
+        {
+          "step": "generate-solutions",
+          "title": "Planning care",
+          "text": "The provider is entering the DKA order set.",
+          "chart": [],
+          "questions": [
+            "case-dka-q4"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Insulin infusion, 2330",
+          "text": "One liter of 0.9% sodium chloride has infused. Repeat potassium is 5.0 mEq/L.",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "2320",
+              "text": "Regular insulin 0.1 units/kg/hr IV infusion (100 units in 100 mL 0.9% sodium chloride)\n0.9% sodium chloride at 250 mL/hr\nGlucose every hour; basic metabolic panel every 2 hours\nPotassium replacement per DKA protocol\nWhen glucose falls below 250 mg/dL, change fluids to dextrose 5% with 0.45% sodium chloride"
+            },
+            {
+              "tab": "labs",
+              "time": "2320",
+              "rows": [
+                [
+                  "Potassium",
+                  "5.0 mEq/L",
+                  "high"
+                ],
+                [
+                  "Glucose",
+                  "420 mg/dL",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-dka-q5"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Morning reassessment, 0400",
+          "chart": [
+            {
+              "tab": "labs",
+              "time": "0400",
+              "rows": [
+                [
+                  "Glucose",
+                  "232 mg/dL",
+                  "high"
+                ],
+                [
+                  "Potassium",
+                  "4.0 mEq/L"
+                ],
+                [
+                  "Bicarbonate",
+                  "16 mEq/L",
+                  "low"
+                ],
+                [
+                  "Anion gap",
+                  "18",
+                  "high"
+                ],
+                [
+                  "Arterial pH",
+                  "7.28",
+                  "low"
+                ]
+              ]
+            },
+            {
+              "tab": "vitals",
+              "time": "0400",
+              "rows": [
+                [
+                  "Heart rate",
+                  "96/min"
+                ],
+                [
+                  "Blood pressure",
+                  "112/70 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "20/min"
+                ]
+              ]
+            },
+            {
+              "tab": "notes",
+              "time": "0400",
+              "text": "More alert, nausea improving. Asking for water."
+            }
+          ],
+          "questions": [
+            "case-dka-q6"
+          ]
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "case-hf-q1",
+      "category": "cardiovascular",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up by the nurse? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "SpO2 89% on room air"
+        },
+        {
+          "id": "B",
+          "text": "Crackles from the bases to the mid lungs"
+        },
+        {
+          "id": "C",
+          "text": "Respiratory rate 26/min"
+        },
+        {
+          "id": "D",
+          "text": "Weight gain of 3 kg in 4 days"
+        },
+        {
+          "id": "E",
+          "text": "Temperature 36.8 C (98.2 F)"
+        },
+        {
+          "id": "F",
+          "text": "Potassium 3.6 mEq/L"
+        },
+        {
+          "id": "G",
+          "text": "Alert and oriented to person, place and time"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "Low oxygen saturation, crackles that reach the mid lungs, tachypnea and rapid weight gain all point to fluid backing up into the lungs. They need follow-up now. A 3 kg gain is about 3 L of retained fluid.",
+      "why": {
+        "E": "Normal temperature.",
+        "F": "Within normal range, though it should be watched once diuresis starts.",
+        "G": "Normal mental status is reassuring."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-hf-q2",
+      "category": "cardiovascular",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The client is most likely experiencing {{1}}, as evidenced by {{2}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Condition",
+          "options": [
+            {
+              "id": "A",
+              "text": "fluid volume excess from heart failure"
+            },
+            {
+              "id": "B",
+              "text": "deficient fluid volume"
+            },
+            {
+              "id": "C",
+              "text": "community-acquired pneumonia"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Evidence",
+          "options": [
+            {
+              "id": "A",
+              "text": "crackles, jugular vein distention and rapid weight gain"
+            },
+            {
+              "id": "B",
+              "text": "fever and productive cough"
+            },
+            {
+              "id": "C",
+              "text": "dry mucous membranes and low blood pressure"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "A",
+        "2": "A"
+      },
+      "explanation": "Crackles, JVD, edema, weight gain and a high BNP after running out of the diuretic fit decompensated heart failure with fluid overload. There is no fever to suggest pneumonia, and the blood pressure is high, not low.",
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-hf-q3",
+      "category": "cardiovascular",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which problem places the client at greatest immediate risk?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pulmonary edema with impaired gas exchange"
+        },
+        {
+          "id": "B",
+          "text": "Hyponatremia"
+        },
+        {
+          "id": "C",
+          "text": "Worsening kidney function"
+        },
+        {
+          "id": "D",
+          "text": "Pressure injury from lower-extremity edema"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Breathing comes first. Fluid in the alveoli is lowering oxygenation (SpO2 89%, RR 26) and can progress to respiratory failure. The other problems are real but less immediately life-threatening.",
+      "why": {
+        "B": "Sodium 132 mEq/L is mildly low and is usually dilutional; it is monitored.",
+        "C": "Creatinine is trended, especially during diuresis, but it is not the most urgent threat.",
+        "D": "Skin care matters, but it is not life-threatening right now."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-hf-q4",
+      "category": "cardiovascular",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential intervention, indicate whether it is indicated, contraindicated or non-essential for the client at this time.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Place the client in high Fowler position"
+        },
+        {
+          "id": "r2",
+          "text": "Give furosemide IV as ordered"
+        },
+        {
+          "id": "r3",
+          "text": "Infuse 0.9% sodium chloride 1,000 mL bolus"
+        },
+        {
+          "id": "r4",
+          "text": "Monitor strict intake and output and daily weight"
+        },
+        {
+          "id": "r5",
+          "text": "Encourage 3 L of oral fluid per day"
+        },
+        {
+          "id": "r6",
+          "text": "Teach the full low-sodium meal plan now"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ind",
+          "text": "Indicated"
+        },
+        {
+          "id": "contra",
+          "text": "Contraindicated"
+        },
+        {
+          "id": "non",
+          "text": "Non-essential"
+        }
+      ],
+      "answer": {
+        "r1": "ind",
+        "r2": "ind",
+        "r3": "contra",
+        "r4": "ind",
+        "r5": "contra",
+        "r6": "non"
+      },
+      "explanation": "The goal is to remove fluid and ease breathing: upright position, IV loop diuretic, and close tracking of output and weight. Extra fluid would worsen overload. Diet teaching matters, but it is not essential while the client is short of breath and can be done once they are stable.",
+      "why": {
+        "r3": "A fluid bolus adds volume to a client who is already overloaded.",
+        "r5": "Heart failure orders here include a 1.5 L/day fluid restriction.",
+        "r6": "Teaching works best once the client can breathe comfortably and focus."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-hf-q5",
+      "category": "cardiovascular",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "The evening furosemide dose is due. Which action should the nurse take first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give the furosemide as scheduled and recheck potassium in the morning"
+        },
+        {
+          "id": "B",
+          "text": "Report the potassium of 3.2 mEq/L and follow the replacement protocol before giving the furosemide"
+        },
+        {
+          "id": "C",
+          "text": "Hold the furosemide and give the client extra oral fluids"
+        },
+        {
+          "id": "D",
+          "text": "Give half the furosemide dose"
+        }
+      ],
+      "answer": "B",
+      "explanation": "Loop diuretics waste potassium. A level of 3.2 mEq/L is low and raises the risk of dysrhythmias, so the nurse reports it and replaces potassium per protocol or order before more diuretic is given. The client still needs diuresis, so the dose is not simply dropped.",
+      "why": {
+        "A": "Giving more diuretic without addressing low potassium can drop it further.",
+        "C": "Extra fluid works against the fluid restriction and the diuresis goal.",
+        "D": "Nurses do not change the dose without an order."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-hf-q6",
+      "category": "cardiovascular",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each finding on day 2, indicate whether it shows the client is improving or needs follow-up.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Weight down 1.8 kg from admission"
+        },
+        {
+          "id": "r2",
+          "text": "SpO2 95% on 2 L nasal cannula"
+        },
+        {
+          "id": "r3",
+          "text": "Crackles only in the lung bases"
+        },
+        {
+          "id": "r4",
+          "text": "Urine output 2,400 mL in 24 hours"
+        },
+        {
+          "id": "r5",
+          "text": "Dizziness on standing with BP 98/60 mm Hg"
+        }
+      ],
+      "columns": [
+        {
+          "id": "imp",
+          "text": "Improving"
+        },
+        {
+          "id": "con",
+          "text": "Needs follow-up"
+        }
+      ],
+      "answer": {
+        "r1": "imp",
+        "r2": "imp",
+        "r3": "imp",
+        "r4": "imp",
+        "r5": "con"
+      },
+      "explanation": "Weight loss, better oxygenation, fewer crackles and strong urine output show the diuresis is working. Dizziness on standing with a lower blood pressure suggests the client may now be over-diuresed or orthostatic, which needs follow-up and fall precautions.",
+      "why": {
+        "r5": "New orthostatic symptoms are a safety concern (falls) and may mean the diuretic dose needs adjusting."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q1",
+      "category": "infection",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "New confusion"
+        },
+        {
+          "id": "B",
+          "text": "Temperature 38.9 C (102 F)"
+        },
+        {
+          "id": "C",
+          "text": "Heart rate 118/min"
+        },
+        {
+          "id": "D",
+          "text": "Blood pressure 84/50 mm Hg"
+        },
+        {
+          "id": "E",
+          "text": "Lactate 3.4 mmol/L"
+        },
+        {
+          "id": "F",
+          "text": "SpO2 95% on room air"
+        },
+        {
+          "id": "G",
+          "text": "History of controlled hypertension"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "New confusion, fever, tachycardia, hypotension and a high lactate together suggest infection with poor tissue perfusion. In older adults, new confusion may be the first sign of sepsis.",
+      "why": {
+        "F": "Oxygenation is acceptable right now.",
+        "G": "Relevant history, but it does not need immediate action. It does mean 84/50 is far below this client's usual pressure."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q2",
+      "category": "infection",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The findings are most consistent with {{1}} from a likely {{2}} source. A lactate of 3.4 mmol/L suggests {{3}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Condition",
+          "options": [
+            {
+              "id": "A",
+              "text": "sepsis"
+            },
+            {
+              "id": "B",
+              "text": "dehydration alone"
+            },
+            {
+              "id": "C",
+              "text": "acute stroke"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Source",
+          "options": [
+            {
+              "id": "A",
+              "text": "urinary"
+            },
+            {
+              "id": "B",
+              "text": "respiratory"
+            },
+            {
+              "id": "C",
+              "text": "skin"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "label": "Lactate meaning",
+          "options": [
+            {
+              "id": "A",
+              "text": "tissue hypoperfusion"
+            },
+            {
+              "id": "B",
+              "text": "normal metabolism"
+            },
+            {
+              "id": "C",
+              "text": "liver failure"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "A",
+        "2": "A",
+        "3": "A"
+      },
+      "explanation": "Fever, tachycardia, hypotension and high WBC with cloudy, foul-smelling urine and pyuria point to sepsis from a urinary source. Lactate rises when tissues are not getting enough oxygen and switch to anaerobic metabolism.",
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q3",
+      "category": "infection",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which complication is the client at highest immediate risk of developing?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Septic shock and organ failure"
+        },
+        {
+          "id": "B",
+          "text": "A fall related to confusion"
+        },
+        {
+          "id": "C",
+          "text": "Pressure injury"
+        },
+        {
+          "id": "D",
+          "text": "Urinary retention"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Hypotension with a lactate above 2 mmol/L shows the circulation is already failing to perfuse tissues. Without fast fluids and antibiotics this can progress to septic shock and multiple organ dysfunction.",
+      "why": {
+        "B": "Fall risk is real and needs precautions, but it is not the most life-threatening problem.",
+        "C": "Important later, not the immediate threat.",
+        "D": "Not suggested by the findings."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q4",
+      "category": "infection",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "The client weighs 132 lb. The order is 0.9% sodium chloride 30 mL/kg IV over 3 hours. At what rate in mL/hr will the nurse set the pump?",
+      "order": "0.9% sodium chloride 30 mL/kg IV over 3 hours",
+      "patient": "Weight 132 lb",
+      "unit": "mL/hr",
+      "answer": 600,
+      "exact": 600,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Volume = kg x mL/kg; Rate = Volume / hours",
+      "steps": [
+        {
+          "work": "132 lb / 2.2 = 60 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "60 kg x 30 mL/kg = 1,800 mL",
+          "explain": "Total fluid volume."
+        },
+        {
+          "work": "1,800 mL / 3 hr = 600 mL/hr",
+          "explain": "Volume over time."
+        }
+      ],
+      "explanation": "60 kg x 30 mL/kg = 1,800 mL over 3 hours, so 600 mL/hr. Watch the lungs during large-volume resuscitation in an older adult.",
+      "mistakes": [
+        "Using 132 lb in place of 60 kg (3,960 mL).",
+        "Dividing by 180 minutes and calling the result mL/hr."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q5",
+      "category": "infection",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "The nurse is preparing the first dose of ceftriaxone. Which action is most important before giving it?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Make sure blood cultures have been drawn, without delaying the antibiotic"
+        },
+        {
+          "id": "B",
+          "text": "Wait for the urine culture result to choose the right antibiotic"
+        },
+        {
+          "id": "C",
+          "text": "Recheck the temperature"
+        },
+        {
+          "id": "D",
+          "text": "Give acetaminophen first to lower the fever"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Cultures drawn before the first antibiotic dose give the best chance of identifying the organism. In sepsis the antibiotic should not be held for long waiting on cultures, so they are drawn quickly and the drug is started right away.",
+      "why": {
+        "B": "Culture results take a day or more; waiting would dangerously delay treatment.",
+        "C": "The fever is already documented and does not change the action.",
+        "D": "Antipyretics can be given, but they are not a prerequisite and do not treat the infection."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-sepsis-q6",
+      "category": "infection",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "After the fluid bolus and first antibiotic dose, indicate whether each finding shows the client is improving or needs follow-up.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Blood pressure 108/64 mm Hg"
+        },
+        {
+          "id": "r2",
+          "text": "Repeat lactate 1.9 mmol/L"
+        },
+        {
+          "id": "r3",
+          "text": "Urine output 45 mL/hr"
+        },
+        {
+          "id": "r4",
+          "text": "Oriented to person, place and time"
+        },
+        {
+          "id": "r5",
+          "text": "New crackles in both lung bases with SpO2 90%"
+        }
+      ],
+      "columns": [
+        {
+          "id": "imp",
+          "text": "Improving"
+        },
+        {
+          "id": "con",
+          "text": "Needs follow-up"
+        }
+      ],
+      "answer": {
+        "r1": "imp",
+        "r2": "imp",
+        "r3": "imp",
+        "r4": "imp",
+        "r5": "con"
+      },
+      "explanation": "Better blood pressure, a falling lactate, adequate urine output (at least 0.5 mL/kg/hr) and clearer thinking show perfusion is improving. New crackles with lower oxygen saturation suggest fluid overload from the large bolus, so the nurse reports it promptly.",
+      "why": {
+        "r3": "45 mL/hr is above 0.5 mL/kg/hr for a 60 kg client (30 mL/hr).",
+        "r5": "An older adult can develop pulmonary congestion during aggressive fluid resuscitation."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q1",
+      "category": "endocrine",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Deep, rapid respirations"
+        },
+        {
+          "id": "B",
+          "text": "Blood glucose 486 mg/dL"
+        },
+        {
+          "id": "C",
+          "text": "Arterial pH 7.18"
+        },
+        {
+          "id": "D",
+          "text": "Heart rate 124/min with dry mucous membranes"
+        },
+        {
+          "id": "E",
+          "text": "Potassium 5.6 mEq/L"
+        },
+        {
+          "id": "F",
+          "text": "Temperature 37.2 C (99 F)"
+        },
+        {
+          "id": "G",
+          "text": "Reports missing insulin doses for 2 days"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "Kussmaul respirations, severe hyperglycemia, acidosis, signs of dehydration and an abnormal potassium all need action. The missed insulin explains the cause and matters for teaching, but it is not a finding that needs urgent treatment by itself.",
+      "why": {
+        "F": "Normal temperature.",
+        "G": "Important history that guides teaching later; not an abnormal finding to treat now."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q2",
+      "category": "endocrine",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The client has {{1}}. The serum potassium is high because {{2}}, so once insulin is started, the potassium is expected to {{3}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Condition",
+          "options": [
+            {
+              "id": "A",
+              "text": "diabetic ketoacidosis"
+            },
+            {
+              "id": "B",
+              "text": "hyperosmolar hyperglycemic state"
+            },
+            {
+              "id": "C",
+              "text": "respiratory acidosis"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Cause of high potassium",
+          "options": [
+            {
+              "id": "A",
+              "text": "acidosis and lack of insulin shift potassium out of cells"
+            },
+            {
+              "id": "B",
+              "text": "the client eats a high-potassium diet"
+            },
+            {
+              "id": "C",
+              "text": "the kidneys are retaining potassium normally"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "label": "Expected potassium change",
+          "options": [
+            {
+              "id": "A",
+              "text": "fall"
+            },
+            {
+              "id": "B",
+              "text": "rise further"
+            },
+            {
+              "id": "C",
+              "text": "stay the same"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "A",
+        "2": "A",
+        "3": "A"
+      },
+      "explanation": "High glucose, ketones, low pH and low bicarbonate with an anion gap are DKA. Potassium leaves the cells in acidosis and without insulin, so the serum level looks high even though total body potassium is usually low. Insulin drives potassium back into cells, so the level falls.",
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q3",
+      "category": "endocrine",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which problem should the nurse address first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Severe fluid volume deficit"
+        },
+        {
+          "id": "B",
+          "text": "Knowledge deficit about sick-day insulin rules"
+        },
+        {
+          "id": "C",
+          "text": "Risk for infection"
+        },
+        {
+          "id": "D",
+          "text": "Anxiety"
+        }
+      ],
+      "answer": "A",
+      "explanation": "Osmotic diuresis has left the client several liters dry (tachycardia, low blood pressure, dry mucosa). Restoring circulating volume comes first and also begins to lower glucose.",
+      "why": {
+        "B": "Teaching is essential before discharge, not first.",
+        "C": "Not the most immediate threat.",
+        "D": "Address it, but it is not the priority physiological problem."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q4",
+      "category": "endocrine",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential order, indicate whether the nurse should anticipate it or not anticipate it for this client.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "0.9% sodium chloride IV bolus"
+        },
+        {
+          "id": "r2",
+          "text": "Confirm potassium is at least 3.3 mEq/L before starting the insulin infusion"
+        },
+        {
+          "id": "r3",
+          "text": "Check blood glucose every hour"
+        },
+        {
+          "id": "r4",
+          "text": "Sodium bicarbonate IV for a pH of 7.18"
+        },
+        {
+          "id": "r5",
+          "text": "Add dextrose to the IV fluids once glucose falls to about 250 mg/dL"
+        },
+        {
+          "id": "r6",
+          "text": "Regular insulin by IV push every 15 minutes until glucose is normal"
+        }
+      ],
+      "columns": [
+        {
+          "id": "yes",
+          "text": "Anticipate"
+        },
+        {
+          "id": "no",
+          "text": "Do not anticipate"
+        }
+      ],
+      "answer": {
+        "r1": "yes",
+        "r2": "yes",
+        "r3": "yes",
+        "r4": "no",
+        "r5": "yes",
+        "r6": "no"
+      },
+      "explanation": "DKA care centers on isotonic fluids, a continuous low-dose IV insulin infusion started only once potassium is safe, hourly glucose checks, and dextrose once glucose falls so insulin can keep clearing ketones without causing hypoglycemia. Bicarbonate is reserved for very severe acidosis, and repeated IV insulin pushes risk rapid drops in glucose and potassium.",
+      "why": {
+        "r4": "Bicarbonate is generally reserved for pH below about 7.0.",
+        "r6": "A steady infusion is used; the goal is a gradual glucose decline."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q5",
+      "category": "endocrine",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "The client weighs 154 lb. The order is regular insulin 0.1 units/kg/hr IV. The bag contains 100 units of regular insulin in 100 mL 0.9% sodium chloride. At what rate in mL/hr will the nurse set the pump?",
+      "order": "Regular insulin 0.1 units/kg/hr IV infusion",
+      "available": "100 units regular insulin in 100 mL 0.9% sodium chloride",
+      "patient": "Weight 154 lb",
+      "unit": "mL/hr",
+      "answer": 7,
+      "exact": 7,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "units/hr = kg x units/kg/hr; mL/hr = units/hr / concentration",
+      "steps": [
+        {
+          "work": "154 lb / 2.2 = 70 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "70 kg x 0.1 units/kg/hr = 7 units/hr",
+          "explain": "Hourly insulin dose."
+        },
+        {
+          "work": "100 units / 100 mL = 1 unit/mL; 7 units/hr / 1 unit/mL = 7 mL/hr",
+          "explain": "Convert units to volume."
+        }
+      ],
+      "explanation": "70 kg x 0.1 = 7 units/hr. At 1 unit/mL the pump runs at 7 mL/hr. Insulin infusions are high-alert: use an independent double check per policy.",
+      "mistakes": [
+        "Using pounds: 154 x 0.1 = 15.4 units/hr, more than double the dose."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-dka-q6",
+      "category": "endocrine",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "With a glucose of 232 mg/dL, the nurse anticipates {{1}}. Because the anion gap is still 18, the insulin infusion should {{2}}. Subcutaneous basal insulin should be given {{3}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Glucose action",
+          "options": [
+            {
+              "id": "A",
+              "text": "adding dextrose to the IV fluids"
+            },
+            {
+              "id": "B",
+              "text": "stopping the insulin infusion"
+            },
+            {
+              "id": "C",
+              "text": "giving a bolus of regular insulin"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Insulin infusion",
+          "options": [
+            {
+              "id": "A",
+              "text": "continue"
+            },
+            {
+              "id": "B",
+              "text": "stop now"
+            },
+            {
+              "id": "C",
+              "text": "double"
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "label": "Basal insulin timing",
+          "options": [
+            {
+              "id": "A",
+              "text": "once the gap closes, 1 to 2 hours before the infusion is stopped"
+            },
+            {
+              "id": "B",
+              "text": "right now while the gap is open"
+            },
+            {
+              "id": "C",
+              "text": "only after discharge"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "A",
+        "2": "A",
+        "3": "A"
+      },
+      "explanation": "Glucose usually normalizes before ketoacidosis clears. Dextrose lets the insulin infusion continue until the anion gap closes. Basal insulin overlaps the infusion by 1 to 2 hours so ketoacidosis does not return when the drip stops.",
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    }
+  ]
+}

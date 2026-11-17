@@ -47,8 +47,10 @@ app.get('/api/questions', (req, res) => {
   for (const f of files()) {
     let set; try { set = readSet(f); } catch (e) { continue; }
     const cats = Object.fromEntries((set.categories || []).map(c => [c.id, c.name]));
+    const caseOf = {};
+    (set.cases || []).forEach(c => (c.stages || []).forEach(s => (s.questions || []).forEach(id => caseOf[id] = c.title)));
     (set.questions || []).forEach((q, i) => out.push({
-      file: f, set: set.set, index: i, categoryName: cats[q.category] || q.category, q,
+      file: f, set: set.set, index: i, categoryName: cats[q.category] || q.category, caseTitle: caseOf[q && q.id] || '', q,
       reports: reports.filter(r => r.id === q.id)
     }));
   }
