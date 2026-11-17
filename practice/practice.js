@@ -6,7 +6,9 @@
   const LS = 'nph_practice';
   const DISCLAIMER = 'Illustrative educational question. Clinical decisions depend on the full patient assessment.';
   const CHOICE = ['mc', 'priority', 'delegation', 'ekg', 'case'];
-  const FORMAT_LABEL = { mc: 'Multiple choice', sata: 'Select all that apply', priority: 'Prioritization', delegation: 'Delegation', case: 'Clinical judgment', order: 'Ordering', calc: 'Calculation', ekg: 'EKG rhythm', match: 'Matching', fill: 'Fill in the blank' };
+  const FORMAT_LABEL = { mc: 'Multiple choice', sata: 'Select all that apply', priority: 'Prioritization', delegation: 'Delegation', case: 'Clinical judgment', order: 'Ordering', calc: 'Calculation', ekg: 'EKG rhythm', match: 'Matching', fill: 'Fill in the blank', matrix: 'Matrix', cloze: 'Drop-down' };
+  const NCJMM_LABEL = { 'recognize-cues': 'Recognize cues', 'analyze-cues': 'Analyze cues', 'prioritize-hypotheses': 'Prioritize hypotheses', 'generate-solutions': 'Generate solutions', 'take-action': 'Take action', 'evaluate-outcomes': 'Evaluate outcomes' };
+  const FLAG_LABEL = { high: 'High', low: 'Low', crit: 'Critical', abn: 'Abnormal' };
   const DIFF_LABEL = { beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced', nclex: 'NCLEX level' };
   const PRO = '<span class="pro-chip">Pro · Coming soon</span>';
 
@@ -26,7 +28,7 @@
   }
 
   /* ── text helpers ── */
-  const NUM = /(\d+(?:,\d{3})*(?:\.\d+)?|\.\d+)(\s?(?:mcg\/kg\/min|mg\/kg\/day|mg\/kg\/hr|mg\/kg|mcg\/min|mg\/min|mg\/hr|units\/hr|units\/kg|mL\/hr|mL\/h|mL\/min|gtt\/mL|gtt\/min|mg\/mL|mcg\/mL|units\/mL|mEq\/L|mEq|mcg|mg|kg|lbs?|mL|L|g|units?|tablets?|tabs?|capsules?|caps?|oz|tsp|tbsp|hours?|hrs?|hr|minutes?|min|%)(?![A-Za-z]))?/g;
+  const NUM = /(?<![A-Za-z])(\d+(?:,\d{3})*(?:\.\d+)?|\.\d+)(\s?(?:mcg\/kg\/min|mg\/kg\/day|mg\/kg\/hr|mg\/kg|mcg\/min|mg\/min|mg\/hr|units\/hr|units\/kg|mL\/hr|mL\/h|mL\/min|gtt\/mL|gtt\/min|mg\/mL|mcg\/mL|units\/mL|mEq\/L|mEq|mcg|mg|kg|lbs?|mL|L|g|units?|tablets?|tabs?|capsules?|caps?|oz|tsp|tbsp|hours?|hrs?|hr|minutes?|min|%)(?![A-Za-z]))?/g;
   const hl = t => esc(t || '').replace(NUM, m => `<b class="num">${m}</b>`).replace(/\n/g, '<br>');
   const txt = t => esc(t || '').replace(/\n/g, '<br>');
 
@@ -54,6 +56,7 @@
     el.innerHTML = '<div class="pp-loading">Loading questions…</div>';
     try {
       const data = await getSet(setId);
+      if (data.mode === 'case') return cat ? startCase(setId, data, cat) : renderCaseIndex(data);
       const qs = data.questions.filter(q => !cat || q.category === cat);
       const ordered = data.mode === 'dosage' ? qs.slice().sort((a, b) => (a.number || 0) - (b.number || 0)) : qs;
       const key = cat || 'all';
@@ -71,7 +74,7 @@
     el.innerHTML = '<div class="pp-loading">Loading…</div>';
     let sets;
     try { sets = await getSets(true); } catch (e) { el.innerHTML = `<div class="empty">${esc(e.message)}</div>`; return; }
-    const dose = sets.find(s => s.mode === 'dosage'), banks = sets.filter(s => s.mode !== 'dosage');
+    const dose = sets.find(s => s.mode === 'dosage'), banks = sets.filter(s => s.mode === 'bank' || !s.mode), caseSets = sets.filter(s => s.mode === 'case');
     const row = (s, cat, name, count, extra) => {
       const href = `#practice/${s.set}${cat ? '/' + cat : ''}`;
       const items = setState(s.set).items; let done = 0, right = 0;
@@ -86,8 +89,73 @@
       html += `<section class="pr-sec"><div class="sh"><h2>${ico('clip')}${esc(b.title)}</h2><span class="tier free">Free</span></div><p class="pr-desc">${esc(b.description)}</p>
         <div class="pr-list">${b.total > 1 ? row(b, '', 'Mixed: all categories', b.total) : ''}${b.categories.map(c => row(b, c.id, c.name, c.count, c.example)).join('')}</div></section>`;
     });
+    caseSets.forEach(cs => {
+      html += `<section class="pr-sec"><div class="sh"><h2>${ico('doc')}${esc(cs.title)}</h2><span class="tier free">Free</span></div><p class="pr-desc">${esc(cs.description)}</p>
+        <div class="pr-list">${cs.cases.length ? cs.cases.map(c => caseRow(cs, c)).join('') : '<a class="pr-row off" aria-disabled="true"><div><b>Case studies</b><small>Cases are being written and reviewed.</small></div><span class="pr-prog">Coming soon</span></a>'}</div></section>`;
+    });
     html += proPanel('practice');
     el.innerHTML = html;
+  }
+
+  /* ── case studies: unfolding NGN-style cases with a patient chart ── */
+  function caseProgress(set, ids) {
+    const items = setState(set).items; let done = 0, right = 0;
+    ids.forEach(id => { const r = (items[id] || {}).result; if (r) { done++; if (r.correct && !r.revealed) right++; } });
+    return { done, right, total: ids.length };
+  }
+  function caseRow(cs, c) {
+    const p = caseProgress(cs.set, c.questions);
+    const cat = (cs.categories.find(x => x.id === c.category) || {}).name || '';
+    const prog = p.done === p.total ? `Finished · ${p.right} of ${p.total} correct` : p.done ? `${p.done} of ${p.total} answered` : `${c.stages} stages · ${p.total} questions`;
+    const sub = [cat, c.setting, DIFF_LABEL[c.difficulty]].filter(Boolean).join(' · ');
+    return `<a class="pr-row" href="#practice/${esc(cs.set)}/${esc(c.id)}"><div><b>${esc(c.title)}</b><small>${esc(sub)}${c.summary ? ` · ${esc(c.summary)}` : ''}</small></div><span class="pr-prog">${prog}</span><span class="go">${ico('arrow')}</span></a>`;
+  }
+  function renderCaseIndex(data) {
+    const summary = data.cases.map(c => ({ ...c, questions: c.stages.flatMap(s => s.questions), stages: c.stages.length }));
+    host().innerHTML = `<header class="pp-top"><a class="pp-crumb" href="#practice">${ico('back')}Practice</a><h1>${esc(data.title)}</h1><p>${esc(data.description)}</p></header>
+      <div class="pr-list">${summary.map(c => caseRow(data, c)).join('') || '<p class="empty">Cases are being written and reviewed.</p>'}</div>`;
+  }
+  function startCase(setId, data, caseId) {
+    const c = data.cases.find(x => x.id === caseId);
+    if (!c) { host().innerHTML = `<div class="empty">That case was not found.</div><p class="pp-back"><a href="#practice">${ico('back')} Back to Practice</a></p>`; return; }
+    const ids = c.stages.flatMap(s => s.questions), stageOf = {};
+    c.stages.forEach((s, i) => s.questions.forEach(id => stageOf[id] = i));
+    S = { set: setId, data, key: 'case:' + c.id, cat: '', case: c, stageOf, tab: null, title: c.title, ids, all: ids.slice(), mode: 'all', i: 0 };
+    // Resume where the student stopped, but never past the first unanswered question.
+    const items = setState(setId).items, firstOpen = ids.findIndex(id => !(items[id] || {}).result);
+    S.i = Math.min((setState(setId).pos || {})[S.key] || 0, firstOpen < 0 ? ids.length - 1 : firstOpen);
+    renderQuestion();
+  }
+  function chartHtml() {
+    const c = S.case, cur = S.stageOf[S.ids[S.i]];
+    const entries = c.stages.slice(0, cur + 1).flatMap((s, si) => (s.chart || []).map(en => ({ ...en, isNew: si === cur && cur > 0 })));
+    const newTabs = new Set(entries.filter(e => e.isNew).map(e => e.tab));
+    if (!S.tab || !c.tabs.some(t => t.id === S.tab)) S.tab = (c.tabs.find(t => newTabs.has(t.id)) || c.tabs[0]).id;
+    const stage = c.stages[cur];
+    const body = entries.filter(e => e.tab === S.tab).reverse().map(e => `<div class="ch-entry${e.isNew ? ' new' : ''}">
+        <div class="ch-eh">${e.time ? `<b>${esc(e.time)}</b>` : ''}${e.title ? `<span>${esc(e.title)}</span>` : ''}${e.isNew ? '<em class="qtag">New</em>' : ''}</div>
+        ${e.text ? `<p>${hl(e.text)}</p>` : ''}
+        ${e.rows ? `<table class="ch-t"><tbody>${e.rows.map(r => `<tr class="${r[2] ? 'flag ' + esc(r[2]) : ''}"><th scope="row">${esc(r[0])}</th><td>${esc(r[1])}${r[2] ? ` <span class="fl">${esc(FLAG_LABEL[r[2]] || r[2])}</span>` : ''}</td></tr>`).join('')}</tbody></table>` : ''}
+      </div>`).join('') || '<p class="ch-none">No entries in this section yet.</p>';
+    return `<section class="case-wrap" aria-label="Case information">
+      ${stage.title || stage.text ? `<div class="case-upd">${stage.title ? `<h3>${esc(stage.title)}</h3>` : ''}${stage.text ? `<p>${hl(stage.text)}</p>` : ''}</div>` : ''}
+      <div class="chart"><div class="ch-tabs" role="tablist" aria-label="Patient chart">${c.tabs.map(t => `<button role="tab" id="cht-${esc(t.id)}" aria-selected="${t.id === S.tab}" aria-controls="ch-panel" data-tab="${esc(t.id)}" tabindex="${t.id === S.tab ? 0 : -1}">${esc(t.name || t.id)}${newTabs.has(t.id) ? '<i class="dot" aria-label="new entries"></i>' : ''}</button>`).join('')}</div>
+      <div class="ch-body" id="ch-panel" role="tabpanel" aria-labelledby="cht-${esc(S.tab)}" tabindex="0">${body}</div></div>
+    </section>`;
+  }
+  function wireChart() {
+    const tl = host().querySelector('.ch-tabs'); if (!tl) return;
+    const pick = id => { S.tab = id; const ch = host().querySelector('.case-wrap'); ch.outerHTML = chartHtml(); wireChart(); host().querySelector(`[data-tab="${CSS.escape(id)}"]`).focus(); };
+    tl.addEventListener('click', e => { const b = e.target.closest('[data-tab]'); if (b) pick(b.dataset.tab); });
+    tl.addEventListener('keydown', e => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.key)) return;
+      e.preventDefault(); const tabs = S.case.tabs.map(t => t.id), i = tabs.indexOf(S.tab);
+      pick(tabs[e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1 : (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length]);
+    });
+  }
+  function caseStepper() {
+    const cur = S.stageOf[S.ids[S.i]], n = S.case.stages.length;
+    return `<ol class="stepper" aria-label="Case progress">${S.case.stages.map((s, i) => `<li class="${i < cur ? 'done' : i === cur ? 'cur' : ''}" ${i === cur ? 'aria-current="step"' : ''}><span>${i + 1}</span><small>${esc(s.step ? NCJMM_LABEL[s.step] || s.step : 'Stage ' + (i + 1))}</small></li>`).join('')}</ol><p class="sr">Stage ${cur + 1} of ${n}</p>`;
   }
 
   function proPanel(where) {
@@ -104,6 +172,13 @@
   /* ── question screen ── */
   function header(noProg) {
     const st = stats(S.set, S.ids);
+    if (S.case) {
+      const instr = S.mode === 'review' ? 'Reviewing the questions you missed. Explanations are shown.' : S.mode === 'retry' ? 'Retrying the questions you missed. Your earlier answers were cleared.'
+        : 'Read the chart, then answer. Each answer unlocks the next part of the case, and new chart entries are marked New.';
+      const c = S.case, sub = [c.setting, DIFF_LABEL[c.difficulty]].filter(Boolean).join(' · ');
+      return `<header class="pp-top"><a class="pp-crumb" href="#practice">${ico('back')}Practice</a><h1>${esc(c.title)}</h1>${sub ? `<p class="case-sub">${esc(sub)}</p>` : ''}<p>${instr}</p>
+        ${noProg ? '' : `${caseStepper()}<div class="pp-prog"><div class="pp-prog-t"><b>Question ${S.i + 1} of ${S.ids.length}</b><span>${st.done} answered · ${st.pct}% correct</span></div><div class="bar" role="progressbar" aria-label="Questions answered" aria-valuemin="0" aria-valuemax="${st.total}" aria-valuenow="${st.done}"><i style="width:${st.total ? st.done / st.total * 100 : 0}%"></i></div></div>`}</header>`;
+    }
     const instr = S.mode === 'review' ? 'Reviewing the questions you missed. Explanations are shown.'
       : S.mode === 'retry' ? 'Retrying the questions you missed. Your earlier answers were cleared.'
       : S.data.mode === 'dosage' ? 'Use dimensional analysis. Show your work in the workspace if it helps, then enter your answer with the correct rounding.'
@@ -119,7 +194,7 @@
     const q = cur(), it = getItem(S.set, q.id), res = it.result, locked = !!res;
     const catName = (S.data.categories.find(c => c.id === q.category) || {}).name || '';
     const num = q.number || (S.all.indexOf(q.id) + 1);
-    const meta = [`Question ${num}`, esc(catName), FORMAT_LABEL[q.format]].filter(Boolean).join(' · ');
+    const meta = (S.case ? [`Question ${S.all.indexOf(q.id) + 1}`, q.ncjmm && NCJMM_LABEL[q.ncjmm], FORMAT_LABEL[q.format]] : [`Question ${num}`, esc(catName), FORMAT_LABEL[q.format]]).filter(Boolean).join(' · ');
     const tags = (q.difficulty ? `<span class="qtag">${DIFF_LABEL[q.difficulty]}</span>` : '') + (q.verified === true ? '' : '<span class="qtag warn" title="This question has not been reviewed yet">Not yet verified</span>');
     const box = (label, body, cls) => body ? `<section class="pq-box ${cls || ''}"><h4>${label}</h4><p>${hl(body)}</p></section>` : '';
     let rnd = '';
@@ -129,8 +204,10 @@
         : `<p class="pq-round">Round ${esc(r.label || 'to ' + r.to)}.${r.note ? ' ' + txt(r.note) : ''} Answer in <b>${esc(q.unit)}</b>.</p>`;
     }
     const last = S.i === S.ids.length - 1;
+    // In a case, the next question stays locked until this one is answered (or its explanation viewed).
+    const gate = S.case && S.mode !== 'review' && !locked;
     const hintsUsed = it.hints || 0, hints = q.hints || [];
-    host().innerHTML = `${header()}
+    host().innerHTML = `${header()}${S.case ? chartHtml() : ''}
       <article class="pq" aria-labelledby="pq-stem">
         <div class="pq-meta"><span>${meta}</span>${tags}</div>
         ${box('Patient', q.patient, 'pt')}${box('Case', q.case)}${box('Medication order', q.order, 'ord')}${box('Available', q.available)}
@@ -153,9 +230,10 @@
       <nav class="pp-nav" aria-label="Question navigation">
         <button class="btn btn-s" id="pq-prev" aria-label="Previous question" ${S.i === 0 ? 'disabled' : ''}>${ico('back')}Previous</button>
         ${locked ? (last ? `<button class="btn btn-p" id="pq-finish">See results</button>` : '<span></span>') : `<button class="btn btn-p" id="pq-submit">Submit answer</button>`}
-        <button class="btn btn-s" id="pq-next" aria-label="Next question" ${last ? 'disabled' : ''}>Next${ico('arrow')}</button>
+        <button class="btn btn-s" id="pq-next" aria-label="${gate ? 'Answer this question to continue the case' : 'Next question'}" ${last || gate ? 'disabled' : ''}>Next${ico('arrow')}</button>
       </nav>`;
     wire(q, it, locked);
+    if (S.case) wireChart();
   }
 
   /* ── answer inputs per format ── */
@@ -179,6 +257,18 @@
       return `<p class="pq-sub">Match each item on the left with one on the right.</p><div class="mt">${q.left.map(l =>
         `<label class="mt-row"><span>${hl(l.text)}</span><select data-l="${esc(l.id)}" ${dis}><option value="">Choose…</option>${q.right.map(x => `<option value="${esc(x.id)}" ${p[l.id] === x.id ? 'selected' : ''}>${esc(x.text)}</option>`).join('')}</select></label>`).join('')}</div>`;
     }
+    if (q.format === 'matrix') {
+      const cells = r.cells || {};
+      return `<p class="pq-sub">Choose one option in each row.</p><div class="cs-mxw"><table class="cs-mx"><thead><tr><th scope="col"><span class="sr">Item</span></th>${q.columns.map(c => `<th scope="col">${esc(c.text)}</th>`).join('')}</tr></thead><tbody>${q.rows.map(row =>
+        `<tr><th scope="row" id="mx-${esc(row.id)}">${hl(row.text)}</th>${q.columns.map(c => `<td><label><input type="radio" name="mx-${esc(row.id)}" data-row="${esc(row.id)}" value="${esc(c.id)}" ${cells[row.id] === c.id ? 'checked' : ''} ${dis}><span class="cs-cl" aria-hidden="true">${esc(c.text)}</span><span class="sr">${esc(row.text)}: ${esc(c.text)}</span></label></td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    }
+    if (q.format === 'cloze') {
+      const b = r.blanks || {};
+      return `<p class="pq-sub">Choose the option that best completes each blank.</p><p class="cz">${esc(q.template).replace(/\{\{([\w-]+)\}\}/g, (m, id) => {
+        const bl = q.blanks.find(x => x.id === id); if (!bl) return m;
+        return `<select data-b="${esc(id)}" aria-label="${esc(bl.label || 'Blank ' + id)}" ${dis}><option value="">Select…</option>${bl.options.map(o => `<option value="${esc(o.id)}" ${b[id] === o.id ? 'selected' : ''}>${esc(o.text)}</option>`).join('')}</select>`;
+      }).replace(/\n/g, '<br>')}</p>`;
+    }
     if (q.format === 'fill') return `<label class="ans"><span class="sr">Your answer</span><input type="text" id="ans-text" autocomplete="off" value="${esc(r.text || '')}" placeholder="Type your answer" ${dis}></label>`;
     if (q.format === 'calc') {
       const unit = q.unitChoices
@@ -195,6 +285,8 @@
     if (q.format === 'order') return { order: [...el.querySelectorAll('#ord li')].map(li => li.dataset.id) };
     if (q.format === 'match') { const pairs = {}; el.querySelectorAll('.mt select').forEach(s => { if (s.value) pairs[s.dataset.l] = s.value; }); return { pairs }; }
     if (q.format === 'fill') return { text: (el.querySelector('#ans-text') || {}).value || '' };
+    if (q.format === 'matrix') { const cells = {}; el.querySelectorAll('.cs-mx input:checked').forEach(i => cells[i.dataset.row] = i.value); return { cells }; }
+    if (q.format === 'cloze') { const blanks = {}; el.querySelectorAll('.cz select').forEach(s => { if (s.value) blanks[s.dataset.b] = s.value; }); return { blanks }; }
     if (q.format === 'calc') { const u = el.querySelector('#ans-unit'); return { value: (el.querySelector('#ans-num') || {}).value || '', unit: u ? u.value : q.unit }; }
     return {};
   }
@@ -203,6 +295,8 @@
     if (q.format === 'sata') return !r.choices.length;
     if (q.format === 'match') return Object.keys(r.pairs).length < q.left.length;
     if (q.format === 'fill') return !r.text.trim();
+    if (q.format === 'matrix') return Object.keys(r.cells).length < q.rows.length;
+    if (q.format === 'cloze') return Object.keys(r.blanks).length < q.blanks.length;
     if (q.format === 'calc') return !String(r.value).trim() || (q.unitChoices && !r.unit);
     return false;
   }
@@ -266,15 +360,17 @@
   /* ── feedback ── */
   function feedbackHtml(q, f, it) {
     const status = f.revealed ? ['viewed', 'Explanation (not scored)'] : f.correct ? ['ok', 'Correct'] : ['bad', 'Not quite'];
-    const choiceWhy = (CHOICE.includes(q.format) || q.format === 'sata') && f.why && Object.keys(f.why).length
-      ? `<h5>Why the other answers are ${q.format === 'priority' ? 'less urgent' : 'incorrect'}</h5><ul class="why">${Object.entries(f.why).map(([k, v]) => `<li><b>${esc(k)}:</b> ${txt(v)}</li>`).join('')}</ul>` : '';
+    const whyLabel = k => q.format === 'matrix' ? ((q.rows.find(r => r.id === k) || {}).text || k) : k;
+    const choiceWhy = (CHOICE.includes(q.format) || ['sata', 'matrix', 'cloze'].includes(q.format)) && f.why && Object.keys(f.why).length
+      ? `<h5>${['matrix', 'cloze'].includes(q.format) ? 'Item by item' : `Why the other answers are ${q.format === 'priority' ? 'less urgent' : 'incorrect'}`}</h5><ul class="why">${Object.entries(f.why).map(([k, v]) => `<li><b>${esc(whyLabel(k))}:</b> ${txt(v)}</li>`).join('')}</ul>` : '';
+    const part = f.partTotal && !f.revealed && !f.correct ? `<p class="pfb-note">You got ${f.partRight} of ${f.partTotal} ${q.format === 'matrix' ? 'rows' : 'blanks'} right.</p>` : '';
     const sata = q.format === 'sata' && !f.revealed && !f.correct ? `<p class="pfb-note">You chose ${f.selectedRight} of the ${f.totalRight} correct answers${f.selectedWrong ? ` and ${f.selectedWrong} incorrect one${f.selectedWrong > 1 ? 's' : ''}` : ''}.</p>` : '';
     const steps = f.steps && f.steps.length ? `<h5>${S.data.mode === 'dosage' ? 'Step-by-step (dimensional analysis)' : 'Step by step'}</h5><ol class="steps">${f.steps.map(s => `<li>${s.work ? `<div class="work">${txt(s.work)}</div>` : ''}${s.explain ? `<p>${txt(s.explain)}</p>` : ''}</li>`).join('')}</ol>` : '';
     const mine = it.work && (it.work.steps || []).some(Boolean) ? `<details class="mine"><summary>Your work</summary><ol>${it.work.steps.filter(Boolean).map(s => `<li>${esc(s)}</li>`).join('')}</ol></details>` : '';
     const tool = f.lesson && typeof BY !== 'undefined' && BY[f.lesson] ? `<a class="lnk" href="#tool-${esc(f.lesson)}" data-open="${esc(f.lesson)}">${ico('book')}Review: ${esc(BY[f.lesson].t)}</a>` : '';
     return `<section class="pfb ${status[0]}">
       <h3>${status[0] === 'ok' ? ico('check') : status[0] === 'bad' ? ico('x') : ico('help')}${status[1]}</h3>
-      ${(f.notes || []).map(n => `<p class="pfb-note">${esc(n)}</p>`).join('')}${sata}
+      ${(f.notes || []).map(n => `<p class="pfb-note">${esc(n)}</p>`).join('')}${sata}${part}
       <p class="pfb-ans"><b>Correct answer:</b> <span>${txt(f.answerText)}</span></p>
       <p>${txt(f.explanation)}</p>
       ${steps}
@@ -339,7 +435,7 @@
     const sub = el.querySelector('#pq-submit');
     if (sub) sub.onclick = async () => {
       const r = readResponse(q);
-      if (isBlank(q, r)) return showError(q.format === 'calc' && q.unitChoices && String(r.value).trim() ? 'Choose a unit for your answer.' : q.format === 'match' ? 'Match every item before submitting.' : 'Enter or choose an answer first.');
+      if (isBlank(q, r)) return showError(q.format === 'calc' && q.unitChoices && String(r.value).trim() ? 'Choose a unit for your answer.' : q.format === 'match' ? 'Match every item before submitting.' : q.format === 'matrix' ? 'Choose an option in every row before submitting.' : q.format === 'cloze' ? 'Fill every blank before submitting.' : 'Enter or choose an answer first.');
       sub.disabled = true; sub.textContent = 'Checking…';
       try {
         const f = await api('/check', { id: q.id, response: r });
@@ -349,7 +445,7 @@
         const fb = host().querySelector('#pq-fb'); if (fb) fb.scrollIntoView({ behavior: 'smooth', block: 'start' });
       } catch (e) { sub.disabled = false; sub.textContent = 'Submit answer'; showError(e.message); }
     };
-    const go = d => { if (!locked) persist(); S.i = Math.max(0, Math.min(S.ids.length - 1, S.i + d)); if (S.mode === 'all') setPos(S.set, S.key, S.i); renderQuestion(); window.scrollTo(0, 0); };
+    const go = d => { if (!locked) persist(); const st0 = S.case && S.stageOf[S.ids[S.i]]; S.i = Math.max(0, Math.min(S.ids.length - 1, S.i + d)); if (S.case && S.stageOf[S.ids[S.i]] !== st0) S.tab = null; if (S.mode === 'all') setPos(S.set, S.key, S.i); renderQuestion(); window.scrollTo(0, 0); };
     el.querySelector('#pq-prev').onclick = () => go(-1);
     el.querySelector('#pq-next').onclick = () => go(1);
     const fin = el.querySelector('#pq-finish'); if (fin) fin.onclick = renderResults;
@@ -376,22 +472,24 @@
     const byCat = {};
     ids.forEach(id => {
       const q = S.data.questions.find(x => x.id === id), r = (items[id] || {}).result;
-      const c = byCat[q.category] = byCat[q.category] || { right: 0, done: 0, total: 0 };
+      const g = S.case ? (q.ncjmm || 'other') : q.category;
+      const c = byCat[g] = byCat[g] || { right: 0, done: 0, total: 0 };
       c.total++; if (r) { c.done++; if (r.correct && !r.revealed) c.right++; }
     });
     const weak = Object.entries(byCat).filter(([, c]) => c.done && c.right < c.done);
-    const name = id => (S.data.categories.find(c => c.id === id) || {}).name || id;
+    const name = id => S.case ? (NCJMM_LABEL[id] || 'Other') : (S.data.categories.find(c => c.id === id) || {}).name || id;
     const missed = missedIds(S.set, ids);
     host().innerHTML = `${header(true)}
       <section class="res">
         <h2>Your results</h2>
         <div class="kpis"><div class="kpi"><b>${st.right}</b><span>Correct</span></div><div class="kpi"><b>${st.done - st.right}</b><span>Incorrect or viewed</span></div><div class="kpi"><b>${st.pct}%</b><span>Score${st.done < st.total ? ` (${st.total - st.done} unanswered)` : ''}</span></div></div>
-        <h3>By category</h3>
+        <h3>${S.case ? 'By clinical judgment step' : 'By category'}</h3>
         <ul class="cat-res">${Object.entries(byCat).map(([id, c]) => `<li class="${c.done && c.right < c.done ? 'weak' : ''}"><span>${esc(name(id))}</span><b>${c.done ? `${c.right}/${c.done}` : 'Not answered'}</b></li>`).join('')}</ul>
+        ${S.case && S.case.debrief ? `<h3>Case debrief</h3><p class="case-debrief">${txt(S.case.debrief)}</p>` : ''}
         ${weak.length ? `<p class="pfb-note"><b>Needs more practice:</b> ${weak.map(([id]) => esc(name(id))).join(', ')}.</p>` : st.done ? '<p class="pfb-note">No weak categories in this set. Nice work.</p>' : ''}
         <div class="res-act">
           ${missed.length ? `<button class="btn btn-s" id="r-review">Review incorrect (${missed.length})</button><button class="btn btn-p" id="r-retry">Retry missed</button>` : ''}
-          <button class="btn btn-s" id="r-restart">Start over</button>
+          <button class="btn btn-s" id="r-restart">Start over</button>${S.case ? `<a class="btn btn-s" href="#practice">More cases</a>` : ''}
           <button class="btn btn-s pro-lock" disabled>Generate practice for weak areas ${PRO}</button>
         </div>
       </section>`;
@@ -404,15 +502,15 @@
     el.querySelector('#r-restart').onclick = () => {
       if (el.querySelector('#r-restart').dataset.c !== '1') { el.querySelector('#r-restart').dataset.c = '1'; el.querySelector('#r-restart').textContent = 'Clear all answers in this set?'; return; }
       const s = load(); ids.forEach(id => { if (s[S.set]) delete s[S.set].items[id]; }); if (s[S.set] && s[S.set].pos) s[S.set].pos[S.key] = 0; save(s);
-      S.ids = S.all; S.i = 0; S.mode = 'all'; renderQuestion();
+      S.ids = S.all; S.i = 0; S.mode = 'all'; S.tab = null; renderQuestion();
     };
   }
 
   /* ── Pro page ── */
   function renderPro() {
     const el = document.getElementById('pro-root'); if (!el) return;
-    const free = ['All core nursing lessons', 'Anatomy and body systems', 'Pharmacology reference cards', 'Disease and disorder library', 'EKG lessons and practice strips', 'NCLEX-style question bank', 'Dosage calculation practice', 'Study planner', 'Progress tracking', 'Games and interactive tools'];
-    const pro = ['AI nursing tutor available anytime', 'Ask questions about any lesson', 'Upload lecture notes, PowerPoints and study guides', 'Personalized quizzes', 'AI explanations for incorrect answers', 'Adaptive quizzes based on weak areas', 'Personalized NCLEX study plans', 'Clinical scenario practice', 'Custom flashcard generation', 'Detailed performance analytics'];
+    const free = ['All core nursing lessons', 'Anatomy and body systems', 'Pharmacology reference cards', 'Disease and disorder library', 'EKG lessons and practice strips', 'NCLEX-style question bank', 'Clinical judgment case studies', 'Dosage calculation practice', 'Study planner', 'Progress tracking', 'Games and interactive tools'];
+    const pro = ['AI nursing tutor available anytime', 'Ask questions about any lesson', 'Upload lecture notes, PowerPoints and study guides', 'Personalized quizzes', 'AI explanations for incorrect answers', 'Adaptive quizzes based on weak areas', 'Personalized NCLEX study plans', 'AI-generated clinical scenarios from your notes', 'Custom flashcard generation', 'Detailed performance analytics'];
     el.innerHTML = `<div class="vh"><h1>Free and Pro</h1><p>The full learning library is free, forever. Pro adds personalized AI coaching.</p></div>
       <div class="tiers">
         <section class="tcard"><span class="tier free">Free forever</span><h2>NursePrepHub Free</h2><p class="price">$0</p><p>Everything you need to learn and practice on your own.</p><ul>${free.map(t => `<li>${ico('check')}${t}</li>`).join('')}</ul><a class="btn btn-s" href="#practice">Start practicing</a></section>

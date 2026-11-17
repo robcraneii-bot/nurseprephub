@@ -4,9 +4,12 @@ const fs = require('fs');
 const path = require('path');
 
 const DIR = process.env.QUESTIONS_DIR || path.join(__dirname, '..', 'questions');
-const FORMATS = ['mc', 'sata', 'priority', 'delegation', 'case', 'order', 'calc', 'ekg', 'match', 'fill'];
+const FORMATS = ['mc', 'sata', 'priority', 'delegation', 'case', 'order', 'calc', 'ekg', 'match', 'fill', 'matrix', 'cloze'];
 const CHOICE_FORMATS = ['mc', 'priority', 'delegation', 'ekg', 'case'];
 const DIFFICULTY = ['beginner', 'intermediate', 'advanced', 'nclex'];
+// The six clinical judgment steps, used to tag case-study questions.
+const NCJMM = ['recognize-cues', 'analyze-cues', 'prioritize-hypotheses', 'generate-solutions', 'take-action', 'evaluate-outcomes'];
+const CLOZE_SLOT = /\{\{([\w-]+)\}\}/g;
 // Fields that reveal the answer; removed before a question is sent to the browser.
 const KEY_FIELDS = ['answer', 'exact', 'tolerance', 'explanation', 'why', 'steps', 'mistakes', 'roundingExplanation', 'acceptUnits'];
 // Reviewer bookkeeping (see scripts/review-server.js); never sent to students.
@@ -50,6 +53,19 @@ function validateQuestion(q, set, ids) {
     need(L.length >= 2 && R.length >= 2, 'match questions need "left" and "right" lists');
     need(q.answer && typeof q.answer === 'object' && L.every(l => R.includes(q.answer[l])), 'answer must map every left id to a right id');
   }
+  if (q.format === 'matrix') {
+    const R = (q.rows || []).map(o => o && o.id), C = (q.columns || []).map(o => o && o.id);
+    need(R.length >= 2 && R.every(Boolean) && new Set(R).size === R.length, 'matrix questions need 2+ "rows" with unique ids');
+    need(C.length >= 2 && C.every(Boolean) && new Set(C).size === C.length, 'matrix questions need 2+ "columns" with unique ids');
+    need(q.answer && typeof q.answer === 'object' && R.every(r => C.includes(q.answer[r])), 'answer must map every row id to one column id');
+  }
+  if (q.format === 'cloze') {
+    const B = (q.blanks || []).map(b => b && b.id), slots = [...String(q.template || '').matchAll(CLOZE_SLOT)].map(m => m[1]);
+    need(B.length >= 1 && B.every(Boolean) && new Set(B).size === B.length, 'cloze questions need "blanks" with unique ids');
+    need(slots.length === B.length && B.every(b => slots.includes(b)), 'cloze "template" must contain {{id}} once for every blank');
+    (q.blanks || []).forEach(b => need(b && Array.isArray(b.options) && b.options.length >= 2 && q.answer && b.options.some(o => o.id === q.answer[b.id]), `blank "${b && b.id}" needs 2+ options and an answer among them`));
+  }
+  if (q.ncjmm !== undefined) need(NCJMM.includes(q.ncjmm), `ncjmm must be one of ${NCJMM.join(', ')}`);
   if (q.format === 'fill') need(Array.isArray(q.answer) && q.answer.length && q.answer.every(a => typeof a === 'string' && a.trim()), 'answer must be a list of accepted text answers');
   if (q.format === 'calc') {
     need(typeof q.answer === 'number' && Number.isFinite(q.answer), 'answer must be a number');
@@ -60,6 +76,36 @@ function validateQuestion(q, set, ids) {
     if (q.unitChoices) need(Array.isArray(q.unitChoices) && q.unitChoices.some(u => normUnit(u) === normUnit(q.unit)), 'unitChoices must include the correct unit');
   }
   return e;
+}
+
+/* ── case studies (mode "case"): each case unfolds over stages; each stage adds chart entries and asks questions ── */
+function validateCases(set, good, f) {
+  const ok = [], have = new Set(good.map(q => q.id)), all = new Set(set.questions.map(q => q && q.id)), used = new Set();
+  if (!Array.isArray(set.cases)) { ERRORS.push(`${f}: case sets need a "cases" list`); return ok; }
+  set.cases.forEach((c, i) => {
+    const e = [], need = (cond, msg) => { if (!cond) e.push(msg); };
+    c = c || {};
+    need(typeof c.id === 'string' && c.id, 'missing id');
+    need(typeof c.title === 'string' && c.title.trim(), 'missing title');
+    need(set.categories.some(x => x.id === c.category), `category "${c.category}" is not listed in the set's categories`);
+    const tabs = (c.tabs || []).map(t => t && t.id);
+    need(tabs.length && tabs.every(Boolean), 'needs "tabs" (chart sections such as notes, vitals, labs, orders)');
+    need(Array.isArray(c.stages) && c.stages.length, 'needs "stages"');
+    (c.stages || []).forEach((s, si) => {
+      (s.chart || []).forEach(en => need(en && tabs.includes(en.tab) && (typeof en.text === 'string' || Array.isArray(en.rows)), `stage ${si + 1}: chart entries need a known "tab" and "text" or "rows"`));
+      need(Array.isArray(s.questions) && s.questions.length, `stage ${si + 1}: needs "questions"`);
+      (s.questions || []).forEach(id => {
+        if (!all.has(id)) e.push(`stage ${si + 1}: question "${id}" is not in this file`);
+        else if (!have.has(id)) e.push(`stage ${si + 1}: question "${id}" has errors (see above)`);
+        if (used.has(id)) e.push(`question "${id}" is used twice`);
+        used.add(id);
+      });
+    });
+    if (e.length) ERRORS.push(`${f} case ${i + 1}${c.id ? ` (${c.id})` : ''}: ${e.join('; ')}`);
+    else ok.push(c);
+  });
+  good.filter(q => !used.has(q.id)).forEach(q => ERRORS.push(`${f}: question "${q.id}" is not part of any case`));
+  return ok;
 }
 
 /* ── loading ── */
@@ -78,6 +124,7 @@ function load() {
       if (errs.length) ERRORS.push(`${f} question ${i + 1}${q && q.id ? ` (${q.id})` : ''}: ${errs.join('; ')}`);
       else { ids.add(q.id); good.push(q); QUESTIONS.set(q.id, { ...q, set: set.set }); }
     });
+    if (set.mode === 'case') set.cases = validateCases(set, good, f);
     SETS.set(set.set, { ...set, questions: good });
   }
   ERRORS.forEach(e => console.warn('[questions] ' + e));
@@ -97,7 +144,8 @@ function listSets() {
   return [...SETS.values()].map(s => ({
     set: s.set, title: s.title || s.set, description: s.description || '', tier: s.tier || 'free', mode: s.mode || 'bank',
     total: s.questions.length, verified: s.questions.filter(q => q.verified === true).length,
-    categories: s.categories.map(c => ({ ...c, count: s.questions.filter(q => q.category === c.id).length }))
+    categories: s.categories.map(c => ({ ...c, count: s.questions.filter(q => q.category === c.id).length })),
+    ...(s.mode === 'case' ? { cases: s.cases.map(c => ({ id: c.id, title: c.title, category: c.category, difficulty: c.difficulty || '', summary: c.summary || '', setting: c.setting || '', stages: c.stages.length, questions: c.stages.flatMap(st => st.questions) })) } : {})
   }));
 }
 function publicSet(id) {
@@ -114,6 +162,8 @@ function answerText(q) {
     case 'order': return q.answer.map((id, i) => `${i + 1}. ${(q.options.find(o => o.id === id) || {}).text}`).join('\n');
     case 'match': return q.left.map(l => `${l.text} → ${(q.right.find(r => r.id === q.answer[l.id]) || {}).text}`).join('\n');
     case 'fill': return q.answer[0];
+    case 'matrix': return q.rows.map(r => `${r.text}: ${(q.columns.find(c => c.id === q.answer[r.id]) || {}).text}`).join('\n');
+    case 'cloze': return String(q.template).replace(CLOZE_SLOT, (m, id) => { const b = q.blanks.find(x => x.id === id); return `[${(b.options.find(o => o.id === q.answer[id]) || {}).text}]`; });
     case 'calc': return `${q.answer} ${q.unit}`;
     default: return opt(q.answer);
   }
@@ -140,6 +190,13 @@ function check(id, response) {
     case 'order': out.correct = Array.isArray(r.order) && r.order.length === q.answer.length && r.order.every((a, i) => a === q.answer[i]); break;
     case 'match': out.correct = r.pairs && typeof r.pairs === 'object' && q.left.every(l => r.pairs[l.id] === q.answer[l.id]); break;
     case 'fill': out.correct = q.answer.some(a => norm(a) === norm(r.text)); break;
+    case 'matrix': case 'cloze': {
+      // NGN-style partial credit: each row or blank scores on its own; the question is correct only if all are.
+      const got = (q.format === 'matrix' ? r.cells : r.blanks) || {}, keys = Object.keys(q.answer);
+      out.partRight = keys.filter(k => got[k] === q.answer[k]).length; out.partTotal = keys.length;
+      out.correct = out.partRight === out.partTotal;
+      break;
+    }
     case 'calc': {
       const raw = String(r.value ?? '').trim();
       const v = parseNumber(raw);
@@ -170,4 +227,4 @@ function check(id, response) {
 function reveal(id) { const q = QUESTIONS.get(id); return q ? { revealed: true, ...feedback(q) } : null; }
 
 load();
-module.exports = { load, listSets, publicSet, check, reveal, has: id => QUESTIONS.has(id), count: () => QUESTIONS.size, errors: () => ERRORS, roundTo, FORMATS, validateQuestion };
+module.exports = { NCJMM, load, listSets, publicSet, check, reveal, has: id => QUESTIONS.has(id), count: () => QUESTIONS.size, errors: () => ERRORS, roundTo, FORMATS, validateQuestion };

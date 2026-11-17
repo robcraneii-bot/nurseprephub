@@ -122,6 +122,8 @@ function answerBlock(q) {
     case 'sata': return `<ul class="opts">${q.options.map(o => opt(o, q.answer.includes(o.id))).join('')}</ul>`;
     case 'order': return `<ul class="opts">${q.options.map(o => opt(o, false)).join('')}</ul><div class="ans"><b>Correct order:</b> ${q.answer.map(esc).join(' → ')}</div>`;
     case 'match': return `<div class="ans"><b>Pairs:</b>\n${q.left.map(l => `${esc(l.text)} → ${esc((q.right.find(r => r.id === q.answer[l.id]) || {}).text)}`).join('\n')}</div>`;
+    case 'matrix': return `<div class="ans"><b>Grid (${q.columns.map(c => esc(c.text)).join(' / ')}):</b>\n${q.rows.map(r => `${esc(r.text)} → ${esc((q.columns.find(c => c.id === q.answer[r.id]) || {}).text)}${q.why && q.why[r.id] ? ` (${esc(q.why[r.id])})` : ''}`).join('\n')}</div>`;
+    case 'cloze': return `<div class="ans"><b>Template:</b> ${esc(q.template)}\n${q.blanks.map(bl => `{{${esc(bl.id)}}}: ${bl.options.map(o => o.id === q.answer[bl.id] ? `<b>${esc(o.text)}</b>` : esc(o.text)).join(' · ')}`).join('\n')}</div>`;
     case 'fill': return `<div class="ans"><b>Accepted:</b> ${q.answer.map(esc).join(' · ')}</div>`;
     case 'calc': return `<div class="ans"><b>Answer:</b> ${esc(q.answer)} ${esc(q.unit)}${typeof q.exact === 'number' ? ` (exact ${esc(q.exact)})` : ''} · rounded ${esc(q.rounding.label || 'to ' + q.rounding.to)}${q.rounding.note ? ` · ${esc(q.rounding.note)}` : ''}</div>`;
     default: return `<ul class="opts">${(q.options || []).map(o => opt(o, o.id === q.answer)).join('')}</ul>`;
@@ -133,7 +135,7 @@ function card(d) {
   const ctx = [['Case', q.case], ['Patient', q.patient], ['Order', q.order], ['Available', q.available]].filter(x => x[1]).map(([k, v]) => `<div class="ctx"><b>${k}:</b> ${esc(v)}</div>`).join('');
   const list = (title, arr, tag = 'ul', f = x => esc(x)) => arr && arr.length ? `<div class="sec"><b>${title}</b><${tag}>${arr.map(x => `<li>${f(x)}</li>`).join('')}</${tag}></div>` : '';
   return `<article class="card" data-id="${id}">
-    <div class="meta"><code>${id}</code><span>${esc(d.set)} · ${esc(d.categoryName)} · ${esc(q.format)}${q.difficulty ? ' · ' + esc(q.difficulty) : ''}</span>
+    <div class="meta"><code>${id}</code><span>${esc(d.set)} · ${esc(d.categoryName)} · ${esc(q.format)}${q.difficulty ? ' · ' + esc(q.difficulty) : ''}${q.ncjmm ? ' · ' + esc(q.ncjmm) : ''}${d.caseTitle ? ' · case: ' + esc(d.caseTitle) : ''}</span>
       ${q.verified === true ? `<span class="tag ok">Reviewed${q.reviewedBy ? ' by ' + esc(q.reviewedBy) : ''}${q.reviewedAt ? ' · ' + esc(q.reviewedAt) : ''}</span>` : '<span class="tag warn">Needs review</span>'}
       ${d.reports.length ? `<span class="tag bad">${d.reports.length} report${d.reports.length > 1 ? 's' : ''}</span>` : ''}</div>
     ${ctx}<p class="stem">${esc(q.stem)}</p>

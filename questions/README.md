@@ -81,6 +81,38 @@ Changes are written to the files in this folder. Commit them and redeploy to pub
 | `match` | `"left": [{"id":"1","text":"..."}]`, `"right": [{"id":"a","text":"..."}]`, `"answer": {"1":"c","2":"a"}` |
 | `fill` | `"answer": ["accepted answer", "another accepted spelling"]` (not case sensitive) |
 | `calc` | see below |
+| `matrix` | `"rows": [{"id":"r1","text":"..."}]`, `"columns": [{"id":"ind","text":"Indicated"}]`, `"answer": {"r1":"ind"}` (one column per row). `why` can be keyed by row id. Partial credit is shown per row. |
+| `cloze` | `"template": "The client has {{1}} because {{2}}."`, `"blanks": [{"id":"1","label":"Condition","options":[{"id":"A","text":"..."}]}]`, `"answer": {"1":"A"}` |
+
+Any question can also carry `"ncjmm"`: one of `recognize-cues`, `analyze-cues`, `prioritize-hypotheses`,
+`generate-solutions`, `take-action`, `evaluate-outcomes` (the six clinical judgment steps). Case study results are grouped by it.
+
+## Case study sets (`"mode": "case"`)
+
+`cases.json` holds unfolding case studies. The questions live in `questions` like any other set, and a `cases` list
+says how they unfold. Every question must belong to exactly one case.
+
+```json
+"cases": [{
+  "id": "case-hf", "category": "cardiovascular", "title": "Shortness of breath after missed diuretics",
+  "setting": "Medical-surgical unit", "difficulty": "nclex", "summary": "One line for the case list",
+  "debrief": "Shown on the results screen.",
+  "tabs": [{"id":"notes","name":"Nurses' notes"}, {"id":"vitals","name":"Vital signs"}, {"id":"labs","name":"Labs"}, {"id":"orders","name":"Orders"}],
+  "stages": [{
+    "step": "recognize-cues", "title": "Admission, 0800", "text": "What is happening now.",
+    "chart": [
+      {"tab":"notes", "time":"0800", "title":"Admission assessment", "text":"Free text."},
+      {"tab":"vitals", "time":"0800", "rows": [["Heart rate","108/min","high"], ["Temperature","36.8 C"]]}
+    ],
+    "questions": ["case-hf-q1"]
+  }]
+}]
+```
+
+Chart entries add up as the case goes on; entries from the current stage are marked New. A row's third value flags
+it: `high`, `low`, `crit` or `abn`. A student cannot move to the next question in a case until they answer (or view the
+explanation for) the current one. Chart text for later stages is sent to the browser with the set, so do not put
+answers in it.
 
 ### `calc` (medication calculations)
 
