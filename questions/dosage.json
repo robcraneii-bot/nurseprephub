@@ -2596,6 +2596,704 @@
       "lesson": "medmath",
       "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-oral-005",
+      "stem": "The order is furosemide 60 mg PO. Available: 40 mg per scored tablet. How many tablets will the nurse give?",
+      "order": "Furosemide 60 mg PO daily",
+      "available": "40 mg per scored tablet",
+      "unit": "tablets",
+      "answer": 1.5,
+      "exact": 1.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "60 mg / 40 mg x 1 tab = 1.5 tablets",
+          "explain": "Desired over have, times one tablet."
+        }
+      ],
+      "explanation": "60 mg divided by 40 mg per tablet is 1.5 tablets. The tablet is scored, so it may be split.",
+      "mistakes": [
+        "Splitting a tablet that is not scored."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-oral-006",
+      "stem": "The order is cephalexin oral suspension 375 mg PO. Available: 250 mg per 5 mL. How many mL will the nurse give?",
+      "order": "Cephalexin 375 mg PO every 6 hours",
+      "available": "250 mg per 5 mL",
+      "unit": "mL",
+      "answer": 7.5,
+      "exact": 7.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "375 mg / 250 mg x 5 mL = 7.5 mL",
+          "explain": "Desired over have, times the 5 mL the 250 mg comes in."
+        }
+      ],
+      "explanation": "375 / 250 x 5 mL = 7.5 mL. Measure with an oral syringe or calibrated cup, not a household spoon.",
+      "mistakes": [
+        "Forgetting to multiply by 5 mL and answering 1.5."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-oral-007",
+      "stem": "The order is potassium chloride oral solution 30 mEq PO. Available: 20 mEq per 15 mL. How many mL will the nurse give?",
+      "order": "Potassium chloride 30 mEq PO once",
+      "available": "20 mEq per 15 mL",
+      "unit": "mL",
+      "answer": 22.5,
+      "exact": 22.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "30 mEq / 20 mEq x 15 mL = 22.5 mL",
+          "explain": "Desired over have, times the quantity."
+        }
+      ],
+      "explanation": "30 / 20 x 15 mL = 22.5 mL. Dilute oral KCl liquid in juice or water as directed to reduce GI irritation.",
+      "mistakes": [
+        "Using 5 mL as the quantity out of habit."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-single-oral-008",
+      "category": "single-dose",
+      "format": "mc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "stem": "The order is nifedipine extended-release 45 mg PO daily. Available: nifedipine extended-release 30 mg tablets. What should the nurse do?",
+      "order": "Nifedipine ER 45 mg PO daily",
+      "available": "Nifedipine ER 30 mg tablets",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give 1.5 tablets by cutting one tablet in half."
+        },
+        {
+          "id": "B",
+          "text": "Crush 1.5 tablets and mix with applesauce."
+        },
+        {
+          "id": "C",
+          "text": "Contact the pharmacy or provider for a strength or form that does not require splitting."
+        },
+        {
+          "id": "D",
+          "text": "Give 1 tablet now and 0.5 tablet later in the day."
+        }
+      ],
+      "answer": "C",
+      "explanation": "D/H x Q gives 1.5 tablets, but extended-release tablets must not be split, crushed or chewed. Doing so can release the whole dose at once. The nurse clarifies with pharmacy or the provider.",
+      "why": {
+        "A": "Splitting an extended-release tablet destroys the release mechanism.",
+        "B": "Crushing an ER tablet can cause dose dumping.",
+        "D": "Nurses do not change the dosing schedule without an order, and this still requires splitting."
+      },
+      "steps": [
+        {
+          "work": "45 mg / 30 mg x 1 tab = 1.5 tablets",
+          "explain": "The math works, but the form cannot be split."
+        }
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-par-004",
+      "stem": "The order is ondansetron 4 mg IV push. Available: 2 mg per mL. How many mL will the nurse give?",
+      "order": "Ondansetron 4 mg IV push every 8 hours as needed for nausea",
+      "available": "2 mg per mL",
+      "unit": "mL",
+      "answer": 2,
+      "exact": 2,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "4 mg / 2 mg x 1 mL = 2 mL",
+          "explain": "Desired over have, times 1 mL."
+        }
+      ],
+      "explanation": "4 mg / 2 mg per mL = 2 mL. Give IV push slowly as directed by a drug reference.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-par-005",
+      "stem": "The order is ketorolac 15 mg IM. Available: 30 mg per mL. How many mL will the nurse give?",
+      "order": "Ketorolac 15 mg IM once",
+      "available": "30 mg per mL",
+      "unit": "mL",
+      "answer": 0.5,
+      "exact": 0.5,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "steps": [
+        {
+          "work": "15 mg / 30 mg x 1 mL = 0.5 mL",
+          "explain": "Desired over have, times 1 mL."
+        }
+      ],
+      "explanation": "15 / 30 x 1 mL = 0.5 mL. A volume under 1 mL is rounded to the hundredth and measured in a 1 mL syringe.",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-par-006",
+      "stem": "The order is naloxone 0.1 mg IV push. Available: 0.4 mg per mL. How many mL will the nurse give?",
+      "order": "Naloxone 0.1 mg IV push every 2 minutes as needed for respiratory depression",
+      "available": "0.4 mg per mL",
+      "unit": "mL",
+      "answer": 0.25,
+      "exact": 0.25,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "steps": [
+        {
+          "work": "0.1 mg / 0.4 mg x 1 mL = 0.25 mL",
+          "explain": "Desired over have, times 1 mL."
+        }
+      ],
+      "explanation": "0.1 / 0.4 x 1 mL = 0.25 mL. Small, repeated naloxone doses reverse respiratory depression while limiting abrupt pain and withdrawal.",
+      "mistakes": [
+        "Inverting the fraction (0.4 / 0.1 = 4 mL)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "single-dose",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-single-par-007",
+      "stem": "The order is dexamethasone 1.5 mg IV push. Available: 4 mg per mL. How many mL will the nurse give?",
+      "order": "Dexamethasone 1.5 mg IV push once",
+      "available": "4 mg per mL",
+      "unit": "mL",
+      "answer": 0.38,
+      "exact": 0.375,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "steps": [
+        {
+          "work": "1.5 mg / 4 mg x 1 mL = 0.375 mL",
+          "explain": "Desired over have, times 1 mL."
+        },
+        {
+          "work": "0.375 -> 0.38 mL",
+          "explain": "Less than 1 mL: round to the hundredth."
+        }
+      ],
+      "explanation": "1.5 / 4 = 0.375 mL, rounded to 0.38 mL. Use a 1 mL syringe, which is marked in hundredths.",
+      "mistakes": [
+        "Rounding to the tenth (0.4 mL) for a volume under 1 mL."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-recon-008",
+      "stem": "The order is vancomycin 750 mg IV. Vancomycin 1 g vial. Label: add 20 mL sterile water to yield 50 mg/mL. How many mL will the nurse withdraw?",
+      "order": "Vancomycin 750 mg IV every 12 hours",
+      "available": "Vancomycin 1 g vial; reconstitute with 20 mL sterile water to yield 50 mg/mL",
+      "unit": "mL",
+      "answer": 15,
+      "exact": 15,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "750 mg / 50 mg x 1 mL = 15 mL",
+          "explain": "Use the final concentration on the label, not the diluent volume."
+        }
+      ],
+      "explanation": "After reconstitution the vial holds 50 mg/mL. 750 / 50 = 15 mL, which is then further diluted for IV infusion per the drug reference.",
+      "mistakes": [
+        "Using 1,000 mg per 20 mL without checking the label concentration."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-recon-009",
+      "stem": "The order is ceftriaxone 250 mg IM. Ceftriaxone 500 mg vial. Label: add 1 mL diluent to yield 350 mg/mL. How many mL will the nurse give?",
+      "order": "Ceftriaxone 250 mg IM once",
+      "available": "Ceftriaxone 500 mg vial; add 1 mL diluent to yield 350 mg/mL",
+      "unit": "mL",
+      "answer": 0.71,
+      "exact": 0.714,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "steps": [
+        {
+          "work": "250 mg / 350 mg x 1 mL = 0.714 mL",
+          "explain": "Use the resulting concentration, 350 mg/mL."
+        },
+        {
+          "work": "0.714 -> 0.71 mL",
+          "explain": "Less than 1 mL: round to the hundredth."
+        }
+      ],
+      "explanation": "The powder adds volume, so 500 mg ends up in about 1.4 mL, not 1 mL. That is why the label gives 350 mg/mL. 250 / 350 = 0.71 mL.",
+      "mistakes": [
+        "Assuming 500 mg in 1 mL and giving 0.5 mL."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "formula": "Dose = (Desired / Have) x Quantity",
+      "id": "dose-recon-010",
+      "stem": "The order is ampicillin 350 mg IM. Ampicillin 1 g vial. Label: add 3.5 mL diluent to yield 250 mg/mL. How many mL will the nurse give?",
+      "order": "Ampicillin 350 mg IM every 6 hours",
+      "available": "Ampicillin 1 g vial; add 3.5 mL diluent to yield 250 mg/mL",
+      "unit": "mL",
+      "answer": 1.4,
+      "exact": 1.4,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "350 mg / 250 mg x 1 mL = 1.4 mL",
+          "explain": "Desired over the reconstituted concentration."
+        }
+      ],
+      "explanation": "350 / 250 x 1 mL = 1.4 mL. The 3.5 mL of diluent is not part of the dose math.",
+      "mistakes": [
+        "Calculating 350 / 1,000 x 3.5 mL, which ignores the powder volume."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-recon-011",
+      "category": "reconstitution",
+      "format": "sata",
+      "difficulty": "beginner",
+      "lesson": "medmath",
+      "stem": "The nurse reconstitutes a multiple-dose vial of a powdered antibiotic and will store the remainder. What must the nurse write on the vial label? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Date and time of reconstitution"
+        },
+        {
+          "id": "B",
+          "text": "Final concentration (for example, 250 mg/mL)"
+        },
+        {
+          "id": "C",
+          "text": "Nurse's initials"
+        },
+        {
+          "id": "D",
+          "text": "Expiration (beyond-use) date and time"
+        },
+        {
+          "id": "E",
+          "text": "The patient's weight"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "explanation": "A reconstituted multiple-dose vial needs the date and time mixed, the resulting concentration, the preparer's initials, and when it expires, so the next nurse can use it safely. Follow the storage directions on the label.",
+      "why": {
+        "E": "Weight is needed for some dose calculations, but it does not belong on a shared vial label."
+      },
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "weight-based",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = Weight (kg) x mg/kg; Volume = Dose / Concentration",
+      "id": "dose-wb-004",
+      "stem": "A child weighing 28 lb has an order for ondansetron 0.15 mg/kg IV once. Available: 2 mg per mL. How many mL will the nurse give?",
+      "patient": "Weight 28 lb",
+      "order": "Ondansetron 0.15 mg/kg IV once",
+      "available": "2 mg per mL",
+      "unit": "mL",
+      "answer": 0.95,
+      "exact": 0.9525,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "steps": [
+        {
+          "work": "28 lb / 2.2 = 12.73 -> 12.7 kg",
+          "explain": "Convert to kg and round to the tenth."
+        },
+        {
+          "work": "12.7 kg x 0.15 mg/kg = 1.905 mg",
+          "explain": "Weight-based dose."
+        },
+        {
+          "work": "1.905 mg / 2 mg x 1 mL = 0.9525 -> 0.95 mL",
+          "explain": "Volume under 1 mL: round to the hundredth."
+        }
+      ],
+      "explanation": "12.7 kg x 0.15 mg/kg = 1.905 mg. At 2 mg/mL that is 0.95 mL.",
+      "mistakes": [
+        "Multiplying pounds by mg/kg.",
+        "Rounding the mg dose before calculating the volume."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "weight-based",
+      "format": "calc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "formula": "Dose = Weight (kg) x mg/kg/dose, not to exceed the maximum single dose",
+      "id": "dose-wb-005",
+      "stem": "A child weighing 99 lb has an order for ibuprofen 10 mg/kg/dose PO every 6 hours as needed for pain, not to exceed 400 mg per dose. Available: 100 mg per 5 mL. How many mL will the nurse give?",
+      "patient": "Weight 99 lb",
+      "order": "Ibuprofen 10 mg/kg/dose PO every 6 hours PRN pain; max 400 mg/dose",
+      "available": "100 mg per 5 mL",
+      "unit": "mL",
+      "answer": 20,
+      "exact": 20,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "99 lb / 2.2 = 45 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "45 kg x 10 mg/kg = 450 mg",
+          "explain": "Weight-based dose."
+        },
+        {
+          "work": "450 mg > 400 mg max -> give 400 mg",
+          "explain": "The order caps the single dose."
+        },
+        {
+          "work": "400 mg / 100 mg x 5 mL = 20 mL",
+          "explain": "D/H x Q."
+        }
+      ],
+      "explanation": "The weight-based dose (450 mg) is above the 400 mg cap in the order, so the nurse gives the maximum, 400 mg, which is 20 mL.",
+      "mistakes": [
+        "Giving 22.5 mL (450 mg) and ignoring the dose cap."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "weight-based",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Dose = Weight (kg) x units/kg; Volume = Dose / Concentration",
+      "id": "dose-wb-006",
+      "stem": "An adult weighing 198 lb has an order for a heparin IV bolus of 80 units/kg. Available: 5,000 units per mL. How many mL will the nurse give?",
+      "patient": "Weight 198 lb",
+      "order": "Heparin 80 units/kg IV bolus per protocol",
+      "available": "5,000 units per mL",
+      "unit": "mL",
+      "answer": 1.4,
+      "exact": 1.44,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "steps": [
+        {
+          "work": "198 lb / 2.2 = 90 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "90 kg x 80 units/kg = 7,200 units",
+          "explain": "Bolus dose."
+        },
+        {
+          "work": "7,200 / 5,000 x 1 mL = 1.44 -> 1.4 mL",
+          "explain": "Volume over 1 mL: round to the tenth."
+        }
+      ],
+      "explanation": "90 kg x 80 units/kg = 7,200 units. At 5,000 units/mL that is 1.44 mL, rounded to 1.4 mL. Heparin is high-alert; many facilities require an independent double check and may cap the bolus per protocol.",
+      "mistakes": [
+        "Using 198 lb instead of 90 kg (15,840 units)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "weight-based",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Max per dose = (Weight kg x max mg/kg/day) / doses per day",
+      "id": "dose-safe-005",
+      "stem": "A child weighing 48.4 lb is prescribed high-dose amoxicillin. The safe range is 80-90 mg/kg/day divided every 12 hours. What is the maximum safe single dose in mg?",
+      "patient": "Weight 48.4 lb",
+      "available": "Safe range: 80-90 mg/kg/day divided every 12 hours",
+      "unit": "mg",
+      "answer": 990,
+      "exact": 990,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "steps": [
+        {
+          "work": "48.4 lb / 2.2 = 22 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "22 kg x 90 mg/kg/day = 1,980 mg/day",
+          "explain": "Maximum daily dose."
+        },
+        {
+          "work": "1,980 / 2 = 990 mg per dose",
+          "explain": "Every 12 hours = 2 doses per day."
+        }
+      ],
+      "explanation": "22 kg x 90 = 1,980 mg/day. Divided into 2 doses, the maximum single dose is 990 mg.",
+      "mistakes": [
+        "Stopping at the daily total.",
+        "Dividing by 12 (hours) instead of 2 (doses)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "category": "weight-based",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "lesson": "medmath",
+      "formula": "Min per dose = (Weight kg x min mg/kg/day) / doses per day",
+      "id": "dose-safe-006",
+      "stem": "A child weighing 39.6 lb is prescribed ampicillin. The safe range is 100-200 mg/kg/day divided every 6 hours. What is the minimum therapeutic single dose in mg?",
+      "patient": "Weight 39.6 lb",
+      "available": "Safe range: 100-200 mg/kg/day divided every 6 hours",
+      "unit": "mg",
+      "answer": 450,
+      "exact": 450,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "steps": [
+        {
+          "work": "39.6 lb / 2.2 = 18 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "18 kg x 100 mg/kg/day = 1,800 mg/day",
+          "explain": "Minimum daily dose."
+        },
+        {
+          "work": "1,800 / 4 = 450 mg per dose",
+          "explain": "Every 6 hours = 4 doses per day."
+        }
+      ],
+      "explanation": "18 kg x 100 = 1,800 mg/day, divided into 4 doses = 450 mg. A dose below this is subtherapeutic.",
+      "mistakes": [
+        "Dividing by 6 (hours) instead of 4 (doses)."
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-safe-007",
+      "category": "weight-based",
+      "format": "mc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "A child weighing 33 lb has an order for cefaclor 150 mg PO every 8 hours. The safe range is 20-40 mg/kg/day divided every 8 hours. What should the nurse do?",
+      "patient": "Weight 33 lb",
+      "order": "Cefaclor 150 mg PO every 8 hours",
+      "available": "Safe range: 20-40 mg/kg/day",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give the dose; it is within the safe range."
+        },
+        {
+          "id": "B",
+          "text": "Hold the dose and contact the provider; the order exceeds the safe range."
+        },
+        {
+          "id": "C",
+          "text": "Hold the dose and contact the provider; the order is below the therapeutic range."
+        },
+        {
+          "id": "D",
+          "text": "Give 100 mg instead, the midpoint of the range."
+        }
+      ],
+      "answer": "A",
+      "explanation": "15 kg x 20-40 mg/kg/day = 300-600 mg/day. The order is 150 mg x 3 = 450 mg/day, which is within range, so the nurse gives it.",
+      "why": {
+        "B": "450 mg/day is below the 600 mg/day maximum.",
+        "C": "450 mg/day is above the 300 mg/day minimum.",
+        "D": "Nurses do not change a dose without an order, and 100 mg x 3 is not the midpoint."
+      },
+      "steps": [
+        {
+          "work": "33 lb / 2.2 = 15 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "20 x 15 = 300 mg/day; 40 x 15 = 600 mg/day",
+          "explain": "Safe daily range."
+        },
+        {
+          "work": "150 mg x 3 = 450 mg/day",
+          "explain": "Ordered daily total."
+        },
+        {
+          "work": "300 <= 450 <= 600",
+          "explain": "Within range: safe."
+        }
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-safe-008",
+      "category": "weight-based",
+      "format": "mc",
+      "difficulty": "advanced",
+      "lesson": "medmath",
+      "stem": "A child weighing 55 lb has an order for clindamycin 40 mg PO every 6 hours. The safe range is 8-20 mg/kg/day divided every 6 hours. What should the nurse do?",
+      "patient": "Weight 55 lb",
+      "order": "Clindamycin 40 mg PO every 6 hours",
+      "available": "Safe range: 8-20 mg/kg/day",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give the dose; it is within the safe range."
+        },
+        {
+          "id": "B",
+          "text": "Hold the dose and contact the provider; the order exceeds the safe range."
+        },
+        {
+          "id": "C",
+          "text": "Hold the dose and contact the provider; the order is below the therapeutic range."
+        },
+        {
+          "id": "D",
+          "text": "Give the dose and recheck the range after the first 24 hours."
+        }
+      ],
+      "answer": "C",
+      "explanation": "25 kg x 8-20 mg/kg/day = 200-500 mg/day. The order is 40 mg x 4 = 160 mg/day, which is below the 200 mg/day minimum. An underdose may not treat the infection and can promote resistance, so the nurse clarifies with the provider.",
+      "why": {
+        "A": "160 mg/day is below the 200 mg/day minimum.",
+        "B": "The order is under the range, not over it.",
+        "D": "A dose known to be subtherapeutic is clarified before it is given."
+      },
+      "steps": [
+        {
+          "work": "55 lb / 2.2 = 25 kg",
+          "explain": "Convert to kg."
+        },
+        {
+          "work": "8 x 25 = 200 mg/day; 20 x 25 = 500 mg/day",
+          "explain": "Safe daily range."
+        },
+        {
+          "work": "40 mg x 4 = 160 mg/day",
+          "explain": "Ordered daily total."
+        },
+        {
+          "work": "160 < 200",
+          "explain": "Below the range: subtherapeutic."
+        }
+      ],
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
     }
   ]
 }
