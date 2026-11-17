@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const bank = require('./practice/bank');
+const { createGate } = require('./gate');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -9,16 +10,23 @@ const PORT = process.env.PORT || 8080;
 // Behind one proxy hop (Railway/Render/Heroku style) req.ip is the visitor's address.
 app.set('trust proxy', Number(process.env.TRUST_PROXY ?? 1));
 app.use(express.json({ limit: '200kb' }));
+app.use(express.urlencoded({ extended: false, limit: '4kb' }));
+app.use((req, res, next) => { res.set({ 'X-Content-Type-Options': 'nosniff', 'Referrer-Policy': 'same-origin' }); next(); });
 
-// Question files hold answer keys and reports hold student notes: never serve them as static files.
-app.use(['/questions', '/data'], (req, res) => res.status(404).end());
-app.use(express.static(__dirname, { dotfiles: 'ignore' }));
+/* ── Private-access gate: nothing below is reachable without a valid access code (see gate.js) ── */
+const gate = createGate();
+app.use(gate.middleware);
+gate.routes(app);
+
+// Serve only what the site needs. Source code, question files, reports, scripts and archives are never sent.
+app.use('/img', express.static(path.join(__dirname, 'img'), { dotfiles: 'ignore', index: false }));
+['practice.js', 'practice.css'].forEach(f => app.get('/practice/' + f, (req, res) => res.sendFile(path.join(__dirname, 'practice', f))));
 
 /* ── AI chat: free during early access, with a per-visitor daily allowance ── */
 const AI_DAILY_LIMIT = Number(process.env.AI_DAILY_LIMIT || 25);
 const ALLOWED_MODELS = new Set(['claude-sonnet-4-6']);
 const DEFAULT_MODEL = 'claude-sonnet-4-6';
-const usage = new Map(); // ip -> { day, count }
+const usage = new Map(); // signed-in user (or ip) -> { day, count }
 const today = () => new Date().toISOString().slice(0, 10);
 function takeAiCredit(ip) {
   const d = today();
@@ -33,7 +41,7 @@ setInterval(() => { const d = today(); for (const [k, v] of usage) if (v.day !==
 app.post('/api/chat', async (req, res) => {
   const API_KEY = process.env.ANTHROPIC_API_KEY;
   if (!API_KEY) return res.status(500).json({ error: 'Set ANTHROPIC_API_KEY in environment variables.' });
-  const credit = takeAiCredit(req.ip);
+  const credit = takeAiCredit(req.user ? 'user:' + req.user.name : req.ip);
   res.set('X-AI-Remaining', String(credit.left));
   if (!credit.ok) {
     const msg = `You've used today's ${AI_DAILY_LIMIT} free AI requests. Your allowance resets at midnight UTC. Lessons, flashcards, games and the question bank stay fully available.`;
@@ -88,8 +96,10 @@ app.post('/api/practice/report', (req, res) => {
 });
 setInterval(() => reportsByIp.clear(), 864e5).unref();
 
-app.get('/api/health', (req, res) => res.json({ status: 'ok', questions: bank.count() }));
+// Public (for uptime checks), so it reveals nothing beyond "up".
+app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
-app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
+// Any other path that looks like a file is not part of the site.
+app.get('*', (req, res) => /\.[a-z0-9]+$/i.test(req.path) ? res.status(404).end() : res.sendFile(path.join(__dirname, 'index.html')));
 
 app.listen(PORT, () => console.log('NursePrepHub running on port ' + PORT));
