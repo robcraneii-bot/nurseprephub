@@ -24,5 +24,9 @@ for (const [f, text] of Object.entries(files)) for (const [re, why] of BANNED) {
   const m = text.match(re);
   if (m) { n++; console.log(`${f}: ${why}: "...${text.slice(Math.max(0, m.index - 40), m.index + 60).replace(/\s+/g, ' ')}..."`); }
 }
+// The identifier rules exist twice (server in careplan.js, instant feedback in the careplan tool page); they must match.
+const rulesOf = t => { const m = String(t || '').match(/\/\* ID_RULES start[\s\S]*?\/\* ID_RULES end \*\//); return m && m[0].replace(/\s+/g, ' '); };
+const serverRules = rulesOf(files['careplan.js']), pageRules = rulesOf(files['index.html [tool careplan]']);
+if (!serverRules || serverRules !== pageRules) { n++; console.log('careplan: identifier rules in careplan.js and the Care Plan Generator page are missing or differ; copy the ID_RULES block across.'); }
 console.log(n ? `\n${n} problem(s).` : `Checked ${Object.keys(files).length} files and decoded tools: no banned names or wording.`);
 process.exit(n ? 1 : 0);
