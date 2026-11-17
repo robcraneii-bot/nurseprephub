@@ -2091,6 +2091,511 @@
       ],
       "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
+    },
+    {
+      "id": "dose-recon-005",
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "beginner",
+      "stem": "The order is nafcillin 500 mg IM. Nafcillin 1 g vial. Label: add 3.4 mL diluent to yield 250 mg/mL. How many mL will the nurse give?",
+      "order": "Nafcillin 500 mg IM",
+      "available": "Nafcillin 1 g vial. Label: add 3.4 mL diluent to yield 250 mg/mL.",
+      "unit": "mL",
+      "answer": 2,
+      "exact": 2,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "Volume = Desired dose / Concentration after reconstitution",
+      "steps": [
+        {
+          "work": "Concentration after mixing = 250 mg/mL",
+          "explain": "Use the labeled concentration, not the diluent volume."
+        },
+        {
+          "work": "500 mg / 250 mg/mL = 2 mL",
+          "explain": "Desired dose over the final concentration."
+        }
+      ],
+      "explanation": "After adding 3.4 mL, each mL contains 250 mg. 500 mg / 250 mg/mL = 2 mL.",
+      "mistakes": [
+        "Giving 3.4 mL because that is how much diluent was added."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-recon-006",
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "advanced",
+      "stem": "The order is penicillin G potassium 1,500,000 units added to an IV piggyback. The 5,000,000-unit vial label reads: add 18.2 mL diluent = 250,000 units/mL; add 8.2 mL = 500,000 units/mL; add 3.2 mL = 1,000,000 units/mL. The nurse adds 8.2 mL of diluent. How many mL will the nurse withdraw?",
+      "order": "Penicillin G potassium 1,500,000 units IV piggyback",
+      "available": "Penicillin G potassium 5,000,000-unit vial. 18.2 mL diluent = 250,000 units/mL; 8.2 mL = 500,000 units/mL; 3.2 mL = 1,000,000 units/mL. Nurse adds 8.2 mL.",
+      "unit": "mL",
+      "answer": 3,
+      "exact": 3,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "Volume = Desired dose / Concentration that matches the diluent used",
+      "steps": [
+        {
+          "work": "8.2 mL diluent -> 500,000 units/mL",
+          "explain": "Pick the concentration that matches the amount of diluent actually added."
+        },
+        {
+          "work": "1,500,000 units / 500,000 units/mL = 3 mL",
+          "explain": "Desired dose over the final concentration."
+        }
+      ],
+      "explanation": "Multi-strength vials have a different concentration for each diluent volume. With 8.2 mL added, the concentration is 500,000 units/mL, so 1,500,000 units = 3 mL. Label the vial with the concentration you chose.",
+      "mistakes": [
+        "Using the wrong row of the label (for example 250,000 units/mL gives 6 mL).",
+        "Not writing the chosen concentration on the vial, so the next nurse cannot use it safely."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-recon-007",
+      "category": "reconstitution",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "stem": "The order is ceftriaxone 750 mg IV. Ceftriaxone 1 g vial. Label: for IV use, add 9.6 mL diluent to yield 100 mg/mL. How many mL will the nurse withdraw?",
+      "order": "Ceftriaxone 750 mg IV",
+      "available": "Ceftriaxone 1 g vial. Label (IV): add 9.6 mL diluent to yield 100 mg/mL.",
+      "unit": "mL",
+      "answer": 7.5,
+      "exact": 7.5,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "Volume = Desired dose / Concentration after reconstitution",
+      "steps": [
+        {
+          "work": "Concentration after mixing = 100 mg/mL",
+          "explain": "Use the IV concentration on the label."
+        },
+        {
+          "work": "750 mg / 100 mg/mL = 7.5 mL",
+          "explain": "Desired dose over the final concentration."
+        }
+      ],
+      "explanation": "The powder adds volume, so 9.6 mL of diluent makes a solution of 100 mg/mL. 750 mg / 100 mg/mL = 7.5 mL.",
+      "mistakes": [
+        "Using the IM concentration from a different part of the label."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-005",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "stem": "A client is 180 cm tall and weighs 90 kg. Using the Mosteller formula, what is the body surface area?",
+      "patient": "Height 180 cm; weight 90 kg",
+      "unit": "m²",
+      "answer": 2.12,
+      "exact": 2.12,
+      "rounding": {
+        "to": 0.01,
+        "label": "to the nearest hundredth"
+      },
+      "formula": "BSA = √(cm × kg / 3600)",
+      "steps": [
+        {
+          "work": "180 × 90 = 16,200",
+          "explain": "Multiply height in cm by weight in kg."
+        },
+        {
+          "work": "16,200 / 3600 = 4.5",
+          "explain": "Divide by 3600."
+        },
+        {
+          "work": "√4.5 = 2.1213 -> 2.12 m²",
+          "explain": "Take the square root and round to the nearest hundredth."
+        }
+      ],
+      "explanation": "Multiply cm by kg, divide by 3600, then take the square root: √4.5 = 2.12 m².",
+      "mistakes": [
+        "Forgetting the square root (answering 4.5)."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-006",
+      "category": "bsa",
+      "format": "calc",
+      "difficulty": "advanced",
+      "stem": "A child who is 132 cm tall and weighs 66 lb has an order for etoposide 100 mg/m² IV. What dose in mg will the child receive?",
+      "patient": "Height 132 cm; weight 66 lb",
+      "order": "Etoposide 100 mg/m² IV",
+      "unit": "mg",
+      "answer": 105,
+      "exact": 105,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number",
+        "special": true,
+        "note": "Convert lb to kg and round BSA to the nearest hundredth before calculating the dose."
+      },
+      "formula": "1) kg = lb / 2.2  2) BSA = √(cm × kg / 3600)  3) Dose = mg/m² × BSA",
+      "steps": [
+        {
+          "work": "66 lb / 2.2 = 30 kg",
+          "explain": "The Mosteller formula uses kg."
+        },
+        {
+          "work": "√(132 × 30 / 3600) = √1.1 = 1.0488 -> 1.05 m²",
+          "explain": "Find BSA and round to the nearest hundredth."
+        },
+        {
+          "work": "100 mg/m² × 1.05 m² = 105 mg",
+          "explain": "Multiply the ordered dose per m² by the BSA."
+        }
+      ],
+      "explanation": "Convert to kg first (30 kg), find the BSA (1.05 m²), then multiply: 100 × 1.05 = 105 mg. Chemotherapy doses are independently double-checked.",
+      "mistakes": [
+        "Putting pounds into the Mosteller formula.",
+        "Multiplying 100 mg by the weight (mg/kg) instead of by BSA."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-bsa-007",
+      "category": "bsa",
+      "format": "mc",
+      "difficulty": "advanced",
+      "stem": "A client who is 165 cm tall and weighs 60 kg has an order for fluorouracil 800 mg IV. The protocol dose is 400 mg/m². What should the nurse do?",
+      "patient": "Height 165 cm; weight 60 kg",
+      "order": "Fluorouracil 800 mg IV",
+      "available": "Protocol dose: 400 mg/m²",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give the dose; it matches the protocol."
+        },
+        {
+          "id": "B",
+          "text": "Hold the dose and contact the prescriber; the order is higher than the protocol dose."
+        },
+        {
+          "id": "C",
+          "text": "Hold the dose and contact the prescriber; the order is lower than the protocol dose."
+        },
+        {
+          "id": "D",
+          "text": "Give 664 mg and document the change."
+        }
+      ],
+      "answer": "B",
+      "explanation": "BSA = √(165 × 60 / 3600) = √2.75 = 1.66 m². 400 mg/m² × 1.66 m² = 664 mg. The order of 800 mg is about 20% higher than the protocol dose, so hold it and clarify with the prescriber.",
+      "why": {
+        "A": "800 mg does not match the calculated 664 mg.",
+        "C": "800 mg is above 664 mg, not below it.",
+        "D": "Nurses do not change a dose without a new order."
+      },
+      "steps": [
+        {
+          "work": "√(165 × 60 / 3600) = √2.75 = 1.6583 -> 1.66 m²",
+          "explain": "Find BSA."
+        },
+        {
+          "work": "400 × 1.66 = 664 mg",
+          "explain": "Protocol dose for this client."
+        },
+        {
+          "work": "800 mg > 664 mg",
+          "explain": "The order is too high."
+        }
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-005",
+      "category": "infusion-time",
+      "format": "fill",
+      "difficulty": "intermediate",
+      "stem": "A 500 mL bag of D5W is infusing at 80 mL/hr. How long will it take to infuse? Give the answer in hours and minutes (for example 3 hr 40 min).",
+      "order": "D5W 500 mL IV at 80 mL/hr",
+      "answer": [
+        "6 hr 15 min",
+        "6 hours 15 minutes",
+        "6 hr 15 minutes",
+        "6 hours 15 min",
+        "6h 15m",
+        "6h15m",
+        "6:15"
+      ],
+      "formula": "1) Hours = Volume / Rate  2) Minutes = decimal × 60",
+      "steps": [
+        {
+          "work": "500 / 80 = 6.25 hr",
+          "explain": "Time in hours."
+        },
+        {
+          "work": "0.25 × 60 = 15 min",
+          "explain": "Convert the decimal part to minutes."
+        },
+        {
+          "work": "6 hr 15 min",
+          "explain": "Combine."
+        }
+      ],
+      "explanation": "500 mL at 80 mL/hr takes 6.25 hours. The 0.25 hour is 15 minutes, so 6 hr 15 min.",
+      "mistakes": [
+        "Reading 6.25 hr as 6 hr 25 min."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-006",
+      "category": "infusion-time",
+      "format": "fill",
+      "difficulty": "advanced",
+      "stem": "At 2015 a nurse hangs 1,000 mL of 0.9% sodium chloride at 75 mL/hr. At what time will it finish? Give the answer in military time (for example 1415).",
+      "order": "0.9% sodium chloride 1,000 mL IV at 75 mL/hr, started at 2015",
+      "answer": [
+        "0935",
+        "09:35",
+        "9:35",
+        "9:35 am",
+        "9:35am",
+        "9:35 a.m."
+      ],
+      "formula": "1) Hours = Volume / Rate  2) Minutes = decimal × 60  3) Add to the start time",
+      "steps": [
+        {
+          "work": "1,000 / 75 = 13.3333 hr",
+          "explain": "Time in hours."
+        },
+        {
+          "work": "0.3333 × 60 = 20 min, so 13 hr 20 min",
+          "explain": "Convert the decimal part to minutes."
+        },
+        {
+          "work": "2015 + 13 hr 20 min = 3335 -> 3335 − 2400 = 0935",
+          "explain": "Past midnight, subtract 2400 to get the next day's time."
+        }
+      ],
+      "explanation": "The bag takes 13 hours 20 minutes. Starting at 2015, it finishes at 0935 the next morning.",
+      "mistakes": [
+        "Treating 13.33 hr as 13 hr 33 min.",
+        "Writing 3335 instead of rolling over past midnight."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-time-007",
+      "category": "infusion-time",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "stem": "At 0600 a nurse hangs 1,000 mL of lactated Ringer's at 125 mL/hr. At 1000 the nurse finds 600 mL left in the bag. How many mL behind schedule is the infusion?",
+      "order": "Lactated Ringer's 1,000 mL IV at 125 mL/hr, started at 0600",
+      "unit": "mL",
+      "answer": 100,
+      "exact": 100,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Expected remaining = Start volume − (Rate × Hours); Behind = Actual remaining − Expected remaining",
+      "steps": [
+        {
+          "work": "0600 to 1000 = 4 hr",
+          "explain": "Elapsed time."
+        },
+        {
+          "work": "125 × 4 = 500 mL; 1,000 − 500 = 500 mL",
+          "explain": "Volume that should remain."
+        },
+        {
+          "work": "600 − 500 = 100 mL",
+          "explain": "Extra volume still in the bag."
+        }
+      ],
+      "explanation": "On schedule, 500 mL should remain. 600 mL remain, so the infusion is 100 mL behind. Check the site, tubing and pump, and follow facility policy or contact the provider before changing the rate.",
+      "mistakes": [
+        "Speeding up the rate to catch up without checking policy or an order."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-006",
+      "category": "insulin",
+      "format": "calc",
+      "difficulty": "advanced",
+      "stem": "A client uses insulin aspart with an insulin-to-carbohydrate ratio of 1 unit per 10 g and a correction factor of 1 unit per 50 mg/dL above a target of 120 mg/dL. Before lunch the glucose is 220 mg/dL and the meal has 60 g of carbohydrate. How many total units will the nurse give?",
+      "patient": "Glucose 220 mg/dL; meal 60 g carbohydrate",
+      "order": "Insulin aspart subcut with meals: 1 unit per 10 g carbohydrate, plus 1 unit per 50 mg/dL above 120 mg/dL",
+      "unit": "units",
+      "answer": 8,
+      "exact": 8,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Total = (Carbs / ratio) + ((Glucose − target) / correction factor)",
+      "steps": [
+        {
+          "work": "60 g / 10 g per unit = 6 units",
+          "explain": "Meal (carbohydrate) dose."
+        },
+        {
+          "work": "(220 − 120) / 50 = 2 units",
+          "explain": "Correction dose."
+        },
+        {
+          "work": "6 + 2 = 8 units",
+          "explain": "Add them together."
+        }
+      ],
+      "explanation": "The meal needs 6 units and the high glucose needs 2 correction units, for a total of 8 units of insulin aspart.",
+      "mistakes": [
+        "Dividing the full glucose (220) by 50 instead of only the amount above target.",
+        "Forgetting to add the correction dose to the meal dose."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-insulin-007",
+      "category": "insulin",
+      "format": "mc",
+      "difficulty": "intermediate",
+      "stem": "The order is regular insulin 8 units and NPH insulin 22 units subcut before breakfast, mixed in one syringe. Which is correct?",
+      "order": "Regular insulin 8 units + NPH insulin 22 units subcut before breakfast",
+      "available": "Regular insulin U-100; NPH insulin U-100; U-100 insulin syringe",
+      "options": [
+        {
+          "id": "A",
+          "text": "Draw up the regular insulin first; the total in the syringe is 30 units."
+        },
+        {
+          "id": "B",
+          "text": "Draw up the NPH insulin first; the total in the syringe is 30 units."
+        },
+        {
+          "id": "C",
+          "text": "Draw up the regular insulin first; the total in the syringe is 0.3 units."
+        },
+        {
+          "id": "D",
+          "text": "Draw up the NPH insulin first; the total in the syringe is 14 units."
+        }
+      ],
+      "answer": "A",
+      "explanation": "Draw up clear (regular) before cloudy (NPH) so NPH does not contaminate the regular vial. 8 + 22 = 30 units on a U-100 insulin syringe (0.3 mL).",
+      "why": {
+        "B": "Cloudy before clear risks contaminating the regular insulin vial.",
+        "C": "30 units equals 0.3 mL; the syringe reads in units.",
+        "D": "The doses are added, not subtracted, and NPH is not drawn first."
+      },
+      "steps": [
+        {
+          "work": "Clear (regular) first, then cloudy (NPH)",
+          "explain": "Order of drawing up."
+        },
+        {
+          "work": "8 + 22 = 30 units",
+          "explain": "Total units in the syringe."
+        }
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-pump-007",
+      "category": "iv-pump",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "stem": "Potassium chloride 20 mEq in 100 mL is to infuse over 2 hours by electronic pump. At what rate in mL/hr?",
+      "order": "Potassium chloride 20 mEq in 100 mL IV over 2 hours",
+      "unit": "mL/hr",
+      "answer": 50,
+      "exact": 50,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Rate = Volume (mL) / Time (hr)",
+      "steps": [
+        {
+          "work": "100 mL / 2 hr = 50 mL/hr",
+          "explain": "Volume over time."
+        },
+        {
+          "work": "20 mEq / 2 hr = 10 mEq/hr",
+          "explain": "Check the delivered dose rate."
+        }
+      ],
+      "explanation": "100 mL over 2 hours is 50 mL/hr, which delivers 10 mEq/hr. IV potassium always goes on a pump and is never given IV push.",
+      "mistakes": [
+        "Using 20 (the mEq) as the volume."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
+    },
+    {
+      "id": "dose-gravity-007",
+      "category": "iv-gravity",
+      "format": "calc",
+      "difficulty": "intermediate",
+      "stem": "Infuse 1,000 mL over 12 hours by gravity. The drop factor is 15 gtt/mL. How many gtt/min?",
+      "order": "IV fluid 1,000 mL over 12 hours",
+      "available": "Tubing drop factor: 15 gtt/mL",
+      "unit": "gtt/min",
+      "answer": 21,
+      "exact": 20.83,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "gtt/min = (Volume mL / Time min) × Drop factor",
+      "steps": [
+        {
+          "work": "12 hr × 60 = 720 min",
+          "explain": "Convert hours to minutes."
+        },
+        {
+          "work": "1,000 / 720 × 15 = 20.83",
+          "explain": "Volume over minutes, times the drop factor."
+        },
+        {
+          "work": "20.83 -> 21 gtt/min",
+          "explain": "Round to a whole drop."
+        }
+      ],
+      "explanation": "1,000 mL over 720 minutes with 15 gtt/mL tubing is 20.83, rounded to 21 gtt/min.",
+      "mistakes": [
+        "Dividing by 12 hours instead of 720 minutes."
+      ],
+      "lesson": "medmath",
+      "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
+      "verified": false
     }
   ]
 }
