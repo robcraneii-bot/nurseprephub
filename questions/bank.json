@@ -2335,11 +2335,11 @@
       "options": [
         {
           "id": "A",
-          "text": "It is strictly contraindicated in pregnancy"
+          "text": "It works by enhancing antithrombin III"
         },
         {
           "id": "B",
-          "text": "The antidote is protamine sulfate"
+          "text": "It is strictly contraindicated in pregnancy"
         },
         {
           "id": "C",
@@ -2347,7 +2347,7 @@
         },
         {
           "id": "D",
-          "text": "It works by enhancing antithrombin III"
+          "text": "The antidote is protamine sulfate"
         },
         {
           "id": "E",
@@ -2355,14 +2355,14 @@
         }
       ],
       "answer": [
-        "A",
+        "B",
         "C",
         "E"
       ],
       "explanation": "Warfarin blocks vitamin K-dependent clotting factors. The antidote is vitamin K (and prothrombin complex concentrate for acute bleeding). Protamine and antithrombin III relate to heparin.",
       "why": {
-        "B": "Protamine sulfate reverses heparin.",
-        "D": "Enhancing antithrombin III is how heparin works."
+        "A": "Enhancing antithrombin III is how heparin works.",
+        "D": "Protamine sulfate reverses heparin."
       },
       "source": "Master Guide, Ch 34 Hematologic (Ignatavicius 11e, pp. 827-864)",
       "verified": false
@@ -2377,34 +2377,34 @@
       "options": [
         {
           "id": "A",
-          "text": "Subcutaneous phentolamine is the extravasation antidote"
-        },
-        {
-          "id": "B",
-          "text": "It is a first-line vasopressor for septic shock"
-        },
-        {
-          "id": "C",
           "text": "Give it through a central line"
         },
         {
-          "id": "D",
+          "id": "B",
           "text": "Give it by IV push"
         },
         {
-          "id": "E",
+          "id": "C",
           "text": "Titrate to a mean arterial pressure of at least 65 mmHg"
+        },
+        {
+          "id": "D",
+          "text": "It is a first-line vasopressor for septic shock"
+        },
+        {
+          "id": "E",
+          "text": "Subcutaneous phentolamine is the extravasation antidote"
         }
       ],
       "answer": [
         "A",
-        "B",
         "C",
+        "D",
         "E"
       ],
       "explanation": "Norepinephrine is a potent alpha-1 agonist given by continuous infusion through a central line. Watch for peripheral gangrene.",
       "why": {
-        "D": "It is a titrated infusion, not an IV push."
+        "B": "It is a titrated infusion, not an IV push."
       },
       "source": "Master Guide, Ch 31 Shock (Ignatavicius 11e, pp. 760-780)",
       "verified": false
@@ -2423,30 +2423,30 @@
         },
         {
           "id": "B",
-          "text": "Ventricular dysrhythmias"
-        },
-        {
-          "id": "C",
           "text": "Nausea and vomiting"
         },
         {
+          "id": "C",
+          "text": "Ventricular dysrhythmias"
+        },
+        {
           "id": "D",
-          "text": "Gynecomastia"
+          "text": "Anorexia"
         },
         {
           "id": "E",
-          "text": "Anorexia"
+          "text": "Gynecomastia"
         }
       ],
       "answer": [
         "A",
         "B",
         "C",
-        "E"
+        "D"
       ],
       "explanation": "Early signs are anorexia and nausea or vomiting. Late signs are blurred vision, yellow-green halos and ventricular dysrhythmias.",
       "why": {
-        "D": "Gynecomastia is an effect of spironolactone."
+        "E": "Gynecomastia is an effect of spironolactone."
       },
       "source": "Master Guide, Ch 29 Heart Failure (Ignatavicius 11e, pp. 689-724)",
       "verified": false

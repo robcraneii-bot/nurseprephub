@@ -2952,34 +2952,34 @@
       "options": [
         {
           "id": "A",
-          "text": "Date and time of reconstitution"
+          "text": "The patient's weight"
         },
         {
           "id": "B",
-          "text": "Final concentration (for example, 250 mg/mL)"
-        },
-        {
-          "id": "C",
-          "text": "Nurse's initials"
-        },
-        {
-          "id": "D",
           "text": "Expiration (beyond-use) date and time"
         },
         {
+          "id": "C",
+          "text": "Final concentration (for example, 250 mg/mL)"
+        },
+        {
+          "id": "D",
+          "text": "Nurse's initials"
+        },
+        {
           "id": "E",
-          "text": "The patient's weight"
+          "text": "Date and time of reconstitution"
         }
       ],
       "answer": [
-        "A",
         "B",
         "C",
-        "D"
+        "D",
+        "E"
       ],
       "explanation": "A reconstituted multiple-dose vial needs the date and time mixed, the resulting concentration, the preparer's initials, and when it expires, so the next nurse can use it safely. Follow the storage directions on the label.",
       "why": {
-        "E": "Weight is needed for some dose calculations, but it does not belong on a shared vial label."
+        "A": "Weight is needed for some dose calculations, but it does not belong on a shared vial label."
       },
       "source": "NursePrepHub original (AI-drafted via /medmath); standard dimensional analysis. Needs nurse-educator review.",
       "verified": false
