@@ -7,7 +7,7 @@ const DIR = process.env.QUESTIONS_DIR || path.join(__dirname, '..', 'questions')
 const FORMATS = ['mc', 'sata', 'priority', 'delegation', 'case', 'order', 'calc', 'ekg', 'match', 'fill', 'matrix', 'cloze'];
 const CHOICE_FORMATS = ['mc', 'priority', 'delegation', 'ekg', 'case'];
 const DIFFICULTY = ['beginner', 'intermediate', 'advanced', 'nclex'];
-// NCSBN Clinical Judgment Measurement Model steps, used to tag case-study questions.
+// The six clinical judgment steps, used to tag case-study questions.
 const NCJMM = ['recognize-cues', 'analyze-cues', 'prioritize-hypotheses', 'generate-solutions', 'take-action', 'evaluate-outcomes'];
 const CLOZE_SLOT = /\{\{([\w-]+)\}\}/g;
 // Fields that reveal the answer; removed before a question is sent to the browser.

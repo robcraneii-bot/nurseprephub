@@ -85,7 +85,7 @@ Changes are written to the files in this folder. Commit them and redeploy to pub
 | `cloze` | `"template": "The client has {{1}} because {{2}}."`, `"blanks": [{"id":"1","label":"Condition","options":[{"id":"A","text":"..."}]}]`, `"answer": {"1":"A"}` |
 
 Any question can also carry `"ncjmm"`: one of `recognize-cues`, `analyze-cues`, `prioritize-hypotheses`,
-`generate-solutions`, `take-action`, `evaluate-outcomes` (the NCSBN clinical judgment steps). Case study results are grouped by it.
+`generate-solutions`, `take-action`, `evaluate-outcomes` (the six clinical judgment steps). Case study results are grouped by it.
 
 ## Case study sets (`"mode": "case"`)
 
