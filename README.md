@@ -30,6 +30,15 @@ It prints the code to give that person and the `ACCESS_CODES` entry to add on th
 To revoke someone, delete their entry and restart; their cookie stops working at once.
 If `ACCESS_CODES` or `SESSION_SECRET` is missing, nobody can sign in (the gate fails closed).
 
+## Care Plan Generator
+
+`POST /api/careplan` (see `careplan.js`) takes form fields only; the prompt is built on the server, so the browser
+cannot change the instructions. It calls Claude Opus 5.5 (`claude-opus-5-5`) through the official Anthropic SDK with a
+structured-output schema, so every plan has the same shape: prioritized nursing diagnoses with related-to and
+evidenced-by statements, goals, interventions with rationales, evaluation, teaching and urgent flags. Refusal
+fallbacks are on (`fallbacks: "default"`). Each plan counts as one request toward the daily AI limit.
+Students can edit, reorder, save (in their own browser), print and copy plans.
+
 ## Checks
 
 ```
