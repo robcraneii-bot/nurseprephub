@@ -86,15 +86,25 @@ function userMessage(i) {
 }
 
 let client = null;
-const getClient = () => (client = client || new Anthropic({ timeout: 120e3, maxRetries: 1 }));
+// One attempt, capped at 150 s: a failed attempt refunds the student's credit, so retrying by hand costs nothing,
+// and the worst-case wait stays close to what the page promises.
+const TIMEOUT_MS = 150e3;
+const getClient = () => (client = client || new Anthropic({ timeout: TIMEOUT_MS, maxRetries: 0 }));
 
-function register(app, { takeAiCredit, dailyLimit }) {
+function register(app, { takeAiCredit, refundAiCredit = () => null, dailyLimit }) {
   app.post('/api/careplan', async (req, res) => {
     if (!process.env.ANTHROPIC_API_KEY) return res.status(500).json({ error: 'The AI service is not set up on the server yet.' });
     const input = readInput(req.body);
     if (!input) return res.status(400).json({ error: 'Enter the medical diagnosis or reason for care.' });
-    const credit = takeAiCredit(req.user ? 'user:' + req.user.name : req.ip);
+    const who = req.user ? 'user:' + req.user.name : req.ip;
+    const credit = takeAiCredit(who);
     res.set('X-AI-Remaining', String(credit.left));
+    // Failures on our side give the credit back. A refusal does not: the request ran and was billed.
+    const fail = (status, error) => {
+      const r = refundAiCredit(who);
+      if (r) res.set('X-AI-Remaining', String(r.left));
+      return res.status(status).json({ error });
+    };
     if (!credit.ok) return res.status(429).json({ error: `You've used today's ${dailyLimit} AI requests. Your allowance resets at midnight UTC.` });
 
     try {
@@ -118,18 +128,20 @@ function register(app, { takeAiCredit, dailyLimit }) {
       if (response.stop_reason !== 'max_tokens') { try { plan = FORMAT.parse(text); } catch (e) { plan = null; } }
       if (!plan) {
         console.error('[careplan] unusable reply, stop_reason:', response.stop_reason);
-        return res.status(502).json({ error: 'The plan came back incomplete. Try again, or ask for fewer diagnoses.' });
+        return fail(502, 'The plan came back incomplete. Try again, or ask for fewer diagnoses.');
       }
       res.json({ input, plan, model: response.model, generatedAt: new Date().toISOString() });
     } catch (e) {
       // Most specific first; never pass upstream error text (it can include request details) to the browser.
-      if (e instanceof Anthropic.RateLimitError) return res.status(503).json({ error: 'The AI service is busy. Wait a minute and try again.' });
-      if (e instanceof Anthropic.AuthenticationError) { console.error('[careplan] authentication failed: check ANTHROPIC_API_KEY'); return res.status(500).json({ error: 'The AI service is not set up correctly on the server.' }); }
-      if (e instanceof Anthropic.BadRequestError) { console.error('[careplan] bad request:', e.status, e.message); return res.status(502).json({ error: 'The AI service rejected the request. Please report this.' }); }
-      if (e instanceof Anthropic.APIConnectionError) return res.status(502).json({ error: 'Could not reach the AI service. Check your connection and try again.' });
-      if (e instanceof Anthropic.APIError) { console.error('[careplan] API error:', e.status); return res.status(502).json({ error: 'The AI service had a problem. Try again.' }); }
+      if (e instanceof Anthropic.RateLimitError) return fail(503, 'The AI service is busy. Wait a minute and try again.');
+      if (e instanceof Anthropic.AuthenticationError) { console.error('[careplan] authentication failed: check ANTHROPIC_API_KEY'); return fail(500, 'The AI service is not set up correctly on the server.'); }
+      if (e instanceof Anthropic.BadRequestError) { console.error('[careplan] bad request:', e.status, e.message); return fail(502, 'The AI service rejected the request. Please report this.'); }
+      // APIConnectionTimeoutError extends APIConnectionError, so check it first.
+      if (e instanceof Anthropic.APIConnectionTimeoutError) return fail(504, 'The plan took too long to write. Try again, or ask for fewer diagnoses.');
+      if (e instanceof Anthropic.APIConnectionError) return fail(502, 'Could not reach the AI service. Check your connection and try again.');
+      if (e instanceof Anthropic.APIError) { console.error('[careplan] API error:', e.status); return fail(502, 'The AI service had a problem. Try again.'); }
       console.error('[careplan] unexpected error:', e && e.message);
-      res.status(500).json({ error: 'Something went wrong. Try again.' });
+      fail(500, 'Something went wrong. Try again.');
     }
   });
 }

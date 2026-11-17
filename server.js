@@ -36,6 +36,12 @@ function takeAiCredit(ip) {
   u.count++;
   return { ok: true, left: AI_DAILY_LIMIT - u.count };
 }
+// Give a credit back when the request failed on our side (outage, rate limit, unusable reply), so a retry is free.
+function refundAiCredit(ip) {
+  const u = usage.get(ip);
+  if (u && u.day === today() && u.count > 0) u.count--;
+  return { left: u ? AI_DAILY_LIMIT - u.count : AI_DAILY_LIMIT };
+}
 setInterval(() => { const d = today(); for (const [k, v] of usage) if (v.day !== d) usage.delete(k); }, 36e5).unref();
 
 app.post('/api/chat', async (req, res) => {
@@ -65,7 +71,7 @@ app.post('/api/chat', async (req, res) => {
 });
 
 /* ── Care Plan Generator: structured plans built from form fields (prompt lives on the server) ── */
-require('./careplan').register(app, { takeAiCredit, dailyLimit: AI_DAILY_LIMIT });
+require('./careplan').register(app, { takeAiCredit, refundAiCredit, dailyLimit: AI_DAILY_LIMIT });
 
 /* ── Practice: question sets are graded here so answer keys never reach the browser early ── */
 app.get('/api/practice/sets', (req, res) => res.json(bank.listSets()));
