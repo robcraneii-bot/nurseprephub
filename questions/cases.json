@@ -16,6 +16,22 @@
     {
       "id": "endocrine",
       "name": "Endocrine"
+    },
+    {
+      "id": "neurological",
+      "name": "Neurological"
+    },
+    {
+      "id": "respiratory",
+      "name": "Respiratory"
+    },
+    {
+      "id": "maternity",
+      "name": "Maternal and Newborn"
+    },
+    {
+      "id": "pediatrics",
+      "name": "Pediatrics"
     }
   ],
   "cases": [
@@ -691,6 +707,842 @@
           ]
         }
       ]
+    },
+    {
+      "id": "case-stroke",
+      "category": "neurological",
+      "title": "Sudden weakness and trouble speaking",
+      "setting": "Emergency department",
+      "difficulty": "nclex",
+      "summary": "Older adult with atrial fibrillation and new one-sided weakness",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: stroke care is a race against the clock, so note the last known well time; right-sided weakness with aphasia points to the left hemisphere; get a CT before anything that thins the blood; blood pressure must be under 185/110 before a thrombolytic, but not dropped too far; a sudden severe headache during the infusion means stop it; and keep the client NPO until a swallow screen is passed.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Arrival, 0820",
+          "text": "A 68-year-old client is brought in by ambulance. A family member says the client was fine at breakfast at 0715, then dropped a coffee cup and could not get words out.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0820",
+              "title": "Triage assessment",
+              "text": "Right side of the face droops when smiling. Right arm drifts down within 5 seconds; right leg weak. Understands questions and follows commands but struggles to find words and speech is slurred. History of atrial fibrillation; stopped apixaban 3 weeks ago because of cost. Last known well 0715."
+            },
+            {
+              "tab": "vitals",
+              "time": "0820",
+              "rows": [
+                [
+                  "Temperature",
+                  "37.0 C (98.6 F)"
+                ],
+                [
+                  "Heart rate",
+                  "96/min, irregular",
+                  "abn"
+                ],
+                [
+                  "Blood pressure",
+                  "186/104 mm Hg",
+                  "high"
+                ],
+                [
+                  "Respiratory rate",
+                  "18/min"
+                ],
+                [
+                  "SpO2",
+                  "96% on room air"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "0825",
+              "rows": [
+                [
+                  "Point-of-care glucose",
+                  "112 mg/dL"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-stroke-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "questions": [
+            "case-stroke-q2"
+          ],
+          "chart": []
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "questions": [
+            "case-stroke-q3"
+          ],
+          "chart": []
+        },
+        {
+          "step": "generate-solutions",
+          "title": "CT result and orders, 0850",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0845",
+              "title": "CT head without contrast",
+              "text": "No bleeding seen. Provider suspects acute ischemic stroke and plans IV alteplase. Weight 176 lb (80 kg)."
+            },
+            {
+              "tab": "labs",
+              "time": "0840",
+              "rows": [
+                [
+                  "Platelets",
+                  "228,000/mm3"
+                ],
+                [
+                  "INR",
+                  "1.0"
+                ],
+                [
+                  "Glucose",
+                  "114 mg/dL"
+                ]
+              ]
+            },
+            {
+              "tab": "orders",
+              "time": "0850",
+              "text": "Labetalol 10 mg IV now, may repeat once, to keep BP below 185/110 before alteplase\nAlteplase 0.9 mg/kg IV (maximum 90 mg): 10% as IV bolus over 1 minute, the rest over 60 minutes\nNPO until bedside swallow screen passed\nNeuro checks and vital signs per stroke protocol\nAdmit to stroke unit"
+            }
+          ],
+          "questions": [
+            "case-stroke-q4"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Starting alteplase, 0905",
+          "text": "After one dose of labetalol, the blood pressure is 172/98 mm Hg. The nurse prepares the alteplase.",
+          "chart": [
+            {
+              "tab": "vitals",
+              "time": "0900",
+              "rows": [
+                [
+                  "Heart rate",
+                  "90/min, irregular",
+                  "abn"
+                ],
+                [
+                  "Blood pressure",
+                  "172/98 mm Hg",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-stroke-q5",
+            "case-stroke-q6"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Next day, 0900",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0900",
+              "text": "Right arm now lifts against gravity and holds for 10 seconds. Speech clearer; still pauses for some words. Follow-up CT shows no bleeding. Bedside swallow screen: coughs and voice sounds wet after sips of water."
+            },
+            {
+              "tab": "vitals",
+              "time": "0900",
+              "rows": [
+                [
+                  "Heart rate",
+                  "82/min, irregular",
+                  "abn"
+                ],
+                [
+                  "Blood pressure",
+                  "154/86 mm Hg",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "97% on room air"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-stroke-q7"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-copd",
+      "category": "respiratory",
+      "title": "Worsening breathlessness in a client with COPD",
+      "setting": "Medical-surgical unit",
+      "difficulty": "nclex",
+      "summary": "Older adult with a COPD flare, high carbon dioxide and a chest infection",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: in a COPD flare, look for work of breathing and low oxygen first; read the ABG step by step; aim oxygen at 88 to 92% rather than 100%; sedatives and too much oxygen can both worsen carbon dioxide retention; new drowsiness means rising carbon dioxide and calls for urgent help; and expect high glucose from steroids and a fast heart rate from bronchodilators.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Admission, 1100",
+          "text": "A 66-year-old client with COPD is admitted with 3 days of worsening shortness of breath and a cough that now brings up thick yellow-green sputum.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1100",
+              "title": "Admission assessment",
+              "text": "Sitting forward with hands on knees, using neck and shoulder muscles to breathe. Pursed-lip breathing. Speaks 3 to 4 words at a time. Wheezes throughout with diminished sounds in the bases. Barrel-shaped chest and clubbed fingers. Alert and oriented x3. Quit smoking 2 years ago. Not on home oxygen."
+            },
+            {
+              "tab": "vitals",
+              "time": "1100",
+              "rows": [
+                [
+                  "Temperature",
+                  "38.1 C (100.6 F)",
+                  "high"
+                ],
+                [
+                  "Heart rate",
+                  "112/min",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "142/84 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "28/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "86% on room air",
+                  "low"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1045",
+              "title": "Arterial blood gas (room air)",
+              "rows": [
+                [
+                  "pH",
+                  "7.31",
+                  "low"
+                ],
+                [
+                  "PaCO2",
+                  "58 mm Hg",
+                  "high"
+                ],
+                [
+                  "HCO3",
+                  "29 mEq/L",
+                  "high"
+                ],
+                [
+                  "PaO2",
+                  "54 mm Hg",
+                  "low"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-copd-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Reading the blood gas",
+          "questions": [
+            "case-copd-q2"
+          ],
+          "chart": []
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "questions": [
+            "case-copd-q3"
+          ],
+          "chart": []
+        },
+        {
+          "step": "generate-solutions",
+          "title": "Provider orders, 1130",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "1130",
+              "text": "Oxygen by Venturi mask, titrate to SpO2 88 to 92%\nAlbuterol and ipratropium by nebulizer every 4 hours and as needed\nMethylprednisolone 40 mg IV every 12 hours\nSputum culture; then start prescribed IV antibiotic\nRepeat ABG in 2 hours\nPoint-of-care glucose before meals and at bedtime"
+            }
+          ],
+          "questions": [
+            "case-copd-q4"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Change in condition, 1400",
+          "text": "The nurse finds the client hard to wake. A family member turned the oxygen up \"to help them rest.\"",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1400",
+              "text": "Opens eyes to loud voice, then drifts back to sleep. Oxygen found at 50% by Venturi mask."
+            },
+            {
+              "tab": "vitals",
+              "time": "1400",
+              "rows": [
+                [
+                  "Heart rate",
+                  "104/min",
+                  "high"
+                ],
+                [
+                  "Respiratory rate",
+                  "12/min"
+                ],
+                [
+                  "SpO2",
+                  "97% on 50% Venturi mask",
+                  "abn"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1350",
+              "title": "Repeat ABG",
+              "rows": [
+                [
+                  "pH",
+                  "7.24",
+                  "crit"
+                ],
+                [
+                  "PaCO2",
+                  "72 mm Hg",
+                  "crit"
+                ],
+                [
+                  "HCO3",
+                  "30 mEq/L",
+                  "high"
+                ],
+                [
+                  "PaO2",
+                  "88 mm Hg"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-copd-q5"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Day 3, 0900",
+          "text": "Two days have passed since the change in condition. The client is now on a nasal cannula.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "0900",
+              "text": "Awake and talking in full sentences. Fewer wheezes. Sputum thinner and lighter in color. Hands tremble after nebulizer treatments."
+            },
+            {
+              "tab": "vitals",
+              "time": "0900",
+              "rows": [
+                [
+                  "Temperature",
+                  "37.2 C (99.0 F)"
+                ],
+                [
+                  "Heart rate",
+                  "118/min after nebulizer",
+                  "high"
+                ],
+                [
+                  "Respiratory rate",
+                  "20/min"
+                ],
+                [
+                  "SpO2",
+                  "90% on 1 L/min nasal cannula"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "0700",
+              "rows": [
+                [
+                  "pH",
+                  "7.36"
+                ],
+                [
+                  "PaCO2",
+                  "50 mm Hg",
+                  "high"
+                ],
+                [
+                  "Glucose",
+                  "248 mg/dL",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-copd-q6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-pph",
+      "category": "maternity",
+      "title": "Heavy bleeding after birth",
+      "setting": "Labor and delivery recovery",
+      "difficulty": "nclex",
+      "summary": "Postpartum client with a soft uterus and rising blood loss",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: a soft uterus above the umbilicus with heavy bleeding means uterine atony until proven otherwise; massage the fundus first while calling for help; weigh pads to measure blood loss (1 g is about 1 mL); check the history before uterotonic drugs (no carboprost with asthma, no methylergonovine with high blood pressure); and a fall in hemoglobin after the bleeding stops still needs follow-up.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "One hour after birth, 1500",
+          "text": "A 32-year-old client gave birth vaginally to her third baby 1 hour ago after a 14-hour labor induced with oxytocin. The newborn weighed 4.3 kg (9 lb 8 oz). Estimated blood loss at birth was 350 mL. History of mild asthma; uses an albuterol inhaler as needed.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1500",
+              "title": "Postpartum assessment",
+              "text": "Fundus soft and boggy, 2 cm above the umbilicus, midline. Perineal pad soaked through in 15 minutes with several large clots. Skin cool and clammy. Says she feels \"shaky and a little lightheaded.\" Reports cramping when the newborn breastfeeds. Lochia red."
+            },
+            {
+              "tab": "vitals",
+              "time": "1500",
+              "rows": [
+                [
+                  "Temperature",
+                  "37.4 C (99.3 F)"
+                ],
+                [
+                  "Heart rate",
+                  "112/min",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "98/58 mm Hg (118/74 on admission)",
+                  "low"
+                ],
+                [
+                  "Respiratory rate",
+                  "22/min",
+                  "high"
+                ],
+                [
+                  "SpO2",
+                  "97% on room air"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-pph-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "questions": [
+            "case-pph-q2"
+          ],
+          "chart": []
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "questions": [
+            "case-pph-q3"
+          ],
+          "chart": []
+        },
+        {
+          "step": "take-action",
+          "title": "Measuring blood loss, 1515",
+          "text": "The nurse weighs everything soaked since the birth to find the quantitative blood loss.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1515",
+              "title": "Weighed items",
+              "text": "Three soaked pads: 182 g, 176 g and 168 g (dry weight 22 g each). One soaked underpad: 340 g (dry weight 40 g)."
+            }
+          ],
+          "questions": [
+            "case-pph-q4"
+          ]
+        },
+        {
+          "step": "generate-solutions",
+          "title": "Provider at bedside, 1520",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "1520",
+              "text": "Oxytocin infusion per postpartum hemorrhage protocol\nMethylergonovine 0.2 mg IM now\nCarboprost 250 mcg IM if bleeding continues\nSecond large-bore IV; type and crossmatch 2 units\nCBC now and in 4 hours\nStraight catheter to empty bladder"
+            },
+            {
+              "tab": "labs",
+              "time": "1525",
+              "rows": [
+                [
+                  "Hemoglobin",
+                  "10.1 g/dL (11.8 on admission)",
+                  "low"
+                ],
+                [
+                  "Platelets",
+                  "210,000/mm3"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-pph-q5"
+          ]
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Two hours later, 1730",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1730",
+              "text": "Fundus firm at the umbilicus, midline. One pad partly soaked in the past hour, no large clots. Urine output 40 mL/hr. Feels lightheaded when sitting up at the side of the bed."
+            },
+            {
+              "tab": "vitals",
+              "time": "1730",
+              "rows": [
+                [
+                  "Heart rate",
+                  "92/min"
+                ],
+                [
+                  "Blood pressure",
+                  "112/68 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "18/min"
+                ],
+                [
+                  "SpO2",
+                  "98% on room air"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1725",
+              "rows": [
+                [
+                  "Hemoglobin",
+                  "8.9 g/dL",
+                  "low"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-pph-q6"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case-peds-dehydration",
+      "category": "pediatrics",
+      "title": "Vomiting and diarrhea in a toddler",
+      "setting": "Pediatric emergency department and unit",
+      "difficulty": "nclex",
+      "summary": "Toddler with gastroenteritis and signs of severe dehydration",
+      "tabs": [
+        {
+          "id": "notes",
+          "name": "Nurses' notes"
+        },
+        {
+          "id": "vitals",
+          "name": "Vital signs"
+        },
+        {
+          "id": "labs",
+          "name": "Labs"
+        },
+        {
+          "id": "io",
+          "name": "Intake and output"
+        },
+        {
+          "id": "orders",
+          "name": "Orders"
+        }
+      ],
+      "debrief": "Key ideas: weight loss is the best measure of dehydration in children; a fast heart rate and slow capillary refill appear before blood pressure falls; give an isotonic bolus of 20 mL/kg and reassess; check glucose in a lethargic child; do not add potassium until the child is passing urine; use oral rehydration solution, not juice; and avoid antidiarrheal drugs in young children.",
+      "stages": [
+        {
+          "step": "recognize-cues",
+          "title": "Arrival, 1000",
+          "text": "An 18-month-old is brought in by a parent after 2 days of vomiting and watery diarrhea. Several children at the child's daycare have been sick.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1000",
+              "title": "Triage assessment",
+              "text": "Lethargic but wakes when touched; weak cry with no tears. Lips and mouth dry. Eyes look sunken. Capillary refill 3 seconds. Last wet diaper about 10 hours ago. Weight 10.8 kg today; weighed 12.0 kg at a clinic visit 1 week ago. Clings to parent."
+            },
+            {
+              "tab": "vitals",
+              "time": "1000",
+              "rows": [
+                [
+                  "Temperature",
+                  "37.9 C (100.2 F)"
+                ],
+                [
+                  "Heart rate",
+                  "160/min",
+                  "high"
+                ],
+                [
+                  "Blood pressure",
+                  "84/50 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "34/min"
+                ],
+                [
+                  "SpO2",
+                  "98% on room air"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-peds-dehydration-q1"
+          ]
+        },
+        {
+          "step": "analyze-cues",
+          "title": "Putting the findings together",
+          "chart": [
+            {
+              "tab": "labs",
+              "time": "1015",
+              "rows": [
+                [
+                  "Point-of-care glucose",
+                  "58 mg/dL",
+                  "low"
+                ],
+                [
+                  "Sodium",
+                  "146 mEq/L",
+                  "high"
+                ],
+                [
+                  "Potassium",
+                  "3.4 mEq/L",
+                  "low"
+                ],
+                [
+                  "Bicarbonate",
+                  "16 mEq/L",
+                  "low"
+                ],
+                [
+                  "BUN",
+                  "24 mg/dL",
+                  "high"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-peds-dehydration-q2"
+          ]
+        },
+        {
+          "step": "prioritize-hypotheses",
+          "title": "Choosing the priority",
+          "questions": [
+            "case-peds-dehydration-q3"
+          ],
+          "chart": []
+        },
+        {
+          "step": "generate-solutions",
+          "title": "Provider orders, 1030",
+          "chart": [
+            {
+              "tab": "orders",
+              "time": "1030",
+              "text": "0.9% sodium chloride 20 mL/kg IV bolus over 20 minutes; reassess and repeat once if needed\nDextrose 10% 5 mL/kg IV for glucose below 60 mg/dL\nThen D5 0.9% sodium chloride at maintenance rate; add potassium chloride 20 mEq/L once voiding\nOndansetron 0.15 mg/kg IV once\nWeigh all diapers; strict intake and output\nOral rehydration solution in small amounts once vomiting settles"
+            }
+          ],
+          "questions": [
+            "case-peds-dehydration-q4"
+          ]
+        },
+        {
+          "step": "take-action",
+          "title": "Fluid calculations, 1035",
+          "text": "The nurse uses today's weight of 10.8 kg for all calculations.",
+          "questions": [
+            "case-peds-dehydration-q5",
+            "case-peds-dehydration-q6"
+          ],
+          "chart": []
+        },
+        {
+          "step": "evaluate-outcomes",
+          "title": "Six hours later, 1630",
+          "text": "The child is now on maintenance IV fluid.",
+          "chart": [
+            {
+              "tab": "notes",
+              "time": "1630",
+              "text": "Awake, playing with a toy and crying with tears. Mouth moist. Capillary refill under 2 seconds. Keeping down small sips of oral rehydration solution. Two loose stools in the past 4 hours."
+            },
+            {
+              "tab": "vitals",
+              "time": "1630",
+              "rows": [
+                [
+                  "Heart rate",
+                  "118/min"
+                ],
+                [
+                  "Blood pressure",
+                  "92/56 mm Hg"
+                ],
+                [
+                  "Respiratory rate",
+                  "28/min"
+                ]
+              ]
+            },
+            {
+              "tab": "io",
+              "time": "1630",
+              "rows": [
+                [
+                  "Wet diaper weights (past 2 hours)",
+                  "60 g"
+                ],
+                [
+                  "Oral rehydration solution taken",
+                  "120 mL"
+                ]
+              ]
+            },
+            {
+              "tab": "labs",
+              "time": "1600",
+              "rows": [
+                [
+                  "Glucose",
+                  "96 mg/dL"
+                ]
+              ]
+            }
+          ],
+          "questions": [
+            "case-peds-dehydration-q7"
+          ]
+        }
+      ]
     }
   ],
   "questions": [
@@ -705,23 +1557,23 @@
       "options": [
         {
           "id": "A",
-          "text": "SpO2 89% on room air"
+          "text": "Temperature 36.8 C (98.2 F)"
         },
         {
           "id": "B",
-          "text": "Crackles from the bases to the mid lungs"
+          "text": "SpO2 89% on room air"
         },
         {
           "id": "C",
-          "text": "Respiratory rate 26/min"
+          "text": "Crackles from the bases to the mid lungs"
         },
         {
           "id": "D",
-          "text": "Weight gain of 3 kg in 4 days"
+          "text": "Alert and oriented to person, place and time"
         },
         {
           "id": "E",
-          "text": "Temperature 36.8 C (98.2 F)"
+          "text": "Weight gain of 3 kg in 4 days"
         },
         {
           "id": "F",
@@ -729,20 +1581,20 @@
         },
         {
           "id": "G",
-          "text": "Alert and oriented to person, place and time"
+          "text": "Respiratory rate 26/min"
         }
       ],
       "answer": [
-        "A",
         "B",
         "C",
-        "D"
+        "E",
+        "G"
       ],
       "explanation": "Low oxygen saturation, crackles that reach the mid lungs, tachypnea and rapid weight gain all point to fluid backing up into the lungs. They need follow-up now. A 3 kg gain is about 3 L of retained fluid.",
       "why": {
-        "E": "Normal temperature.",
-        "F": "Within normal range, though it should be watched once diuresis starts.",
-        "G": "Normal mental status is reassuring."
+        "A": "Normal temperature.",
+        "D": "Normal mental status is reassuring.",
+        "F": "Within normal range, though it should be watched once diuresis starts."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -767,11 +1619,11 @@
             },
             {
               "id": "B",
-              "text": "deficient fluid volume"
+              "text": "community-acquired pneumonia"
             },
             {
               "id": "C",
-              "text": "community-acquired pneumonia"
+              "text": "deficient fluid volume"
             }
           ]
         },
@@ -781,22 +1633,22 @@
           "options": [
             {
               "id": "A",
-              "text": "crackles, jugular vein distention and rapid weight gain"
-            },
-            {
-              "id": "B",
               "text": "fever and productive cough"
             },
             {
-              "id": "C",
+              "id": "B",
               "text": "dry mucous membranes and low blood pressure"
+            },
+            {
+              "id": "C",
+              "text": "crackles, jugular vein distention and rapid weight gain"
             }
           ]
         }
       ],
       "answer": {
         "1": "A",
-        "2": "A"
+        "2": "C"
       },
       "explanation": "Crackles, JVD, edema, weight gain and a high BNP after running out of the diuretic fit decompensated heart failure with fluid overload. There is no fever to suggest pneumonia, and the blood pressure is high, not low.",
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
@@ -813,27 +1665,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Pulmonary edema with impaired gas exchange"
-        },
-        {
-          "id": "B",
           "text": "Hyponatremia"
         },
         {
+          "id": "B",
+          "text": "Pulmonary edema with impaired gas exchange"
+        },
+        {
           "id": "C",
-          "text": "Worsening kidney function"
+          "text": "Pressure injury from lower-extremity edema"
         },
         {
           "id": "D",
-          "text": "Pressure injury from lower-extremity edema"
+          "text": "Worsening kidney function"
         }
       ],
-      "answer": "A",
+      "answer": "B",
       "explanation": "Breathing comes first. Fluid in the alveoli is lowering oxygenation (SpO2 89%, RR 26) and can progress to respiratory failure. The other problems are real but less immediately life-threatening.",
       "why": {
-        "B": "Sodium 132 mEq/L is mildly low and is usually dilutional; it is monitored.",
-        "C": "Creatinine is trended, especially during diuresis, but it is not the most urgent threat.",
-        "D": "Skin care matters, but it is not life-threatening right now."
+        "A": "Sodium 132 mEq/L is mildly low and is usually dilutional; it is monitored.",
+        "C": "Skin care matters, but it is not life-threatening right now.",
+        "D": "Creatinine is trended, especially during diuresis, but it is not the most urgent threat."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -914,27 +1766,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Give the furosemide as scheduled and recheck potassium in the morning"
-        },
-        {
-          "id": "B",
-          "text": "Report the potassium of 3.2 mEq/L and follow the replacement protocol before giving the furosemide"
-        },
-        {
-          "id": "C",
           "text": "Hold the furosemide and give the client extra oral fluids"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "Give the furosemide as scheduled and recheck potassium in the morning"
+        },
+        {
+          "id": "C",
           "text": "Give half the furosemide dose"
+        },
+        {
+          "id": "D",
+          "text": "Report the potassium of 3.2 mEq/L and follow the replacement protocol before giving the furosemide"
         }
       ],
-      "answer": "B",
+      "answer": "D",
       "explanation": "Loop diuretics waste potassium. A level of 3.2 mEq/L is low and raises the risk of dysrhythmias, so the nurse reports it and replaces potassium per protocol or order before more diuretic is given. The client still needs diuresis, so the dose is not simply dropped.",
       "why": {
-        "A": "Giving more diuretic without addressing low potassium can drop it further.",
-        "C": "Extra fluid works against the fluid restriction and the diuresis goal.",
-        "D": "Nurses do not change the dose without an order."
+        "A": "Extra fluid works against the fluid restriction and the diuresis goal.",
+        "B": "Giving more diuretic without addressing low potassium can drop it further.",
+        "C": "Nurses do not change the dose without an order."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -1008,15 +1860,15 @@
         },
         {
           "id": "B",
-          "text": "Temperature 38.9 C (102 F)"
+          "text": "Blood pressure 84/50 mm Hg"
         },
         {
           "id": "C",
-          "text": "Heart rate 118/min"
+          "text": "SpO2 95% on room air"
         },
         {
           "id": "D",
-          "text": "Blood pressure 84/50 mm Hg"
+          "text": "Heart rate 118/min"
         },
         {
           "id": "E",
@@ -1024,7 +1876,7 @@
         },
         {
           "id": "F",
-          "text": "SpO2 95% on room air"
+          "text": "Temperature 38.9 C (102 F)"
         },
         {
           "id": "G",
@@ -1034,13 +1886,13 @@
       "answer": [
         "A",
         "B",
-        "C",
         "D",
-        "E"
+        "E",
+        "F"
       ],
       "explanation": "New confusion, fever, tachycardia, hypotension and a high lactate together suggest infection with poor tissue perfusion. In older adults, new confusion may be the first sign of sepsis.",
       "why": {
-        "F": "Oxygenation is acceptable right now.",
+        "C": "Oxygenation is acceptable right now.",
         "G": "Relevant history, but it does not need immediate action. It does mean 84/50 is far below this client's usual pressure."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
@@ -1062,11 +1914,11 @@
           "options": [
             {
               "id": "A",
-              "text": "sepsis"
+              "text": "dehydration alone"
             },
             {
               "id": "B",
-              "text": "dehydration alone"
+              "text": "sepsis"
             },
             {
               "id": "C",
@@ -1112,7 +1964,7 @@
         }
       ],
       "answer": {
-        "1": "A",
+        "1": "B",
         "2": "A",
         "3": "A"
       },
@@ -1135,23 +1987,23 @@
         },
         {
           "id": "B",
-          "text": "A fall related to confusion"
-        },
-        {
-          "id": "C",
           "text": "Pressure injury"
         },
         {
-          "id": "D",
+          "id": "C",
           "text": "Urinary retention"
+        },
+        {
+          "id": "D",
+          "text": "A fall related to confusion"
         }
       ],
       "answer": "A",
       "explanation": "Hypotension with a lactate above 2 mmol/L shows the circulation is already failing to perfuse tissues. Without fast fluids and antibiotics this can progress to septic shock and multiple organ dysfunction.",
       "why": {
-        "B": "Fall risk is real and needs precautions, but it is not the most life-threatening problem.",
-        "C": "Important later, not the immediate threat.",
-        "D": "Not suggested by the findings."
+        "B": "Important later, not the immediate threat.",
+        "C": "Not suggested by the findings.",
+        "D": "Fall risk is real and needs precautions, but it is not the most life-threatening problem."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -1207,27 +2059,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Make sure blood cultures have been drawn, without delaying the antibiotic"
+          "text": "Give acetaminophen first to lower the fever"
         },
         {
           "id": "B",
-          "text": "Wait for the urine culture result to choose the right antibiotic"
-        },
-        {
-          "id": "C",
           "text": "Recheck the temperature"
         },
         {
+          "id": "C",
+          "text": "Make sure blood cultures have been drawn, without delaying the antibiotic"
+        },
+        {
           "id": "D",
-          "text": "Give acetaminophen first to lower the fever"
+          "text": "Wait for the urine culture result to choose the right antibiotic"
         }
       ],
-      "answer": "A",
+      "answer": "C",
       "explanation": "Cultures drawn before the first antibiotic dose give the best chance of identifying the organism. In sepsis the antibiotic should not be held for long waiting on cultures, so they are drawn quickly and the drug is started right away.",
       "why": {
-        "B": "Culture results take a day or more; waiting would dangerously delay treatment.",
-        "C": "The fever is already documented and does not change the action.",
-        "D": "Antipyretics can be given, but they are not a prerequisite and do not treat the infection."
+        "A": "Antipyretics can be given, but they are not a prerequisite and do not treat the infection.",
+        "B": "The fever is already documented and does not change the action.",
+        "D": "Culture results take a day or more; waiting would dangerously delay treatment."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -1298,15 +2150,15 @@
       "options": [
         {
           "id": "A",
-          "text": "Deep, rapid respirations"
+          "text": "Arterial pH 7.18"
         },
         {
           "id": "B",
-          "text": "Blood glucose 486 mg/dL"
+          "text": "Reports missing insulin doses for 2 days"
         },
         {
           "id": "C",
-          "text": "Arterial pH 7.18"
+          "text": "Temperature 37.2 C (99 F)"
         },
         {
           "id": "D",
@@ -1318,24 +2170,24 @@
         },
         {
           "id": "F",
-          "text": "Temperature 37.2 C (99 F)"
+          "text": "Blood glucose 486 mg/dL"
         },
         {
           "id": "G",
-          "text": "Reports missing insulin doses for 2 days"
+          "text": "Deep, rapid respirations"
         }
       ],
       "answer": [
         "A",
-        "B",
-        "C",
         "D",
-        "E"
+        "E",
+        "F",
+        "G"
       ],
       "explanation": "Kussmaul respirations, severe hyperglycemia, acidosis, signs of dehydration and an abnormal potassium all need action. The missed insulin explains the cause and matters for teaching, but it is not a finding that needs urgent treatment by itself.",
       "why": {
-        "F": "Normal temperature.",
-        "G": "Important history that guides teaching later; not an abnormal finding to treat now."
+        "B": "Important history that guides teaching later; not an abnormal finding to treat now.",
+        "C": "Normal temperature."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -1360,11 +2212,11 @@
             },
             {
               "id": "B",
-              "text": "hyperosmolar hyperglycemic state"
+              "text": "respiratory acidosis"
             },
             {
               "id": "C",
-              "text": "respiratory acidosis"
+              "text": "hyperosmolar hyperglycemic state"
             }
           ]
         },
@@ -1374,15 +2226,15 @@
           "options": [
             {
               "id": "A",
-              "text": "acidosis and lack of insulin shift potassium out of cells"
+              "text": "the kidneys are retaining potassium normally"
             },
             {
               "id": "B",
-              "text": "the client eats a high-potassium diet"
+              "text": "acidosis and lack of insulin shift potassium out of cells"
             },
             {
               "id": "C",
-              "text": "the kidneys are retaining potassium normally"
+              "text": "the client eats a high-potassium diet"
             }
           ]
         },
@@ -1392,7 +2244,7 @@
           "options": [
             {
               "id": "A",
-              "text": "fall"
+              "text": "stay the same"
             },
             {
               "id": "B",
@@ -1400,15 +2252,15 @@
             },
             {
               "id": "C",
-              "text": "stay the same"
+              "text": "fall"
             }
           ]
         }
       ],
       "answer": {
         "1": "A",
-        "2": "A",
-        "3": "A"
+        "2": "B",
+        "3": "C"
       },
       "explanation": "High glucose, ketones, low pH and low bicarbonate with an anion gap are DKA. Potassium leaves the cells in acidosis and without insulin, so the serum level looks high even though total body potassium is usually low. Insulin drives potassium back into cells, so the level falls.",
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
@@ -1425,27 +2277,27 @@
       "options": [
         {
           "id": "A",
-          "text": "Severe fluid volume deficit"
-        },
-        {
-          "id": "B",
-          "text": "Knowledge deficit about sick-day insulin rules"
-        },
-        {
-          "id": "C",
           "text": "Risk for infection"
         },
         {
-          "id": "D",
+          "id": "B",
+          "text": "Severe fluid volume deficit"
+        },
+        {
+          "id": "C",
           "text": "Anxiety"
+        },
+        {
+          "id": "D",
+          "text": "Knowledge deficit about sick-day insulin rules"
         }
       ],
-      "answer": "A",
+      "answer": "B",
       "explanation": "Osmotic diuresis has left the client several liters dry (tachycardia, low blood pressure, dry mucosa). Restoring circulating volume comes first and also begins to lower glucose.",
       "why": {
-        "B": "Teaching is essential before discharge, not first.",
-        "C": "Not the most immediate threat.",
-        "D": "Address it, but it is not the priority physiological problem."
+        "A": "Not the most immediate threat.",
+        "C": "Address it, but it is not the priority physiological problem.",
+        "D": "Teaching is essential before discharge, not first."
       },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
@@ -1566,15 +2418,15 @@
           "options": [
             {
               "id": "A",
-              "text": "adding dextrose to the IV fluids"
+              "text": "giving a bolus of regular insulin"
             },
             {
               "id": "B",
-              "text": "stopping the insulin infusion"
+              "text": "adding dextrose to the IV fluids"
             },
             {
               "id": "C",
-              "text": "giving a bolus of regular insulin"
+              "text": "stopping the insulin infusion"
             }
           ]
         },
@@ -1584,15 +2436,15 @@
           "options": [
             {
               "id": "A",
-              "text": "continue"
+              "text": "double"
             },
             {
               "id": "B",
-              "text": "stop now"
+              "text": "continue"
             },
             {
               "id": "C",
-              "text": "double"
+              "text": "stop now"
             }
           ]
         },
@@ -1606,21 +2458,1296 @@
             },
             {
               "id": "B",
-              "text": "right now while the gap is open"
+              "text": "only after discharge"
             },
             {
               "id": "C",
-              "text": "only after discharge"
+              "text": "right now while the gap is open"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "B",
+        "2": "B",
+        "3": "A"
+      },
+      "explanation": "Glucose usually normalizes before ketoacidosis clears. Dextrose lets the insulin infusion continue until the anion gap closes. Basal insulin overlaps the infusion by 1 to 2 hours so ketoacidosis does not return when the drip stops.",
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q1",
+      "category": "neurological",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up by the nurse? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Symptoms began about 1 hour ago"
+        },
+        {
+          "id": "B",
+          "text": "Glucose 112 mg/dL"
+        },
+        {
+          "id": "C",
+          "text": "Right arm drift"
+        },
+        {
+          "id": "D",
+          "text": "Right facial droop"
+        },
+        {
+          "id": "E",
+          "text": "Slurred speech and trouble finding words"
+        },
+        {
+          "id": "F",
+          "text": "SpO2 96% on room air"
+        },
+        {
+          "id": "G",
+          "text": "Blood pressure 186/104 mm Hg"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D",
+        "E",
+        "G"
+      ],
+      "explanation": "Sudden one-sided face and arm weakness with speech trouble are classic stroke signs. The high blood pressure matters because it must be controlled before a clot-dissolving drug can be given. The time since last known well (about 1 hour) is a key cue: it means the client may still be eligible for time-sensitive treatment.",
+      "why": {
+        "B": "A normal glucose helps rule out low blood sugar, which can mimic a stroke.",
+        "F": "Oxygen saturation is normal."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q2",
+      "category": "neurological",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The client is most likely having {{1}} affecting the {{2}} side of the brain.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Condition",
+          "options": [
+            {
+              "id": "A",
+              "text": "low blood sugar"
+            },
+            {
+              "id": "B",
+              "text": "an acute stroke"
+            },
+            {
+              "id": "C",
+              "text": "a migraine with aura"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Side",
+          "options": [
+            {
+              "id": "A",
+              "text": "left"
+            },
+            {
+              "id": "B",
+              "text": "right"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "B",
+        "2": "A"
+      },
+      "explanation": "Sudden weakness on one side with speech trouble in a client with atrial fibrillation who stopped an anticoagulant fits an acute stroke, likely from a clot. Each side of the brain controls the opposite side of the body, and language centers are usually on the left, so right-sided weakness plus aphasia points to the left hemisphere.",
+      "why": {
+        "1": "Glucose is 112 mg/dL, so low blood sugar is ruled out. A migraine does not usually cause sudden weakness with word-finding trouble in an older adult with atrial fibrillation."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q3",
+      "category": "neurological",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which action is the priority for this client right now?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Give aspirin by mouth to prevent clot growth"
+        },
+        {
+          "id": "B",
+          "text": "Offer sips of water to check the swallow"
+        },
+        {
+          "id": "C",
+          "text": "Lower the blood pressure to below 120/80 mm Hg"
+        },
+        {
+          "id": "D",
+          "text": "Get the client to a noncontrast CT of the head as quickly as possible"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Treatment depends on knowing whether the stroke is from a clot or a bleed, and only imaging can show that. Every minute counts, so the CT comes first.",
+      "why": {
+        "A": "Aspirin before a CT could worsen a bleeding stroke, and the swallow has not been screened.",
+        "B": "The client must stay NPO until a formal swallow screen; slurred speech raises aspiration risk.",
+        "C": "Dropping the pressure too far can reduce blood flow to brain tissue that can still be saved."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q4",
+      "category": "neurological",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential intervention, indicate whether it is indicated, contraindicated or non-essential for the client at this time.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Keep the client NPO until the swallow screen is passed"
+        },
+        {
+          "id": "r2",
+          "text": "Give labetalol IV as prescribed and recheck the blood pressure"
+        },
+        {
+          "id": "r3",
+          "text": "Give aspirin 325 mg by mouth now"
+        },
+        {
+          "id": "r4",
+          "text": "Lower the blood pressure quickly to 120/80 mm Hg"
+        },
+        {
+          "id": "r5",
+          "text": "Do neuro checks and vital signs per stroke protocol"
+        },
+        {
+          "id": "r6",
+          "text": "Teach about a heart-healthy diet for atrial fibrillation"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ind",
+          "text": "Indicated"
+        },
+        {
+          "id": "contra",
+          "text": "Contraindicated"
+        },
+        {
+          "id": "non",
+          "text": "Non-essential"
+        }
+      ],
+      "answer": {
+        "r1": "ind",
+        "r2": "ind",
+        "r3": "contra",
+        "r4": "contra",
+        "r5": "ind",
+        "r6": "non"
+      },
+      "explanation": "Before alteplase, the blood pressure must be below 185/110 mm Hg, the client stays NPO, and neuro status is checked often so any change is caught early. Antiplatelet drugs are held, and teaching can wait until the client is stable.",
+      "why": {
+        "r3": "Antiplatelet drugs are not given around thrombolytic therapy (usually not for 24 hours after) because of bleeding risk, and the swallow is unscreened.",
+        "r4": "Only enough lowering to get under the treatment limit is wanted; a large drop can extend the stroke.",
+        "r6": "Useful later, but it does not change care in the next hour."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q5",
+      "category": "neurological",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "The client weighs 80 kg. The order is alteplase 0.9 mg/kg IV (maximum 90 mg), with 10% of the total dose given as an IV bolus over 1 minute. How many mg will the nurse give as the bolus?",
+      "order": "Alteplase 0.9 mg/kg IV (maximum 90 mg): 10% as IV bolus over 1 minute, the rest over 60 minutes",
+      "patient": "Weight 80 kg",
+      "unit": "mg",
+      "answer": 7.2,
+      "exact": 7.2,
+      "rounding": {
+        "to": 0.1,
+        "label": "to the nearest tenth"
+      },
+      "formula": "Total dose = kg x mg/kg (check the maximum); Bolus = total x 0.10",
+      "steps": [
+        {
+          "work": "80 kg x 0.9 mg/kg = 72 mg",
+          "explain": "Total dose. 72 mg is under the 90 mg maximum, so the full amount is used."
+        },
+        {
+          "work": "72 mg x 0.10 = 7.2 mg",
+          "explain": "The bolus is 10% of the total."
+        },
+        {
+          "work": "72 mg - 7.2 mg = 64.8 mg",
+          "explain": "The rest runs over 60 minutes."
+        }
+      ],
+      "explanation": "Total dose 80 x 0.9 = 72 mg. The bolus is 10%, so 7.2 mg over 1 minute, and the remaining 64.8 mg infuses over 60 minutes. Double-check weight-based thrombolytic doses with a second nurse per policy.",
+      "mistakes": [
+        "Giving 10% of the 90 mg maximum (9 mg) instead of 10% of the calculated dose.",
+        "Using the weight in pounds (176 x 0.9 = 158.4 mg), which is far above the maximum."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q6",
+      "category": "neurological",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Twenty minutes into the alteplase infusion, which finding requires the nurse to stop the infusion right away?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Sudden severe headache with new vomiting"
+        },
+        {
+          "id": "B",
+          "text": "A small amount of oozing at the IV site"
+        },
+        {
+          "id": "C",
+          "text": "Blood pressure 170/96 mm Hg"
+        },
+        {
+          "id": "D",
+          "text": "The client asks for a drink of water"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A sudden severe headache, vomiting, a jump in blood pressure or a drop in level of consciousness during a thrombolytic can mean bleeding in the brain. Stop the infusion, notify the provider immediately and expect an emergency CT.",
+      "why": {
+        "B": "Minor oozing is expected; apply gentle pressure and keep watching.",
+        "C": "Below 180/105 mm Hg is the usual goal during and after alteplase; keep monitoring.",
+        "D": "The client stays NPO until a swallow screen is passed, but this is not a reason to stop the drug."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-stroke-q7",
+      "category": "neurological",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each finding the next day, indicate whether it shows the client is progressing as expected or needs follow-up.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Right arm lifts against gravity and holds for 10 seconds"
+        },
+        {
+          "id": "r2",
+          "text": "Speech clearer with some pauses for words"
+        },
+        {
+          "id": "r3",
+          "text": "Follow-up CT shows no bleeding"
+        },
+        {
+          "id": "r4",
+          "text": "Coughs and voice sounds wet after sips of water"
+        },
+        {
+          "id": "r5",
+          "text": "Blood pressure 154/86 mm Hg"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ok",
+          "text": "Progressing as expected"
+        },
+        {
+          "id": "fu",
+          "text": "Needs follow-up"
+        }
+      ],
+      "answer": {
+        "r1": "ok",
+        "r2": "ok",
+        "r3": "ok",
+        "r4": "fu",
+        "r5": "ok"
+      },
+      "explanation": "Strength and speech are improving, there is no bleeding, and the blood pressure is under the post-treatment limit of 180/105 mm Hg. Coughing and a wet voice after water are signs of aspiration, so the client stays NPO and needs a speech-language pathology swallow evaluation.",
+      "why": {
+        "r4": "Failing the swallow screen means a high aspiration risk; keep NPO and get a swallow evaluation.",
+        "r5": "Higher than normal, but within the usual goal in the first 24 hours after a thrombolytic."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q1",
+      "category": "respiratory",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up by the nurse? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "SpO2 86% on room air"
+        },
+        {
+          "id": "B",
+          "text": "Respiratory rate 28/min"
+        },
+        {
+          "id": "C",
+          "text": "Using neck and shoulder muscles to breathe"
+        },
+        {
+          "id": "D",
+          "text": "Clubbed fingers"
+        },
+        {
+          "id": "E",
+          "text": "Barrel-shaped chest"
+        },
+        {
+          "id": "F",
+          "text": "Speaks 3 to 4 words at a time"
+        },
+        {
+          "id": "G",
+          "text": "pH 7.31 with PaCO2 58 mm Hg"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "F",
+        "G"
+      ],
+      "explanation": "Low oxygen, accessory muscle use, a fast breathing rate, short phrases and an acidotic blood gas with high carbon dioxide all show the client is working hard to breathe and not moving enough air. These need action now.",
+      "why": {
+        "D": "Clubbing develops over months to years from chronic low oxygen; it is not an acute change.",
+        "E": "A barrel chest is a long-term change from air trapping in COPD, not a new problem."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q2",
+      "category": "respiratory",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The arterial blood gas shows {{1}} that is {{2}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Imbalance",
+          "options": [
+            {
+              "id": "A",
+              "text": "respiratory acidosis"
+            },
+            {
+              "id": "B",
+              "text": "respiratory alkalosis"
+            },
+            {
+              "id": "C",
+              "text": "metabolic acidosis"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Compensation",
+          "options": [
+            {
+              "id": "A",
+              "text": "uncompensated"
+            },
+            {
+              "id": "B",
+              "text": "fully compensated"
+            },
+            {
+              "id": "C",
+              "text": "partially compensated"
             }
           ]
         }
       ],
       "answer": {
         "1": "A",
-        "2": "A",
-        "3": "A"
+        "2": "C"
       },
-      "explanation": "Glucose usually normalizes before ketoacidosis clears. Dextrose lets the insulin infusion continue until the anion gap closes. Basal insulin overlaps the infusion by 1 to 2 hours so ketoacidosis does not return when the drip stops.",
+      "explanation": "The pH of 7.31 is acidotic. The PaCO2 of 58 mm Hg is high and matches the acidosis, so the cause is respiratory. The HCO3 of 29 mEq/L is also high, which means the kidneys are holding on to bicarbonate to compensate. Because the pH is still outside 7.35 to 7.45, the compensation is partial.",
+      "why": {
+        "2": "Uncompensated would have a normal HCO3; fully compensated would bring the pH back to 7.35 to 7.45."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q3",
+      "category": "respiratory",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which action should the nurse take first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Apply a non-rebreather mask at 15 L/min to reach an SpO2 of 100%"
+        },
+        {
+          "id": "B",
+          "text": "Encourage the client to drink more fluids to thin the sputum"
+        },
+        {
+          "id": "C",
+          "text": "Give oxygen titrated to an SpO2 of 88 to 92% and help the client sit upright"
+        },
+        {
+          "id": "D",
+          "text": "Hold oxygen to avoid suppressing the drive to breathe"
+        }
+      ],
+      "answer": "C",
+      "explanation": "Hypoxemia is the immediate threat, so oxygen is needed now. In a client who retains carbon dioxide, a target of 88 to 92% corrects dangerous hypoxemia while lowering the risk of making the carbon dioxide level climb. Sitting upright helps the diaphragm work.",
+      "why": {
+        "A": "High-flow oxygen aimed at 100% can raise carbon dioxide further in COPD.",
+        "B": "Hydration helps later but does not treat the low oxygen now.",
+        "D": "Never withhold oxygen from a hypoxemic client; titrate it instead."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q4",
+      "category": "respiratory",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential intervention, indicate whether it is indicated, contraindicated or non-essential for the client at this time.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Give the albuterol and ipratropium nebulizer as prescribed"
+        },
+        {
+          "id": "r2",
+          "text": "Collect the sputum culture before the first antibiotic dose"
+        },
+        {
+          "id": "r3",
+          "text": "Increase oxygen to keep SpO2 above 98%"
+        },
+        {
+          "id": "r4",
+          "text": "Position the client sitting up and leaning forward"
+        },
+        {
+          "id": "r5",
+          "text": "Give a prescribed sedative as needed for anxiety"
+        },
+        {
+          "id": "r6",
+          "text": "Enroll the client in a pulmonary rehabilitation program"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ind",
+          "text": "Indicated"
+        },
+        {
+          "id": "contra",
+          "text": "Contraindicated"
+        },
+        {
+          "id": "non",
+          "text": "Non-essential"
+        }
+      ],
+      "answer": {
+        "r1": "ind",
+        "r2": "ind",
+        "r3": "contra",
+        "r4": "ind",
+        "r5": "contra",
+        "r6": "non"
+      },
+      "explanation": "Bronchodilators open the airways, the culture guides antibiotic choice if it is collected before the first dose, and an upright leaning-forward position eases breathing. Oxygen should stay at the ordered target, and sedatives can slow breathing in a client who is already retaining carbon dioxide.",
+      "why": {
+        "r3": "Above the ordered 88 to 92% target; can worsen carbon dioxide retention.",
+        "r5": "Sedatives can depress breathing and raise carbon dioxide further. Coaching pursed-lip breathing is a safer way to ease anxiety.",
+        "r6": "Helpful after recovery, but not part of managing the flare today."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q5",
+      "category": "respiratory",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which action is the priority?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Increase the oxygen further because the respiratory rate has slowed"
+        },
+        {
+          "id": "B",
+          "text": "Return the oxygen to the ordered target, call the rapid response team and prepare for noninvasive ventilation"
+        },
+        {
+          "id": "C",
+          "text": "Give the next nebulizer treatment early"
+        },
+        {
+          "id": "D",
+          "text": "Let the client sleep because rest will lower the work of breathing"
+        }
+      ],
+      "answer": "B",
+      "explanation": "New drowsiness, a slower breathing rate and a pH of 7.24 with PaCO2 72 mm Hg mean carbon dioxide is building up and the client is tiring. Too much oxygen likely contributed. Turn it back to the target and get help now: noninvasive ventilation (BiPAP) is often used to blow off carbon dioxide and can prevent intubation.",
+      "why": {
+        "A": "More oxygen will likely raise the carbon dioxide even more.",
+        "C": "A nebulizer does not fix a failing breathing effort.",
+        "D": "This is not restful sleep; it is carbon dioxide narcosis and can progress to respiratory arrest."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-copd-q6",
+      "category": "respiratory",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings show that treatment for the COPD flare is working? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Respiratory rate 20/min"
+        },
+        {
+          "id": "B",
+          "text": "Talking in full sentences"
+        },
+        {
+          "id": "C",
+          "text": "SpO2 90% on 1 L/min nasal cannula"
+        },
+        {
+          "id": "D",
+          "text": "Blood glucose 248 mg/dL"
+        },
+        {
+          "id": "E",
+          "text": "pH 7.36 with PaCO2 50 mm Hg"
+        },
+        {
+          "id": "F",
+          "text": "Heart rate 118/min and hand tremor after nebulizer"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "explanation": "Oxygen is in the target range on little support, breathing has slowed, the pH is back in range, and the client can speak in full sentences. A PaCO2 of 50 may be near this client's usual level.",
+      "why": {
+        "D": "High glucose is a common side effect of corticosteroids. It needs follow-up and possibly insulin, but it does not show the flare is improving.",
+        "F": "A fast heart rate and tremor are side effects of albuterol. Report them; they are not signs of improvement."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q1",
+      "category": "maternity",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up by the nurse? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Pad soaked through in 15 minutes with large clots"
+        },
+        {
+          "id": "B",
+          "text": "Blood pressure 98/58 mm Hg"
+        },
+        {
+          "id": "C",
+          "text": "Cool, clammy skin and lightheadedness"
+        },
+        {
+          "id": "D",
+          "text": "Cramping during breastfeeding"
+        },
+        {
+          "id": "E",
+          "text": "Heart rate 112/min"
+        },
+        {
+          "id": "F",
+          "text": "Fundus soft and 2 cm above the umbilicus"
+        },
+        {
+          "id": "G",
+          "text": "Temperature 37.4 C (99.3 F)"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "E",
+        "F"
+      ],
+      "explanation": "A soft, high uterus with a pad soaked in 15 minutes means heavy, ongoing bleeding. A fast heart rate, falling blood pressure, cool clammy skin and lightheadedness are signs the body is starting to lose the ability to compensate. Heart rate often rises before blood pressure falls.",
+      "why": {
+        "D": "Afterpains during breastfeeding are expected; oxytocin released during feeding makes the uterus contract.",
+        "G": "A slightly raised temperature is common in the first 24 hours after birth."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q2",
+      "category": "maternity",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The bleeding is most likely caused by {{1}}. A risk factor in this client's history is {{2}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Cause",
+          "options": [
+            {
+              "id": "A",
+              "text": "uterine atony"
+            },
+            {
+              "id": "B",
+              "text": "a clotting disorder"
+            },
+            {
+              "id": "C",
+              "text": "a perineal laceration"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Risk factor",
+          "options": [
+            {
+              "id": "A",
+              "text": "a 4.3 kg newborn after a long oxytocin-induced labor"
+            },
+            {
+              "id": "B",
+              "text": "a history of mild asthma"
+            },
+            {
+              "id": "C",
+              "text": "a temperature of 37.4 C"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "A",
+        "2": "A"
+      },
+      "explanation": "Atony, a uterus that does not stay contracted, is the most common cause of postpartum hemorrhage, and a soft fundus above the umbilicus is its key sign. A large baby stretches the uterus, and a long labor with oxytocin can tire the muscle, both raising the risk. Being a third birth adds to it.",
+      "why": {
+        "1": "A laceration usually causes steady bright red bleeding with a firm uterus. There is no sign of a clotting problem, and platelets are normal.",
+        "2": "Asthma does not cause bleeding, but it matters for drug choice."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q3",
+      "category": "maternity",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which action should the nurse take first?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Weigh the pads to measure the blood loss"
+        },
+        {
+          "id": "B",
+          "text": "Insert a straight catheter to empty the bladder"
+        },
+        {
+          "id": "C",
+          "text": "Leave the room to phone the provider"
+        },
+        {
+          "id": "D",
+          "text": "Massage the fundus firmly while supporting the lower uterus, and call for help"
+        }
+      ],
+      "answer": "D",
+      "explanation": "Fundal massage makes the uterus contract and is the fastest way to slow bleeding from atony. Supporting the lower uterus with the other hand keeps it from being pushed down. Use the call light or ask a coworker so the nurse never leaves the client.",
+      "why": {
+        "A": "Measuring loss is important, but treating the bleeding comes first.",
+        "B": "A full bladder can keep the uterus from contracting, but massage comes first.",
+        "C": "The nurse should stay with a bleeding client and call for help from the bedside."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q4",
+      "category": "maternity",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "Using the weighed items and the 350 mL lost at birth, what is the client's total blood loss since birth in mL? (1 g = 1 mL)",
+      "patient": "Estimated blood loss at birth 350 mL",
+      "available": "Three soaked pads: 182 g, 176 g and 168 g (dry weight 22 g each). One soaked underpad: 340 g (dry weight 40 g).",
+      "unit": "mL",
+      "answer": 1110,
+      "exact": 1110,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Blood loss (mL) = wet weight (g) - dry weight (g); add the loss at birth",
+      "steps": [
+        {
+          "work": "182 + 176 + 168 = 526 g; 526 - (3 x 22) = 460 mL",
+          "explain": "Pads, minus their dry weight."
+        },
+        {
+          "work": "340 - 40 = 300 mL",
+          "explain": "Underpad, minus its dry weight."
+        },
+        {
+          "work": "460 + 300 + 350 = 1,110 mL",
+          "explain": "Add the loss at birth for the total."
+        }
+      ],
+      "explanation": "Weighed loss is 460 mL from the pads plus 300 mL from the underpad, 760 mL in total. Adding the 350 mL lost at birth gives 1,110 mL. A cumulative loss of 1,000 mL or more, or any loss with signs of low blood volume, is treated as postpartum hemorrhage.",
+      "mistakes": [
+        "Forgetting to subtract the dry weight of each item.",
+        "Leaving out the blood lost at birth."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q5",
+      "category": "maternity",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential intervention, indicate whether it is indicated, contraindicated or non-essential for the client at this time.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Start a second large-bore IV"
+        },
+        {
+          "id": "r2",
+          "text": "Give carboprost 250 mcg IM"
+        },
+        {
+          "id": "r3",
+          "text": "Give methylergonovine 0.2 mg IM after checking the blood pressure"
+        },
+        {
+          "id": "r4",
+          "text": "Empty the bladder with a straight catheter"
+        },
+        {
+          "id": "r5",
+          "text": "Help the client walk to the bathroom to void"
+        },
+        {
+          "id": "r6",
+          "text": "Teach about birth control options"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ind",
+          "text": "Indicated"
+        },
+        {
+          "id": "contra",
+          "text": "Contraindicated"
+        },
+        {
+          "id": "non",
+          "text": "Non-essential"
+        }
+      ],
+      "answer": {
+        "r1": "ind",
+        "r2": "contra",
+        "r3": "ind",
+        "r4": "ind",
+        "r5": "contra",
+        "r6": "non"
+      },
+      "explanation": "Two large IVs allow fast fluid and blood replacement. Methylergonovine helps the uterus contract and is safe here because the blood pressure is low, not high. Emptying the bladder lets the uterus contract fully. The drug choice depends on the history: this client has asthma.",
+      "why": {
+        "r2": "Carboprost can cause bronchospasm and is avoided in clients with asthma. Question the order.",
+        "r3": "Methylergonovine is avoided with high blood pressure or preeclampsia; always check the pressure first.",
+        "r5": "She is lightheaded with heavy bleeding, so getting up risks fainting and a fall.",
+        "r6": "Important before discharge, not during an emergency."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-pph-q6",
+      "category": "maternity",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings show that the interventions have been effective? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Urine output 40 mL/hr"
+        },
+        {
+          "id": "B",
+          "text": "Lightheaded when sitting up at the side of the bed"
+        },
+        {
+          "id": "C",
+          "text": "One pad partly soaked in the past hour with no large clots"
+        },
+        {
+          "id": "D",
+          "text": "Heart rate 92/min and blood pressure 112/68 mm Hg"
+        },
+        {
+          "id": "E",
+          "text": "Fundus firm at the umbilicus"
+        },
+        {
+          "id": "F",
+          "text": "Hemoglobin 8.9 g/dL"
+        }
+      ],
+      "answer": [
+        "A",
+        "C",
+        "D",
+        "E"
+      ],
+      "explanation": "A firm fundus, much lighter bleeding, normal vital signs and adequate urine output (at least 30 mL/hr) show the bleeding is controlled and organs are getting enough blood flow.",
+      "why": {
+        "B": "Still lightheaded when upright: keep fall precautions and help her up slowly.",
+        "F": "Hemoglobin often keeps falling for hours after bleeding stops as fluids dilute the blood. Report it; transfusion may be needed."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q1",
+      "category": "pediatrics",
+      "ncjmm": "recognize-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings require immediate follow-up by the nurse? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Heart rate 160/min"
+        },
+        {
+          "id": "B",
+          "text": "Lethargic, wakes only when touched"
+        },
+        {
+          "id": "C",
+          "text": "No wet diaper for about 10 hours"
+        },
+        {
+          "id": "D",
+          "text": "Temperature 37.9 C (100.2 F)"
+        },
+        {
+          "id": "E",
+          "text": "Respiratory rate 34/min"
+        },
+        {
+          "id": "F",
+          "text": "Weight 1.2 kg less than 1 week ago"
+        },
+        {
+          "id": "G",
+          "text": "Capillary refill 3 seconds"
+        }
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C",
+        "F",
+        "G"
+      ],
+      "explanation": "A fast heart rate, slow capillary refill, very little urine, lethargy and a large weight loss together show a serious fluid deficit. Children keep their blood pressure up until late, so a normal reading does not mean the child is safe.",
+      "why": {
+        "D": "A low-grade fever is common with a stomach virus and is not the main concern.",
+        "E": "Within the usual range for a toddler."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q2",
+      "category": "pediatrics",
+      "ncjmm": "analyze-cues",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "cloze",
+      "stem": "Complete the statement by choosing from the lists.",
+      "template": "The child has {{1}} dehydration, based on {{2}}.",
+      "blanks": [
+        {
+          "id": "1",
+          "label": "Severity",
+          "options": [
+            {
+              "id": "A",
+              "text": "mild"
+            },
+            {
+              "id": "B",
+              "text": "moderate"
+            },
+            {
+              "id": "C",
+              "text": "severe"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "label": "Evidence",
+          "options": [
+            {
+              "id": "A",
+              "text": "a normal blood pressure"
+            },
+            {
+              "id": "B",
+              "text": "a 10% weight loss with lethargy and slow capillary refill"
+            },
+            {
+              "id": "C",
+              "text": "a low-grade fever"
+            }
+          ]
+        }
+      ],
+      "answer": {
+        "1": "C",
+        "2": "B"
+      },
+      "explanation": "Weight loss is the best guide: 1.2 kg lost from 12.0 kg is 10%. A loss of 10% or more with lethargy, slow capillary refill and very little urine is severe dehydration.",
+      "why": {
+        "1": "Mild is about 3 to 5% loss and moderate about 6 to 9%, with an alert child.",
+        "2": "Fever does not measure fluid loss, and blood pressure falls late in children."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q3",
+      "category": "pediatrics",
+      "ncjmm": "prioritize-hypotheses",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "mc",
+      "stem": "Which problem is the priority?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Low blood volume that can progress to shock"
+        },
+        {
+          "id": "B",
+          "text": "Spread of infection to other children"
+        },
+        {
+          "id": "C",
+          "text": "Skin breakdown in the diaper area from diarrhea"
+        },
+        {
+          "id": "D",
+          "text": "Parent's need for teaching about oral rehydration"
+        }
+      ],
+      "answer": "A",
+      "explanation": "A 10% fluid loss with lethargy and poor perfusion puts the child at risk of shock, a circulation problem that threatens life. The others matter but can wait until fluid is being replaced.",
+      "why": {
+        "B": "Contact precautions are needed, but they do not outrank circulation.",
+        "C": "Important for comfort and skin care, but not life-threatening.",
+        "D": "Teaching comes once the child is stable."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q4",
+      "category": "pediatrics",
+      "ncjmm": "generate-solutions",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "matrix",
+      "stem": "For each potential intervention, indicate whether it is indicated, contraindicated or non-essential for the client at this time.",
+      "rows": [
+        {
+          "id": "r1",
+          "text": "Give the 0.9% sodium chloride bolus as prescribed"
+        },
+        {
+          "id": "r2",
+          "text": "Treat the glucose of 58 mg/dL with the prescribed dextrose"
+        },
+        {
+          "id": "r3",
+          "text": "Start maintenance fluid with potassium chloride right away"
+        },
+        {
+          "id": "r4",
+          "text": "Offer apple juice to replace fluid"
+        },
+        {
+          "id": "r5",
+          "text": "Give an over-the-counter antidiarrheal medicine"
+        },
+        {
+          "id": "r6",
+          "text": "Weigh every diaper"
+        }
+      ],
+      "columns": [
+        {
+          "id": "ind",
+          "text": "Indicated"
+        },
+        {
+          "id": "contra",
+          "text": "Contraindicated"
+        },
+        {
+          "id": "non",
+          "text": "Non-essential"
+        }
+      ],
+      "answer": {
+        "r1": "ind",
+        "r2": "ind",
+        "r3": "contra",
+        "r4": "contra",
+        "r5": "contra",
+        "r6": "ind"
+      },
+      "explanation": "An isotonic bolus restores circulating volume, low glucose in a lethargic child must be treated, and weighing diapers measures output (1 g is about 1 mL). Potassium waits until the kidneys are working.",
+      "why": {
+        "r3": "Potassium is added only after the child voids. If the kidneys are not making urine, potassium can build up to a dangerous level.",
+        "r4": "Juice is high in sugar and low in sodium and can make diarrhea worse. Use oral rehydration solution.",
+        "r5": "Antidiarrheal drugs are not recommended for young children with infectious diarrhea and can cause harm."
+      },
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q5",
+      "category": "pediatrics",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "The child weighs 10.8 kg. The order is 0.9% sodium chloride 20 mL/kg IV bolus. How many mL will the nurse give?",
+      "order": "0.9% sodium chloride 20 mL/kg IV bolus over 20 minutes",
+      "patient": "Weight 10.8 kg",
+      "unit": "mL",
+      "answer": 216,
+      "exact": 216,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "Volume = kg x mL/kg",
+      "steps": [
+        {
+          "work": "10.8 kg x 20 mL/kg = 216 mL",
+          "explain": "Multiply the weight by the ordered volume per kg."
+        }
+      ],
+      "explanation": "10.8 kg x 20 mL/kg = 216 mL, given over 20 minutes. Reassess heart rate, capillary refill, mental status and urine output after each bolus.",
+      "mistakes": [
+        "Using the old weight of 12.0 kg (240 mL).",
+        "Using 20 mL total instead of 20 mL per kg."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q6",
+      "category": "pediatrics",
+      "ncjmm": "take-action",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "calc",
+      "stem": "Using the 100/50/20 mL/kg/day method for maintenance fluid, what hourly rate in mL/hr will the nurse set for the 10.8 kg child?",
+      "patient": "Weight 10.8 kg",
+      "order": "D5 0.9% sodium chloride at maintenance rate",
+      "available": "Daily maintenance: 100 mL/kg for the first 10 kg, 50 mL/kg for the next 10 kg, 20 mL/kg for each kg above 20",
+      "unit": "mL/hr",
+      "answer": 43,
+      "exact": 43.33,
+      "rounding": {
+        "to": 1,
+        "label": "to the nearest whole number"
+      },
+      "formula": "First 10 kg x 100 mL/kg + next kg x 50 mL/kg = mL/day; mL/day / 24 = mL/hr",
+      "steps": [
+        {
+          "work": "10 kg x 100 mL/kg = 1,000 mL",
+          "explain": "First 10 kg."
+        },
+        {
+          "work": "0.8 kg x 50 mL/kg = 40 mL",
+          "explain": "The remaining 0.8 kg."
+        },
+        {
+          "work": "1,000 + 40 = 1,040 mL/day",
+          "explain": "Daily total."
+        },
+        {
+          "work": "1,040 mL / 24 hr = 43.3 mL/hr, rounded to 43 mL/hr",
+          "explain": "Hourly rate."
+        }
+      ],
+      "explanation": "The first 10 kg need 1,000 mL/day and the remaining 0.8 kg need 40 mL/day, for 1,040 mL/day. Divided by 24 hours, that is 43 mL/hr.",
+      "mistakes": [
+        "Applying 100 mL/kg to all 10.8 kg (1,080 mL/day, 45 mL/hr).",
+        "Forgetting to divide the daily total by 24."
+      ],
+      "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
+      "verified": false
+    },
+    {
+      "id": "case-peds-dehydration-q7",
+      "category": "pediatrics",
+      "ncjmm": "evaluate-outcomes",
+      "difficulty": "nclex",
+      "lesson": "nclex",
+      "format": "sata",
+      "stem": "Which findings show the child's hydration is improving? Select all that apply.",
+      "options": [
+        {
+          "id": "A",
+          "text": "Two loose stools in the past 4 hours"
+        },
+        {
+          "id": "B",
+          "text": "Capillary refill under 2 seconds"
+        },
+        {
+          "id": "C",
+          "text": "Awake, playing and crying with tears"
+        },
+        {
+          "id": "D",
+          "text": "Wet diapers weighing 60 g in the past 2 hours"
+        },
+        {
+          "id": "E",
+          "text": "Glucose 96 mg/dL"
+        },
+        {
+          "id": "F",
+          "text": "Heart rate 118/min"
+        }
+      ],
+      "answer": [
+        "B",
+        "C",
+        "D",
+        "F"
+      ],
+      "explanation": "A slower heart rate, brisk capillary refill, tears, alertness and good urine output all show better hydration. 60 mL over 2 hours in a 10.8 kg child is about 2.8 mL/kg/hr, above the goal of at least 1 mL/kg/hr. Once the child is voiding, potassium can be added to the fluid as ordered.",
+      "why": {
+        "A": "Diarrhea often continues for a few days with a stomach virus. Keep replacing the losses, but stools do not measure hydration.",
+        "E": "Glucose is now normal, which shows the low sugar was treated, not that hydration improved."
+      },
       "source": "NursePrepHub original case (AI-drafted, fictional composite). References UNVERIFIED: needs clinician review against current guidelines before publishing as reviewed.",
       "verified": false
     }
