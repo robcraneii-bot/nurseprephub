@@ -70,7 +70,7 @@ app.post('/api/chat', async (req, res) => {
   } catch (e) { res.status(500).json({ error: 'AI service error' }); }
 });
 
-/* ── Care Plan Generator: structured plans built from form fields (prompt lives on the server) ── */
+/* ── Care Plan Builder: fictional cases only; prompts and output schemas live on the server (see careplan.js) ── */
 require('./careplan').register(app, { takeAiCredit, refundAiCredit, dailyLimit: AI_DAILY_LIMIT });
 
 /* ── Practice: question sets are graded here so answer keys never reach the browser early ── */
