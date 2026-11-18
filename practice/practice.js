@@ -516,7 +516,7 @@
         <section class="tcard"><span class="tier free">Free forever</span><h2>NursePrepHub Free</h2><p class="price">$0</p><p>Everything you need to learn and practice on your own.</p><ul>${free.map(t => `<li>${ico('check')}${t}</li>`).join('')}</ul><a class="btn btn-s" href="#practice">Start practicing</a></section>
         <section class="tcard pro"><span class="tier pro">Coming soon</span><h2>NursePrepHub Pro</h2><p class="price">AI powered</p><p>Everything in Free, plus:</p><ul>${pro.map(t => `<li>${ico('check')}${t}</li>`).join('')}</ul><button class="btn btn-p" disabled>Coming soon</button></section>
       </div>
-      <p class="pp-note">During early access, the AI tools (NCLEX Prep, Coach Quest, Body Systems Quiz, Reference Library, Care Plan Generator) are free with a daily limit per visitor.</p>`;
+      <p class="pp-note">During early access, the AI tools (NCLEX Prep, Coach Quest, Body Systems Quiz, Reference Library, Care Plan Builder) are free with a daily limit per visitor.</p>`;
   }
 
   window.Practice = { route, renderPro };

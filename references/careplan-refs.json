@@ -1,0 +1,12 @@
+{
+  "_how": "Sources for the Care Plan Builder References tab. Add an entry only after you have opened and checked the source yourself. The server ignores any entry that is missing a field, has a year outside 2021 to 2026, has a non-https url, or is not marked verified: true. A rationale is matched to a source when its topic or text contains one of the keywords (case-insensitive). Every rationale without a match shows 'Not yet verified'.",
+  "_example": {
+    "author": "Organization or last name, initials",
+    "year": 2024,
+    "title": "Exact title of the guideline, article or chapter",
+    "url": "https://...",
+    "keywords": ["fall prevention", "fall risk"],
+    "verified": true
+  },
+  "refs": []
+}
