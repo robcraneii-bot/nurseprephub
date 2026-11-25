@@ -220,7 +220,7 @@
         if (c.length) { push('h2', h); bullets(c.map(c => clean(c.cue).replace(/\.$/, '') + (clean(c.why) ? ': ' + sentence(c.why) : '.'))); }
       });
     }
-    if (p.ai || p.diagnoses.some(x => x.ai || x.interventions.some(v => v.ai))) { push('h1', 'AI Use Disclosure'); para(clean(pp.disclosure) || DISCLOSURE); }
+    if (pp.includeDisclosure === true) { push('h1', 'AI Use Disclosure'); para(clean(pp.disclosure) || DISCLOSURE); }
 
     push('break');
     push('center', bold('References'), { heading: true });

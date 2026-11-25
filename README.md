@@ -57,6 +57,7 @@ The Format dropdown is filled from `FORMATS` in `paper/formats.js`. "Standard" i
 student paper as .docx and .pdf in the browser; title page details are never sent to the server. To add a style, add
 an entry there with its own `build`, `preview`, `checkRef` and `layout`; the Word and PDF writers are shared. Students
 add their own sources and tick the rationales each supports. Uncited rationales print "[Not yet verified]".
+The AI Use Disclosure section is off unless "Include AI use disclosure" is checked.
 Third-party files are in `vendor/`.
 
 ## Checks
