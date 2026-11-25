@@ -51,6 +51,14 @@ References: the AI never writes citations. `references/careplan-refs.json` holds
 `verified: true`), served through `GET /api/careplan/refs`. Any rationale without a matching source shows
 "Not yet verified".
 
+### Paper formats
+
+The Format dropdown is filled from `FORMATS` in `paper/formats.js`. "Standard" is the original layout. "APA 7" builds a
+student paper as .docx and .pdf in the browser; title page details are never sent to the server. To add a style, add
+an entry there with its own `build`, `preview`, `checkRef` and `layout`; the Word and PDF writers are shared. Students
+add their own sources and tick the rationales each supports. Uncited rationales print "[Not yet verified]".
+Third-party files are in `vendor/`.
+
 ## Checks
 
 ```

@@ -120,13 +120,11 @@ input{width:100%;font:inherit;font-size:1.05rem;letter-spacing:.06em;padding:12p
 input:focus{outline:3px solid color-mix(in srgb,var(--accent) 35%,transparent);border-color:var(--accent)}
 button{margin-top:14px;width:100%;min-height:48px;border:0;border-radius:12px;background:var(--accent);color:var(--bg);font:inherit;font-weight:700;cursor:pointer}
 .err{color:var(--bad);font-weight:600;margin-top:12px}
-small{display:block;color:var(--ink2);font-size:.76rem;margin-top:20px;line-height:1.5}
 </style></head><body><main>
 <h1>NursePrepHub</h1><p>This preview is private. Enter your personal access code. You will stay signed in on this device for 30 days.</p>
 <form method="post" action="/login"><label for="code">Access code</label>
 <input id="code" name="code" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" required autofocus>
 <input type="hidden" name="h" id="h"><button type="submit">Sign in</button></form><!--MSG-->
-<small>For education only, not medical advice. Not affiliated with MSJC or NCSBN. NCLEX is a trademark of its owner.</small>
 </main><script>document.getElementById('h').value=location.hash||'';</script></body></html>`;
 
 module.exports = { createGate, hashCode, normalize, parseEntries };

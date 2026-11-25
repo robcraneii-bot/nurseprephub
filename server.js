@@ -20,6 +20,8 @@ gate.routes(app);
 
 // Serve only what the site needs. Source code, question files, reports, scripts and archives are never sent.
 app.use('/img', express.static(path.join(__dirname, 'img'), { dotfiles: 'ignore', index: false }));
+app.use('/vendor', express.static(path.join(__dirname, 'vendor'), { dotfiles: 'ignore', index: false, maxAge: '1d' }));
+app.get('/paper/formats.js', (req, res) => res.sendFile(path.join(__dirname, 'paper', 'formats.js')));
 ['practice.js', 'practice.css'].forEach(f => app.get('/practice/' + f, (req, res) => res.sendFile(path.join(__dirname, 'practice', f))));
 
 /* ── AI chat: free during early access, with a per-visitor daily allowance ── */
